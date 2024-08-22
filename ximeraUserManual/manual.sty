@@ -2,7 +2,7 @@
 %% Bart Snapp and ChatGPT
 
 % Required Packages
-\RequirePackage[letterspace=-80]{microtype}
+\RequirePackage[letterspace=-80]{microtype}   % To be investigated: causes dummy page with AaGg ???
 % \RequirePackage{tikz}
 \RequirePackage{standalone}
 \RequirePackage[landscape,includehead,includefoot,margin=2.5cm,headheight=1cm]{geometry}
@@ -26,6 +26,21 @@
 
 \tikzset{>=stealth}
 \qrset{height=1cm}
+
+% https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
+\usepackage{xstring}
+\usepackage{catchfile}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+\CatchFileDef{\headfull}{/code/.git/HEAD}{}
+\StrGobbleRight{\headfull}{1}[\head]
+\StrBehind[2]{\head}{/}[\branch]
+
+%FOUND \headfull with \head and \branch
+
+\IfFileExists{/code/.git/refs/heads/\branch}{%
+    \CatchFileDef{\commit}{/code/.git/refs/heads/\branch}{}}{%
+    \newcommand{\commit}{\dots~(in \emph{packed-refs})}}
 
 
 \newcommand{\MONTH}{%
@@ -158,12 +173,181 @@
   \end{scope}
   %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}}%
-\resizebox{!}{.7em}{\lsstyle User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
+%\resizebox{!}{.7em}{\lsstyle User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
+\resizebox{!}{.7em}{User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
 \fancyfoot[L]{\sffamily\tiny\textbf{
-XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \otherinput{../.git/refs/heads/minimal}\quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
+XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
 }}
 \fancyfoot[C]{}
 \fancyfoot[R]{\thepage}
+
+
+
+
+
+
+\setcounter{tocdepth}{1}
+\usepackage{pagecolor}
+\usepackage{ccicons}
+
+%
+% Add a frontCover  (by redefining \maketitle)
+%
+%  color setting to be done properly  (HACK to make \ifcolorwork at runtime (vs at load-time))
+%  picture to be done properly (avoid \input's ... !)
+
+\makeatletter
+\definecolor{bkgndcr}{rgb}{1,1,1}
+\definecolor{txtcr}{rgb}{0,0,0}
+\let\othermaketitle\maketitle
+\renewcommand{\maketitle}{
+
+  \ifcolor
+
+  \definecolor{bkgndcr}{RGB}{50,100, 255}
+  \definecolor{bkgndcr}{RGB}{10,100, 50}
+  \definecolor{bkgndcr}{RGB}{60,60, 60}
+  % \definecolor{bkgndcr}{RGB}{255,255, 100}
+
+  \definecolor{txtcr}{RGB}{255, 100, 255}
+  \definecolor{txtcr}{RGB}{255,255, 100}
+
+  \colorlet{otherbkgndcr}{bkgndcr}
+  \colorlet{othertxtcr}{txtcr}
+  \fi
+
+
+  \pagestyle{empty}
+  \newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
+  \pagecolor{bkgndcr}
+  \boldmath % Makes all math text bold
+  \bfseries % Makes all text bold
+  \color{txtcr}
+  \sffamily\flushleft%
+  \!\resizebox{!}{1cm}{\input{tikzLogo.tex}}\\[0cm]%
+  Interactive\\
+  Mathematics\\
+  Education\\
+  Resources for\\
+  All \\
+  \vspace*{-6cm}
+  \hspace*{-3.5cm}\rotatebox{15}{\resizebox{!}{8.7cm}{\begin{minipage}{1.1cm}\flushright User\\[-.2cm]Manual\end{minipage}}}\hfill
+  
+  \begin{center}
+    \scalebox{3}{Fowler $\bullet$ Obbels $\bullet$ Nowell $\bullet$ Snapp}
+  \end{center}
+  \small This document was typeset on \today. \hfill \Large\textsf{\ccbyncsa}\\
+  \small\texttt{GIT COMMIT: \commit}\\
+  \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
+\clearpage\pagecolor{white}\color{black}\unboldmath\normalfont\restoregeometry\colorlet{bkgndcr}{white}\colorlet{txtcr}{black}
+\cleardoublepage
+\mbox{}
+\vspace{3cm}
+\begin{center}
+\Large\it To lovers of mathematics everywhere.
+\end{center}
+\ifnotoc
+\else\twocolumn
+  \tableofcontents\clearpage
+  \mbox{}\cleardoublepage
+\fi
+\pagestyle{main}
+\let\maketitle\othermaketitle
+}
+\makeatother
+
+
+
+%
+% Add a backCover
+%
+
+\newcommand{\backCover}{
+  \ifcolor
+
+  \definecolor{bkgndcr}{RGB}{50,100, 255}
+  \definecolor{bkgndcr}{RGB}{10,100, 50}
+  \definecolor{bkgndcr}{RGB}{60,60, 60}
+  % \definecolor{bkgndcr}{RGB}{255,255, 100}
+
+  \definecolor{txtcr}{RGB}{255, 100, 255}
+  \definecolor{txtcr}{RGB}{255,255, 100}
+
+  \colorlet{otherbkgndcr}{bkgndcr}
+  \colorlet{othertxtcr}{txtcr}
+  \fi  
+\pagestyle{empty}
+\onecolumn
+\colorlet{bkgndcr}{otherbkgndcr}
+\colorlet{txtcr}{othertxtcr}
+\pagecolor{otherbkgndcr}
+\boldmath % Makes all math text bold
+\bfseries % Makes all text bold
+\color{txtcr}
+\sffamily\flushleft%
+Ximera, pronounced ``chimera,'' (\textbf{X}imera: \textbf{I}nteractive,
+\textbf{M}athematics, \textbf{E}ducation,
+\textbf{R}esources, for \textbf{A}ll) is an open-source platform that provides
+tools for
+authoring and publishing (PDF and Online), open-source, interactive educational
+content, such as textbooks, assessments, and online courses.
+
+
+Authors  write and store their content on their own
+machines and GitHub repositories.
+Authors own their content and decide how to license their content. From a
+single source written in \LaTeX, Ximera generates various output: PDF
+worksheets,
+PDF textbooks, and	PDF solution manuals, and so on. Of most interest,
+Ximera can
+also create online interactive activities:
+\begin{center}
+  \begin{tikzpicture}
+      \node at (-1.8,.2)
+      {\resizebox{1cm}{!}{\input{document.tex}}};
+      \node at (-1.85,.2) {\small PDF};
+      \node at (-2,0) {\resizebox{1cm}{!}{\input{document.tex}}};
+      \node at (-2.05,0) {\small PDF};
+      
+      \node at (-2.2,-.2)
+      {\resizebox{1cm}{!}{\input{document.tex}}};
+      \node at (-2.25,-.2) {\small PDF};
+      \draw[->] (-.6,0) -- (-1.3,0);
+      \draw[->] (-.6,.3) -- (-1.3,.3);
+      \draw[->] (-.6,-.3) -- (-1.3,-.3);
+
+      \node at (0,0) {\resizebox{1cm}{!}{\input{document.tex}}};
+      \node at (0,-.05) {\LaTeX};
+      \draw[->] (.6,0) -- (1.4,0);
+
+      \node at (2,0) {\resizebox{1cm}{!}{\input{server.tex}}};
+      \draw[->] (2.6,0) -- (3.4,0);
+      \node at (4,0) {\resizebox{1cm}{!}{\input{computer.tex}}};
+      
+      \node[anchor=north] at (-2,-.8) {Various};
+      \node[anchor=north] at (-2,-1.2) {PDFs};
+
+      \node[anchor=north] at (0,-.8) {Single};
+      \node[anchor=north] at (0,-1.2) {Source};
+
+      \node[anchor=north] at (2,-.8) {Deploy};
+      \node[anchor=north] at (2,-1.2) {Server};
+
+      \node[anchor=north] at (4,-.8) {Students};
+      \node[anchor=north] at (4,-1.2) {Engage};
+
+  \end{tikzpicture}
+\end{center}
+The source code used to produce PDFs can also create interactive online
+activities when deployed to a Ximera server. Students access this content via a
+URL or an assignment in their LMS.
+
+\vfill
+
+\small This document was typeset on \today\ \currenttime. \hfill \Large\textsf{\ccbyncsa}\\
+\small\texttt{GIT COMMIT: \commit (on \branch)}\\
+\small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
+}

@@ -8,10 +8,12 @@
 
 \pdfOnly{\usepackage{manual}}
 
+
+
 \colorfalse
 %\colortrue
 
-\pdfOnly{\input{coverArt/frontCover.tex}}
+%\pdfOnly{\input{coverArt/frontCover.tex}}   % now in manual
 
 \setcounter{tocdepth}{1}
 
@@ -37,5 +39,7 @@
 \activity{printing/printing}
 \activity{seeXimeraInAction/seeXimeraInAction}
         
-\pdfOnly{\onecolumn\colorlet{bkgndcr}{otherbkgndcr}\colorlet{txtcr}{othertxtcr}\input{coverArt/backCover}}
+%\pdfOnly{\onecolumn\colorlet{bkgndcr}{otherbkgndcr}\colorlet{txtcr}{othertxtcr}\input{coverArt/backCover}}
+\pdfOnly{\backCover}  % defined in manual.sty
+
 \end{document}
