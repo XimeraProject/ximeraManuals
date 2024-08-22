@@ -907,6 +907,10 @@ span.xmqa1 {
 	 margin-top: 1em;
 }
 
+/* 202408: set to normal in base.css, but that mixes up newlines in \begin{verbose} */
+.activity-body pre {
+	white-space: revert;
+}
 
 /* ADDED FOR English version */
 
