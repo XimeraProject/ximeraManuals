@@ -1,0 +1,40 @@
+\documentclass{ximera}
+
+\title{Deploying Ximera documents}
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+    Deploying Ximera documents.
+\end{abstract}
+\maketitle
+
+Finally to deploy:
+\begin{enumerate}
+    \item Make sure all source files are committed and pushed to the repository. A quick 
+\begin{verbatim}
+git add -u && git commit -m "this is my change" && git push
+\end{verbatim}
+may help. Also, you can check your personal GitHub page to ensure files are in the repository.
+\item Press \textit{Bake}.
+\item Press \textit{Serve}.
+\end{enumerate}
+
+
+As hard as we try to support the philosophy that \textit{if it compiles in
+    \LaTeX, it compiles online}, it isn't always true. If you find that \textit{Bake} cannot compile a file, you can try the following. Start by running the following:
+\begin{verbatim}
+./scripts/xmlatex -i bash
+\end{verbatim}
+in a terminal window, note \textbf{you must be at the top level of your repository}.
+After that, an interactive \verb!bash! shell should start. Then run the following in turn and see if they give any good information:
+\begin{verbatim}
+pdflatex FILE-NAME.tex
+xake -v compile FILE-NAME.tex
+more FILE-NAME.tex.log
+\end{verbatim}
+If  you find a file that does not compile, you can try to compile the file directly while 
+slowly moving \verb!\end{document}! down through the document. By starting at the top, the file should compile, and then you should be able to locate the exact location of the bug. 
+
+
+\end{document}

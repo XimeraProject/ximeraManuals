@@ -1,0 +1,42 @@
+\documentclass{ximera}
+
+\title{Tools to author Ximera content}
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+    Tools for working on Ximera documents.
+\end{abstract}
+\maketitle
+
+Authors own their content in Ximera and work on their own machine.
+Nevertheless, with the assistance of Visual Studio Code and Docker, we are able
+to provide a common deployment environment for MacOS, Windows, and Linux.
+
+%\xmsection{Docker and Visual Studio Code}
+
+\paragraph{Docker} is a development utility that allows us to set up a computer
+within your
+computer. You must remember to start Docker before you deploy. You can just let
+it run in the background. You can check the status of Docker by running
+\verb!docker ps! in a terminal session.
+
+\paragraph{Visual Studio Code}
+is a popular text-editor. It is has strong \LaTeX, GitHub,
+and Docker integration. It provides a UNIX-like command line interface for
+Windows machines via WSL. A typical workflow would be to:
+\begin{enumerate}
+    \item Open Docker and minimize the window.
+    \item Open Visual Studio Code, do File $\to$ Open Folder, and select the
+          folder of your git repository.
+    \item To open files, do \verb!Ctrl-p! and start typing file names. Any
+          file
+          committed to your git repository will be found, and files in
+          \verb!.gitignore!, will not be shown.
+    \item To run a special command (like search and replace) do
+          \verb!Ctrl-Shift-p!, and search for the command.
+    \item To toggle a UNIX-like terminal, use \verb!Ctrl-~!.
+\end{enumerate}
+
+
+\end{document}

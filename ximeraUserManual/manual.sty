@@ -2,7 +2,7 @@
 %% Bart Snapp and ChatGPT
 
 % Required Packages
-\RequirePackage[letterspace=-80]{microtype}   % To be investigated: causes dummy page with AaGg ???
+%\RequirePackage[letterspace=-80]{microtype}   % To be investigated: causes dummy page with AaGg ???
 % \RequirePackage{tikz}
 \RequirePackage{standalone}
 \RequirePackage[landscape,includehead,includefoot,margin=2.5cm,headheight=1cm]{geometry}
@@ -119,7 +119,31 @@
 ]{verbatim}
 
 
+\makeatletter
 
+%% herdefinieer part
+\renewcommand\part[1]{%
+  %\thispagestyle{empty}
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+%  \thispagestyle{plain}%
+%  \null\vfil    % causes whitespace at top of first page of new \part
+  %\secdef\@part\@spart
+
+  \refstepcounter{part}% Increase the part counter
+  \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}% Add the part to the table of contents
+}
+
+% \def\@spart#1{% with \part* print \Huge title; not used/usable ?
+%     {XXX\centering
+%      \interlinepenalty \@M
+%      \normalfont
+%      \Huge \bfseries XXXY #1\par}%
+%     \@endpart}
+% \makeatother
 
 
 
