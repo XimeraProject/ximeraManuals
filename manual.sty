@@ -27,6 +27,10 @@
 \tikzset{>=stealth}
 \qrset{height=1cm}
 
+
+\renewcommand{\theHsection}{\thepart.section.\thesection}
+
+
 % https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
 \usepackage{xstring}
 \usepackage{catchfile}
@@ -119,9 +123,11 @@
 ]{verbatim}
 
 
-\makeatletter
 
-%% herdefinieer part
+%% \part does not print anything, but it's in the TOC
+%% (and it is used online ...)
+%% 
+\makeatletter
 \renewcommand\part[1]{%
   %\thispagestyle{empty}
   \if@openright
@@ -129,23 +135,10 @@
   \else
     \clearpage
   \fi
-%  \thispagestyle{plain}%
-%  \null\vfil    % causes whitespace at top of first page of new \part
-  %\secdef\@part\@spart
-
   \refstepcounter{part}% Increase the part counter
   \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}% Add the part to the table of contents
 }
-
-% \def\@spart#1{% with \part* print \Huge title; not used/usable ?
-%     {XXX\centering
-%      \interlinepenalty \@M
-%      \normalfont
-%      \Huge \bfseries XXXY #1\par}%
-%     \@endpart}
-% \makeatother
-
-
+\makeatother
 
 
 % Fancy Headers and Footers
