@@ -117,13 +117,13 @@
 
 Use a global grpahics path
   \begin{verbatim}
-    %% where to find images
-    \graphicspath{
-    {./}
-    {./graphics/}
-    {.././graphics/}    
-    }
-    \end{verbatim}
+\graphicspath{     %% setup a global graphics path
+{./}               %% look in the same-level directory
+{./graphics/}      %% look in graphics
+{../graphics/}     %% look up one directory, then in graphics
+%{../../graphics/} %% look up two directories, then in graphics
+}    
+\end{verbatim}
 
 See page 10 and page 24  
 
