@@ -1,6 +1,6 @@
 \documentclass{ximera}
 
-\title{Tools to author Ximera content}
+\title{Authoring tools}
 \author{Bart Snapp}
 
 \begin{document}
@@ -9,9 +9,12 @@
 \end{abstract}
 \maketitle
 
-Authors own their content in Ximera and work on their own machine.
-Nevertheless, with the assistance of Visual Studio Code and Docker, we are able
-to provide a common deployment environment for MacOS, Windows, and Linux.
+Authors own their content in Ximera and work on their own machine. This has
+been a fundament aspect of Ximera since the beginning. However, this can make
+development difficult, since we have at least three platforms to support:
+MacOS, Windows, and Linux.
+With the assistance of Visual Studio Code and Docker, we are able
+to provide a common deployment environment for all three operating systems.
 Moreover, with these programs work well with \verb!git!, version control
 software used by Ximera.
 
@@ -23,15 +26,14 @@ Docker is a development utility that allows us to set up a computer
 within your
 computer. You must remember to start Docker before you deploy. You can just let
 it run in the background. You can check the status of Docker by running
-\verb!docker ps! in a terminal session.
-
+\verb!docker ps! in a terminal session, provided by Visual Studio Code.
 
 \section{Visual Studio Code}
 
 Visual Studio Code
 is a popular text-editor. It is has strong \LaTeX, GitHub,
 and Docker integration. It provides a UNIX-like command line interface for
-Windows machines via WSL. 
+Windows machines via WSL.
 
 \paragraph{A typical workflow} would be to:
 \begin{enumerate}
@@ -47,13 +49,14 @@ Windows machines via WSL.
       \item To toggle a UNIX-like terminal, use \verb!Ctrl-~!.
 \end{enumerate}
 
-\paragraph{Visual Studio Code can be enhanced} with a number of extensions. We recommend:
+\paragraph{Visual Studio Code can be enhanced} with a number of extensions. We
+recommend:
 \begin{itemize}
-      \item LaTeX Workshop by James Yu or LaTeX by Mathematic Inc (for a more minimal version)
+      \item LaTeX Workshop by James Yu or LaTeX by Mathematic Inc (for a more
+            minimal version)
       \item Git?
       \item ??
 \end{itemize}
-
 
 % When you use GitHub, you are writing code in public. You don't want randos to
 % be able to change your code, and they cannot.  But that same protection might make it 
@@ -93,17 +96,12 @@ Windows machines via WSL.
 % \end{verbatim}
 % You should be ready to go at this point.
 
-
-
-
 \section{\texttt{git}}
 \texttt{git} is program for version control. It allows many authors
 to work on the same document without fear of
 of overwriting others work. We will discuss \texttt{git} in more detail later.
-It keeps a \textit{complete history} of your work, and can be reverted to a previous state. 
-
-
-
+It keeps a \textit{complete history} of your work, and can be reverted to a
+previous state.
 
 \paragraph{If you make a new file}, you need to \textit{add} it to the
 repository. Suppose the name of your new file was MY-NEW-FILE.tex. You should
@@ -130,8 +128,10 @@ You can combine these commands into one with \verb!&&!:
 git add -u && git commit -m "this is my change" && git push
 \end{verbatim}
 
-\paragraph{When you commit} you must type a message, describing the commit. You don't have to leave a \textit{good} message, but you must say something.
-If you just type \verb!git commit! you may end up in \verb!vi!, the terminal will look like:
+\paragraph{When you commit} you must type a message, describing the commit. You
+don't have to leave a \textit{good} message, but you must say something.
+If you just type \verb!git commit! you may end up in \verb!vi!, the terminal
+will look like:
 \begin{verbatim}
 ~
 ~
@@ -140,7 +140,7 @@ If you just type \verb!git commit! you may end up in \verb!vi!, the terminal wil
 ~
 ~
 \end{verbatim}
-In this case, take a deep breath and 
+In this case, take a deep breath and
 \begin{center}
       press \verb!Esc! \quad then press \verb!:!\quad then press \verb!q! \quad
       then
@@ -150,19 +150,18 @@ Then run
 \begin{verbatim}
 git config --global core.editor "nano"
 \end{verbatim}
-This will place you in a more user friendly editor in the future. 
+This will place you in a more user friendly editor in the future.
 
-
-\paragraph{If you are collaborating}, you should always start your work off with
+\paragraph{If you are collaborating}, you should always start your work off
+with
 \begin{verbatim}
 git pull
 \end{verbatim}
-typed in terminal. This will retrieve any updates your collaborators have made. Then you do your work, make sure your files compile, then do 
+typed in terminal. This will retrieve any updates your collaborators have made.
+Then you do your work, make sure your files compile, then do
 \begin{verbatim}
 git add -u && git commit -m "this is my change" && git push
 \end{verbatim}
-      
-
 
 % \paragraph{Adding images and PDFs with \texttt{git}}
 
