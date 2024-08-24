@@ -17,16 +17,23 @@ software used by Ximera.
 
 %\xmsection{Docker and Visual Studio Code}
 
-\paragraph{Docker} is a development utility that allows us to set up a computer
+\section{Docker}
+
+Docker is a development utility that allows us to set up a computer
 within your
 computer. You must remember to start Docker before you deploy. You can just let
 it run in the background. You can check the status of Docker by running
 \verb!docker ps! in a terminal session.
 
-\paragraph{Visual Studio Code}
+
+\section{Visual Studio Code}
+
+Visual Studio Code
 is a popular text-editor. It is has strong \LaTeX, GitHub,
 and Docker integration. It provides a UNIX-like command line interface for
-Windows machines via WSL. A typical workflow would be to:
+Windows machines via WSL. 
+
+\paragraph{A typical workflow} would be to:
 \begin{enumerate}
       \item Open Docker and minimize the window.
       \item Open Visual Studio Code, do File $\to$ Open Folder, and select the
@@ -39,6 +46,14 @@ Windows machines via WSL. A typical workflow would be to:
             \verb!Ctrl-Shift-p!, and search for the command.
       \item To toggle a UNIX-like terminal, use \verb!Ctrl-~!.
 \end{enumerate}
+
+\paragraph{Visual Studio Code can be enhanced} with a number of extensions. We recommend:
+\begin{itemize}
+      \item LaTeX Workshop by James Yu or LaTeX by Mathematic Inc (for a more minimal version)
+      \item Git?
+      \item ??
+\end{itemize}
+
 
 % When you use GitHub, you are writing code in public. You don't want randos to
 % be able to change your code, and they cannot.  But that same protection might make it 
@@ -78,16 +93,19 @@ Windows machines via WSL. A typical workflow would be to:
 % \end{verbatim}
 % You should be ready to go at this point.
 
-\paragraph{\texttt{Git}} is program for version control. It allows many authors
-to work on the same document without fear of
-of overwriting others work.  If you are working with a collaborator, you
-should always start your work off with
-\begin{verbatim}
-git pull
-\end{verbatim}
-typed in terminal. This will retrieve any updates your collaborators have made.
 
-First of all if you make a new file, you need to \textit{add} it to the
+
+
+\section{\texttt{git}}
+\texttt{git} is program for version control. It allows many authors
+to work on the same document without fear of
+of overwriting others work. We will discuss \texttt{git} in more detail later.
+It keeps a \textit{complete history} of your work, and can be reverted to a previous state. 
+
+
+
+
+\paragraph{If you make a new file}, you need to \textit{add} it to the
 repository. Suppose the name of your new file was MY-NEW-FILE.tex. You should
 type:
 
@@ -100,7 +118,7 @@ The \verb!add! includes the file in the files that \verb!git! tracks. The
 \verb!commit! says, ``hey I made a change that I want to keep track of.'' The
 \verb!push! says ``I want to share this with others.''
 
-If, on the other hand, you want to push changes made to files you already have,
+\paragraph{If you update a file},
 type use \verb!git add -u! and it will add all updated files.
 \begin{verbatim}
 git add -u
@@ -112,21 +130,39 @@ You can combine these commands into one with \verb!&&!:
 git add -u && git commit -m "this is my change" && git push
 \end{verbatim}
 
-Finally, you don't have to add the \verb!-m! to \verb!commit!. However, if you
-choose to take this path, we strongly recommend running:
+\paragraph{When you commit} you must type a message, describing the commit. You don't have to leave a \textit{good} message, but you must say something.
+If you just type \verb!git commit! you may end up in \verb!vi!, the terminal will look like:
 \begin{verbatim}
-git config --global core.editor "nano"
+~
+~
+~
+~
+~
+~
 \end{verbatim}
-for an easy to use text editor that is not \verb!vi!. If for some chance you
-accidently enter \verb!vi! by typing \verb!git commit!, you'll know you are in
-\verb!vi! because the terminal won't work and the left hand side is filled with
-\verb!~!,
+In this case, take a deep breath and 
 \begin{center}
       press \verb!Esc! \quad then press \verb!:!\quad then press \verb!q! \quad
       then
       press \verb#!# \quad then press \verb!Enter!
 \end{center}
-Then run the code above so that it never happens again.
+Then run
+\begin{verbatim}
+git config --global core.editor "nano"
+\end{verbatim}
+This will place you in a more user friendly editor in the future. 
+
+
+\paragraph{If you are collaborating}, you should always start your work off with
+\begin{verbatim}
+git pull
+\end{verbatim}
+typed in terminal. This will retrieve any updates your collaborators have made. Then you do your work, make sure your files compile, then do 
+\begin{verbatim}
+git add -u && git commit -m "this is my change" && git push
+\end{verbatim}
+      
+
 
 % \paragraph{Adding images and PDFs with \texttt{git}}
 
