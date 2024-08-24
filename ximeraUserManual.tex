@@ -14,7 +14,11 @@
 \colortrue
 
 %\pdfOnly{\input{coverArt/frontCover.tex}}   % now in manual
-\usepackage{sectsty}
+% \usepackage{sectsty}
+\renewcommand{\part}[1]{\chapterstyle\title{#1}\begin{abstract}\end{abstract}\maketitle\def\thechaptertitle{#1}}
+
+
+
 \setcounter{tocdepth}{1}
 \begin{document}
 \begin{abstract}
@@ -23,12 +27,10 @@
 \maketitle
 \pdfOnly{\pagestyle{fancy}}
 \twocolumn
-\part{Introduction and setup} %% Not sure what to do with parts... right now I'm mirroring chapter headings
-\chapterstyle
-\activity{setup/introductionAndSetup}
+\part{Introduction and setup}
 \sectionstyle
 \activity{introduction/introduction}
-\activity{setup/tools}%\activity{setup/git} MOVED TO setup/tools
+\activity{setup/tools}
 \activity{setup/repository}
 %\activity{setup/setup}
 %\activity{workflow/workflow}
@@ -36,9 +38,7 @@
 % \activity{setup/setup_xourse}
 
 
-\part{Getting work done} %% Not sure what to do with parts... right now I'm mirroring chapter headings
-\chapterstyle
-\activity{workflow/gettingWorkDone}
+\part{Getting work done}
 \sectionstyle
 \activity{setup/createActivity}
 \activity{setup/createXourse}
@@ -48,8 +48,6 @@
 \activity{setup/commonIssues}
 
 \part{Answerables and progress}
-\chapterstyle
-\activity{commonUseCases/answerablesAndCredit}
 \sectionstyle
 \activity{commonUseCases/answer}
 \activity{commonUseCases/choice}
@@ -58,21 +56,17 @@
 
 
 \part{Common use cases}
-\chapterstyle
-\activity{commonUseCases/common}%%% SHOULD BE RENAMED??
-%\activity{commonUseCases/commonUseCases}
 \sectionstyle
-
 \activity{commonUseCases/worksheets}
 \activity{commonUseCases/exerciseBanks}
 \activity{commonUseCases/textbooks}
 
 \part{Further information}
+\sectionstyle
 \activity{rendering/rendering}
 \activity{printing/printing}
 \activity{seeXimeraInAction/seeXimeraInAction}
         
-%\pdfOnly{\onecolumn\colorlet{bkgndcr}{otherbkgndcr}\colorlet{txtcr}{othertxtcr}\input{coverArt/backCover}}
 \pdfOnly{\backCover}  % defined in manual.sty
 
 \end{document}
