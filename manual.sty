@@ -202,11 +202,12 @@
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
-\fancyfoot[L]{\sffamily\tiny\textbf{
+\fancyfoot[LO,RE]{\sffamily\tiny\textbf{
 XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
 }}
 \fancyfoot[C]{}
-\fancyfoot[R]{\thepage}
+\fancyfoot[RO,LE]{\thepage}
+
 
 
 
@@ -228,16 +229,21 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 \definecolor{txtcr}{rgb}{0,0,0}
 \let\othermaketitle\maketitle
 \renewcommand{\maketitle}{
-
   \ifcolor
+  \definecolor{bkgndcr}{RGB}{50,100,255}  %% Blue 
+  \definecolor{txtcr}{RGB}{255, 100,255}  %% Pink 
 
-  \definecolor{bkgndcr}{RGB}{50,100, 255}
-  \definecolor{bkgndcr}{RGB}{10,100, 50}
-  \definecolor{bkgndcr}{RGB}{60,60, 60}
-  % \definecolor{bkgndcr}{RGB}{255,255, 100}
+  \definecolor{bkgndcr}{RGB}{255,100,255} %% Pink 
+  \definecolor{txtcr}{RGB}{20,20,20}      %% Dark Gray
 
-  \definecolor{txtcr}{RGB}{255, 100, 255}
-  \definecolor{txtcr}{RGB}{255,255, 100}
+  \definecolor{bkgndcr}{RGB}{255,255,100} %% Yellow
+  \definecolor{txtcr}{RGB}{255,100,255}   %% Pink
+
+  \definecolor{bkgndcr}{RGB}{240,50,50}   %% Red
+  \definecolor{txtcr}{RGB}{255,255,255}   %% White
+
+  % \definecolor{bkgndcr}{RGB}{255,100,50}  %% Orange
+  % \definecolor{txtcr}{RGB}{20,20,20}      %% Dark Gray
 
   \colorlet{otherbkgndcr}{bkgndcr}
   \colorlet{othertxtcr}{txtcr}
@@ -267,12 +273,12 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
   \small\texttt{GIT COMMIT: \commit}\\
   \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
 \clearpage\pagecolor{white}\color{black}\unboldmath\normalfont\restoregeometry\colorlet{bkgndcr}{white}\colorlet{txtcr}{black}
-\cleardoublepage
 \mbox{}
 \vspace{3cm}
 \begin{center}
 \Large\it To lovers of mathematics everywhere.
 \end{center}
+%\newpage\null\thispagestyle{empty}\newpage
 \ifnotoc
 \else\twocolumn
   \tableofcontents\clearpage
@@ -290,19 +296,6 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 %
 
 \newcommand{\backCover}{
-  \ifcolor
-
-  \definecolor{bkgndcr}{RGB}{50,100, 255}
-  \definecolor{bkgndcr}{RGB}{10,100, 50}
-  \definecolor{bkgndcr}{RGB}{60,60, 60}
-  % \definecolor{bkgndcr}{RGB}{255,255, 100}
-
-  \definecolor{txtcr}{RGB}{255, 100, 255}
-  \definecolor{txtcr}{RGB}{255,255, 100}
-
-  \colorlet{otherbkgndcr}{bkgndcr}
-  \colorlet{othertxtcr}{txtcr}
-  \fi  
 \pagestyle{empty}
 \onecolumn
 \colorlet{bkgndcr}{otherbkgndcr}
