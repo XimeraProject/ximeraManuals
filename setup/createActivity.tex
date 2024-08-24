@@ -8,23 +8,40 @@
 
 \begin{document}
 \begin{abstract}
-  How to set up an activity
+    How to set up an activity
 \end{abstract}
 \maketitle
 
+It is easy to write a basic Ximera document with clean \LaTeX. The structure is
+as follows:
 
-{\color{red} TO BE WRITTEN 
-}
+\begin{verbatim}
+\documentclass{ximera}
+%\input{PATH/TO/preamble} %% You need to give a correct path to the preamble.
+\author{Your name}
+\title{Your title} %% Not needed for drill exercises.
+%\license{What ever you choose} %% Only necessary if you need different licenses for different activities.
+\outcomes{list your outcomes,another outcome}  %% Only if you intend to do something with the outcomes
+\begin{document}
+\begin{abstract}                             %% Not needed for drill exercises
+A one-sentence description of the activity.  %% Not needed for drill exercises
+\end{abstract}                               %% Not needed for drill exercises
+\maketitle
 
-Ximera documents can be \textit{glued} together using the \texttt{xourse}
-document
-class.
-A \verb|xourse| file is basically a list of other \verb|ximera| files and even
-other \verb|xourse| files.
-The \verb|xourse| file for \textit{A First Step in Ximera} can be found here is
-\verb!aFirstStepInXimera.tex!, found in the \verb!ximeraFirstSteps! repository.
-The \verb!xourse! documentclass specifies information such as the name of the
-document, the names fo the authors, a description of the content, a license and
-the names of all Ximera \LaTeX\ files comprising
-the whole document.
+%%
+%% Content goes here
+%%
+\end{document}
+\end{verbatim}
+
+\paragraph{Use standard \LaTeX} environments and commands like:
+\begin{description}
+    \item[enumerate]
+    \item[itemize]
+    \item[description]
+    \item[\verb!align*!]
+    \item[Math Mode]
+    \item[Macros] made of basic \LaTeX\ commands are fine.
+\end{description}
+\textbf{No manual formatting.}
 \end{document}
