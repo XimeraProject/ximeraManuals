@@ -163,6 +163,29 @@ Then you do your work, make sure your files compile, then do
 git add -u && git commit -m "this is my change" && git push
 \end{verbatim}
 
+\paragraph{Conflicts} sometimes occur even when using \verb!git!. When this
+happens you'll need to \textit{resolve} the conflict. To do this, open the file
+where the conflict is.
+\begin{verbatim}
+git status
+\end{verbatim}
+should tell you this. Once you find the file, open it, and search for ``HEAD'' and you'll find something like
+\begin{verbatim}
+<<<<<<< HEAD
+Some stuff that some person wrote.
+=======
+Some other stuff that someone else wrote
+>>>>>>> 3d13c5bba8dc2c12b7783e4f85315b1773165fd6
+\end{verbatim}
+In this case just edit the lines starting with !<<<<<<<! and ending with the line \verb!>>>>>>>! and make it look how it should.
+Then do
+\begin{verbatim}
+git add -u
+git commit -m "I updated some files"
+git push
+\end{verbatim}
+and the conflict should be resolved.
+
 % \paragraph{Adding images and PDFs with \texttt{git}}
 
 % We typically add \verb!*.jpg!, \verb!*.png! and \verb!*.pdf! to the
