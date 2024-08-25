@@ -284,11 +284,11 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 \end{center}
 %\newpage\null\thispagestyle{empty}\newpage
 \ifnotoc
-\else\twocolumn
+\else  \newgeometry{hmargin={8cm,8cm},vmargin={2.5cm,2.5cm}}
   \tableofcontents\clearpage
   \mbox{}\cleardoublepage
 \fi
-\pagestyle{main}
+\pagestyle{main}\restoregeometry\twocolumn
 \let\maketitle\othermaketitle
 }
 \makeatother
@@ -301,6 +301,7 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 
 \newcommand{\backCover}{
 \pagestyle{empty}
+\newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
 \onecolumn
 \colorlet{bkgndcr}{otherbkgndcr}
 \colorlet{txtcr}{othertxtcr}
@@ -308,7 +309,10 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 \boldmath % Makes all math text bold
 \bfseries % Makes all text bold
 \color{txtcr}
-\sffamily\flushleft%
+\sffamily
+\mbox{}\vspace{3cm}
+\begin{center}
+  \begin{minipage}{16cm}
 Ximera, pronounced ``chimera,'' (\textbf{X}imera: \textbf{I}nteractive,
 \textbf{M}athematics, \textbf{E}ducation,
 \textbf{R}esources, for \textbf{A}ll) is an open-source platform that provides
@@ -365,7 +369,8 @@ also create online interactive activities:
 The source code used to produce PDFs can also create interactive online
 activities when deployed to a Ximera server. Students access this content via a
 URL or an assignment in their LMS.
-
+\end{minipage}
+\end{center}
 \vfill
 
 \small This document was typeset on \today\ \currenttime. \hfill \Large\textsf{\ccbyncsa}\\
