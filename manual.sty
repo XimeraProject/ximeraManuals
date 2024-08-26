@@ -28,7 +28,7 @@
 \qrset{height=1cm}
 
 
-\renewcommand{\theHsection}{\thepart.section.\thesection}
+\renewcommand{\theHsection}{\thepart.section.\thesection}  %% MAKES LINKS WORK should be added to CLS
 
 
 % https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
@@ -190,7 +190,6 @@
   \end{scope}
   %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}}%
-%\resizebox{!}{.7em}{\lsstyle User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
 \resizebox{!}{.7em}{User\,Manual}\hfill \thechaptertitle:~\makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
