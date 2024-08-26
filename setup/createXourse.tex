@@ -2,25 +2,25 @@
 
 \input{../preamble}
 
-\title{Set up a xourse}
+\title{Create a xourse}
 
 \author{Bart Snapp}
 
 \begin{document}
 \begin{abstract}
-  How to set up a xourse
+  We group Ximera activities into a collection.
 \end{abstract}
 \maketitle
 
 % \section{Setting up a Ximera \texttt{xourse}}
 
 Ximera documents can be \textit{glued} together using the \texttt{xourse}
-document
-class.
-A \verb|xourse| file is basically a list of other \verb|ximera| files and even
-other \verb|xourse| files.
-The \verb|xourse| file for \textit{A First Step in Ximera} can be found here is
-\verb!aFirstStepInXimera.tex!, found in the \verb!ximeraFirstSteps! repository.
+document class. A \verb|xourse| file is basically a list of other \verb|ximera| files and even
+other \verb|xourse| files. The \verb|xourse| file for \textit{A First Step in Ximera} can be found at the top level of the GitHub repository
+\verb!ximeraFirstSteps! here
+\begin{center}
+  \url{https://github.com/XimeraProject/ximeraFirstSteps/blob/main/aFirstStepInXimera.tex}
+\end{center}
 The \verb!xourse! documentclass specifies information such as the name of the
 document, the names fo the authors, a description of the content, a license and
 the names of all Ximera \LaTeX\ files comprising
@@ -131,16 +131,15 @@ the folders \verb!basics! and \verb!exercises!. Inside \verb!basics!, we have
 two activities and a JPG that is required by one of them. Inside
 \verb!exercises!
 we have all the practice exercises.
-Ideally a document's parent folder would contain everything that document needs
-to compile, except for perhaps the preamble, and we address this below.
 
 A consistent and well thought out set up will allow you and others to easily
-understand and modify your
-content for years to come.
+understand and modify your content for years to come. Ideally a document's parent folder would contain everything that document needs
+to compile, except for perhaps the preamble, and we address this below.
+
 
 \begin{warning}
   Every \verb!*.tex! file in the repository with a \verb!\documentclass!
-  \textbf{must} compile for online deployment.
+  \textbf{must compile} for online deployment.
 \end{warning}
 
 \section{Including with \texttt{\textbackslash activity} and
@@ -210,6 +209,6 @@ In \verb!aFirstStepInXimera.tex! we write
 \practice{exercises/hintsAndFollowUp}
 \end{document}
 \end{verbatim}
-Note how we give the paths to the exercises.
+Note how we give the paths to the exercises, it's the folder name, followed by the document name. The \verb!.tex! can be left on if you like.
 
 \end{document}

@@ -191,15 +191,16 @@
   %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}}%
 %\resizebox{!}{.7em}{\lsstyle User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
-\resizebox{!}{.7em}{User\,Manual}\hfill \makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
+\resizebox{!}{.7em}{User\,Manual}\hfill \thechaptertitle:~\makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
-\fancyfoot[L]{\sffamily\tiny\textbf{
+\fancyfoot[LO,RE]{\sffamily\tiny\textbf{
 XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
 }}
 \fancyfoot[C]{}
-\fancyfoot[R]{\thepage}
+\fancyfoot[RO,LE]{\thepage}
+
 
 
 
@@ -221,16 +222,25 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 \definecolor{txtcr}{rgb}{0,0,0}
 \let\othermaketitle\maketitle
 \renewcommand{\maketitle}{
-
   \ifcolor
+  \definecolor{bkgndcr}{RGB}{50,100,255}  %% Blue 
+  \definecolor{txtcr}{RGB}{255, 100,255}  %% Pink 
 
-  \definecolor{bkgndcr}{RGB}{50,100, 255}
-  \definecolor{bkgndcr}{RGB}{10,100, 50}
-  \definecolor{bkgndcr}{RGB}{60,60, 60}
-  % \definecolor{bkgndcr}{RGB}{255,255, 100}
+  \definecolor{bkgndcr}{RGB}{255,100,255} %% Pink 
+  \definecolor{txtcr}{RGB}{20,20,20}      %% Dark Gray
 
-  \definecolor{txtcr}{RGB}{255, 100, 255}
-  \definecolor{txtcr}{RGB}{255,255, 100}
+  \definecolor{bkgndcr}{RGB}{255,255,100} %% Yellow
+  \definecolor{txtcr}{RGB}{255,100,255}   %% Pink
+
+  \definecolor{bkgndcr}{RGB}{240,50,50}   %% Red
+  \definecolor{txtcr}{RGB}{255,255,255}   %% White
+
+  \definecolor{bkgndcr}{RGB}{70,70,200}   %% Blue
+  \definecolor{txtcr}{RGB}{255,255,255}   %% White
+
+
+  % \definecolor{bkgndcr}{RGB}{255,100,50}  %% Orange
+  % \definecolor{txtcr}{RGB}{20,20,20}      %% Dark Gray
 
   \colorlet{otherbkgndcr}{bkgndcr}
   \colorlet{othertxtcr}{txtcr}
@@ -260,18 +270,18 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
   \small\texttt{GIT COMMIT: \commit}\\
   \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
 \clearpage\pagecolor{white}\color{black}\unboldmath\normalfont\restoregeometry\colorlet{bkgndcr}{white}\colorlet{txtcr}{black}
-\cleardoublepage
 \mbox{}
 \vspace{3cm}
 \begin{center}
 \Large\it To lovers of mathematics everywhere.
 \end{center}
+%\newpage\null\thispagestyle{empty}\newpage
 \ifnotoc
-\else\twocolumn
+\else  \newgeometry{hmargin={8cm,8cm},vmargin={2.5cm,2.5cm}}
   \tableofcontents\clearpage
   \mbox{}\cleardoublepage
 \fi
-\pagestyle{main}
+\pagestyle{main}\restoregeometry\twocolumn
 \let\maketitle\othermaketitle
 }
 \makeatother
@@ -283,20 +293,8 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 %
 
 \newcommand{\backCover}{
-  \ifcolor
-
-  \definecolor{bkgndcr}{RGB}{50,100, 255}
-  \definecolor{bkgndcr}{RGB}{10,100, 50}
-  \definecolor{bkgndcr}{RGB}{60,60, 60}
-  % \definecolor{bkgndcr}{RGB}{255,255, 100}
-
-  \definecolor{txtcr}{RGB}{255, 100, 255}
-  \definecolor{txtcr}{RGB}{255,255, 100}
-
-  \colorlet{otherbkgndcr}{bkgndcr}
-  \colorlet{othertxtcr}{txtcr}
-  \fi  
 \pagestyle{empty}
+\newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
 \onecolumn
 \colorlet{bkgndcr}{otherbkgndcr}
 \colorlet{txtcr}{othertxtcr}
@@ -304,7 +302,10 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\q
 \boldmath % Makes all math text bold
 \bfseries % Makes all text bold
 \color{txtcr}
-\sffamily\flushleft%
+\sffamily
+\mbox{}\vspace{3cm}
+\begin{center}
+  \begin{minipage}{16cm}
 Ximera, pronounced ``chimera,'' (\textbf{X}imera: \textbf{I}nteractive,
 \textbf{M}athematics, \textbf{E}ducation,
 \textbf{R}esources, for \textbf{A}ll) is an open-source platform that provides
@@ -361,7 +362,8 @@ also create online interactive activities:
 The source code used to produce PDFs can also create interactive online
 activities when deployed to a Ximera server. Students access this content via a
 URL or an assignment in their LMS.
-
+\end{minipage}
+\end{center}
 \vfill
 
 \small This document was typeset on \today\ \currenttime. \hfill \Large\textsf{\ccbyncsa}\\
