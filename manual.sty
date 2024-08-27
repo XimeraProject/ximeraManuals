@@ -127,18 +127,71 @@
 %% \part does not print anything, but it's in the TOC
 %% (and it is used online ...)
 %% 
+% \makeatletter
+% \renewcommand\part[1]{%
+%   %\thispagestyle{empty}
+%   \if@openright
+%     \cleardoublepage
+%   \else
+%     \clearpage
+%   \fi
+%   \refstepcounter{part}% Increase the part counter
+%   \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}% Add the part to the table of contents
+% }
+% \makeatother
+\renewcommand{\part}[1]{\chapterstyle\title{#1}\begin{abstract}\end{abstract}\maketitle\def\thechaptertitle{#1}}
+
+
+
+
 \makeatletter
-\renewcommand\part[1]{%
-  %\thispagestyle{empty}
-  \if@openright
-    \cleardoublepage
-  \else
-    \clearpage
-  \fi
-  \refstepcounter{part}% Increase the part counter
-  \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}% Add the part to the table of contents
-}
+\renewcommand\sectionstyle{%  MOVE TO CLS
+  \def\activitystyle{activity-section}
+  \def\maketitle{%
+    \addtocounter{section}{1}
+    \setcounter{sectiontitlenumber}{\value{section}}
+    {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
+    {\flushleft\Large\sffamily\bfseries\thetitlenumber.\thesectiontitlenumber\hspace{1em}\@title \par}%
+    {\vskip .6em\noindent\textit\theabstract\setcounter{subsection}{0}}%
+    \par\vspace{2em}
+    \phantomsection\addcontentsline{toc}{section}{\thetitlenumber.\thesectiontitlenumber\hspace{1em}\@title}%
+
+ \renewcommand\section{\@startsection{subsection}{2}{\z@}%
+                                       {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                       {1.5ex \@plus .2ex}%
+                                       {\normalfont\large\sffamily\bfseries}}
+
+ \renewcommand\subsection{\@startsection{subsubsection}{3}{\z@}%
+                                          {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                          {1.5ex \@plus .2ex}%
+                                          {\normalfont\normalsize\sffamily\bfseries}}
+
+}}
 \makeatother
+
+% \makeatletter
+% %% Redefine section and subsection %% MOVE TO CLS
+% \renewcommand\section{\@startsection {section}{1}{\z@}%
+%                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
+%                                    {2.3ex \@plus.2ex}%
+%                                    {\boldmath\normalfont\large\sffamily\bfseries}}
+
+% \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+%                                      {-3.25ex \@plus -1ex \@minus -.2ex}%
+%                                      {1.5ex \@plus .2ex}%
+%                                      {\boldmath\normalfont\large\sffamily\bfseries}}
+
+% \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+%                                      {-3.25ex \@plus -1ex \@minus -.2ex}%
+%                                      {1.5ex \@plus .2ex}%
+%                                      {\normalfont\normalsize\sffamily\bfseries}}
+\makeatletter %% move to CLS
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+                                    {3.25ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\boldmath\normalfont\normalsize\sffamily\bfseries}}
+\makeatother
+
 
 
 % Fancy Headers and Footers
@@ -190,12 +243,12 @@
   \end{scope}
   %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}}%
-\resizebox{!}{.7em}{User\,Manual}\hfill \thechaptertitle:~\makeatletter\@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
+\resizebox{!}{.7em}{User\,Manual}\hfill \thechaptertitle:~\makeatletter \@title\makeatother \hfill \MONTH~\thedate \\[-.1cm]
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
 \fancyfoot[LO,RE]{\sffamily\tiny\textbf{
-XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit)\quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
+XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit) \quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
 }}
 \fancyfoot[C]{}
 \fancyfoot[RO,LE]{\thepage}
