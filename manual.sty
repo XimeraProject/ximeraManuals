@@ -18,7 +18,7 @@
 \RequirePackage[skip=5pt plus1pt, indent=0pt]{parskip} %% FOR OUR VERTICAL SPACING
 \RequirePackage{fancyhdr}
 
-\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\sf\bfseries #1}
+\renewcommand{\descriptionlabel}[1]{\hspace{\labelsep}\sf\bfseries #1}  %% MAYBE ADD CLS
 
 % Generate a random 4-digit number
 \pgfmathsetseed{\number\pdfuniformdeviate10000} % Initialize the random number generator with a seed
@@ -32,20 +32,21 @@
 
 
 % https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
-\usepackage{xstring}
-\usepackage{catchfile}
+% \usepackage{xstring}
+% \usepackage{catchfile}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
-\CatchFileDef{\headfull}{/code/.git/HEAD}{}
-\StrGobbleRight{\headfull}{1}[\head]
-\StrBehind[2]{\head}{/}[\branch]
+% \CatchFileDef{\headfull}{/code/.git/HEAD}{}
+% \StrGobbleRight{\headfull}{1}[\head]
+% \StrBehind[2]{\head}{/}[\branch]
 
 %FOUND \headfull with \head and \branch
 
-\IfFileExists{/code/.git/refs/heads/\branch}{%
-    \CatchFileDef{\commit}{/code/.git/refs/heads/\branch}{}}{%
-    \newcommand{\commit}{\dots~(in \emph{packed-refs})}}
+% \IfFileExists{.git/refs/heads/\branch}{%
+%     \CatchFileDef{\commit}{.git/refs/heads/\branch}{}}{%
+%     \newcommand{\commit}{\dots~(in \emph{packed-refs})}}
 
+    \newcommand{\commit}{\otherinput{.git/refs/heads/main}}
 
 \newcommand{\MONTH}{%
   \ifcase\the\month
@@ -248,7 +249,9 @@
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
 \fancyfoot[LO,RE]{\sffamily\tiny\textbf{
-XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad \branch(\commit) \quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
+XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
+  \commit
+ \quad PREVIOUS \quad EDITION \quad IS \quad OBSOLETE.
 }}
 \fancyfoot[C]{}
 \fancyfoot[RO,LE]{\thepage}
@@ -419,6 +422,8 @@ URL or an assignment in their LMS.
 \vfill
 
 \small This document was typeset on \today\ \currenttime. \hfill \Large\textsf{\ccbyncsa}\\
-\small\texttt{GIT COMMIT: \commit (on \branch)}\\
+\small\texttt{GIT COMMIT: \commit 
+%(on \branch)
+}\\
 \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
 }
