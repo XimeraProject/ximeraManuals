@@ -18,7 +18,7 @@ To write a Ximera document authors can use their preferred editor, and compile t
 with a local TeXLive or MikTeX installation that has the Ximera package, 
 as available from \href{https://ctan.org/pkg/ximera}{CTAN}.
 
-To generate and deploy the online version however one needs some extra software. 
+However, one needs some extra software to generate and deploy the online version. 
 This is most conveniently provided through Visual Studio Code and Docker.
 Moreover, also the version control system \verb!git! is needed.
 And, when using Docker a local TeX installation is no longer necessary.
@@ -114,7 +114,7 @@ generate HTML and to deploy the documents your project has to be stored in a git
 Alternatively, you can also use the universal and powerful git command line interface from a 
 terminal window, which we'll briefly introduce next.
 
-\paragraph{If you make a new file}, you need to \textit{add} it to the
+\paragraph{If you make a new file,} you need to \textit{add} it to the
 repository. Suppose the name of your new file was MY-NEW-FILE.tex. You should
 type:
 
@@ -127,7 +127,7 @@ The \verb!add! includes the file in the files that \verb!git! tracks. The
 \verb!commit! says, ``hey I made a change that I want to keep track of.'' The
 \verb!push! says ``I want to share this with others.''
 
-\paragraph{If you update a file},
+\paragraph{If you update a file,}
 type use \verb!git add -u! and it will add all updated files.
 \begin{verbatim}
 git add -u
@@ -163,7 +163,7 @@ git config --global core.editor "nano"
 \end{verbatim}
 This will place you in a more user friendly editor in the future.
 
-\paragraph{If you are collaborating}, you should always start your work off
+\paragraph{If you are collaborating,} you should always start your work off
 with
 \begin{verbatim}
 git pull
