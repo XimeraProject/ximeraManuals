@@ -1,10 +1,10 @@
 \documentclass{ximera}
 
-\title{Graphics}
+\title{Graphics, videos, and interactives}
 
 \begin{document}
 \begin{abstract}
-  Embed compelling content in Ximera activities.
+  Embed pictures in Ximera activities.
 \end{abstract}
 \maketitle
 
@@ -12,7 +12,7 @@ We've seen basic ways to include JPGs, PNGs, and PDFs using
 \verb!\includegraphics!. However, this is not the preferred way to include
 graphics. Moreover, there are considerations for positioning of the graphics.
 
-\paragraph{Positioning graphics}
+\section{Positioning graphics}
 
 In \LaTeX\ it is common to write images in the \verb!figure! environment. We
 choose not to use this because \verb!figure! `floats' the images for `optimal'
@@ -35,37 +35,46 @@ If you use \verb!center!, you would write something like:
 \end{verbatim}
 If you use \verb!image!, you would write something like:
 \begin{verbatim}
-\begin{center}
+\begin{image}
 \includegraphics[width=5cm]{missionPatch.jpg}
-\end{center}
+\end{image}
 \end{verbatim}
 
 The disadvantage of using \verb!\includegraphics! is that you need to handle
-the paths to the images in some way. You can do this by:
-\begin{description}
-  \item[Editing the graphics path]
-  \item[Using a global graphics folder] can be done as follows by adding
+the paths to the images in some way. In the past we've added the files in the
+repository to the graphics path. However, we now suggest you use a global
+graphics path. The repository
+\begin{center}
+  \url{https://github.com/XimeraProject/ximeraNewProject}
+\end{center}
+Comes with the file \verb!preamble.tex! with
 \begin{verbatim}
-\graphicspath{  %% When looking for inages,
+\graphicspath{  %% When looking for images,
 {./}            %% look here first,
-{./graphics/}   %% the look for a graphics folder,
-{../graphics/}  %% which may be a directory up.
+{./pictures/}   %% then look for a "pictures" folder,
+{../pictures/}  %% which may be a directory up.
 }
 \end{verbatim}
+This means that any required \verb!*.jpg!, \verb!*.png!, and \verb!*.pdf! can
+be found, assuming your file isn't nested too deep.
+Moreover, we've set up the \verb!.gitignore! to \text{not ignore} \verb!*.jpg!,
+\verb!*.png!, and \verb!*.pdf! when they are placed in the \verb!graphics!
+directory. Finally, while this is currently the \textit{easiest} method for
+adding graphics in Ximera, it might be better if all graphics were placed at
+the level of the source file, and then a soft link (using the terminal) could
+be made to the
+\verb!graphics! directory. The advantage here being that if someone wants to
+borrow your material, everything they need is in the same folder.
 
-Explain how to use a soft link to eat-your-cake and have-it too. 
-You put the images in the folder with the source, then you soft link to the graphics directory. 
-This is probably the best way to do it.
-
-
-\end{description}
 With this said, TikZ is the preferred method for graphics because code, found
 in the Ximera \LaTeX\ file, generates the image. No need to worry about
 graphics paths.
 
 \section{TikZ is the preferred method for graphics}
 
-The preferred way to include graphics is with TikZ.
+The preferred way to include graphics is with TikZ. Most of TikZ is supported,
+and these are rendered as images online.
+For example the image below:
 \begin{image}
   \begin{tikzpicture}
     \begin{axis}[
@@ -85,7 +94,7 @@ The preferred way to include graphics is with TikZ.
     \end{axis}
   \end{tikzpicture}
 \end{image}
-
+was generated via
 \begin{verbatim}
 \begin{image}
 \begin{tikzpicture}
@@ -107,6 +116,8 @@ The preferred way to include graphics is with TikZ.
 \end{tikzpicture}
 \end{image}
 \end{verbatim}
+When you use TikZ for graphics, you don't need to worry about \verb!\graphicspath!.
+
 
 
 \end{document}
