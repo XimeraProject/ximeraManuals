@@ -20,21 +20,12 @@ Rendering in Ximera can be broken down into three parts:
 \section{Basics of rendering}
 
 There are issues with variables like ``textwidth'' versus
-``pagewidth'' used in LaTeX. For online rendering, these variables are all
-basically made to be the width of the browser window (more or less - there are
+``pagewidth'' used in \LaTeX. For online rendering, these variables are all
+basically made to be the width of the browser window (more or less---there are
 some very technical details here). This can make it difficult to horizontally
 align things with any subtlety.
 
 
-\paragraph{unknown node type: parser error} message. This appears
-          sometimes rather than the actual rendered mathematics. This is due to a
-          corruption in the cookies/cache for the browser, and the person seeing this
-          error need to clear their cache and then reload the page to resolve the
-          problem.
-
-
-
-\paragraph{svg-viewer missing} error message
 
 
 
@@ -49,7 +40,7 @@ Due to how graphs are rendered, they currently don't have any
 accessibility features (e.g. alt-text) if you provide them via TikZ or other
 LaTeX means. You can input them as image files instead, however those also lack
 any accessibility support. This is something to keep in mind, as you may need
-to provide textual description explicitly for things like screenreaders to
+to provide textual description explicitly for things like screen readers to
 provide more accessibility for graphs and/or images.
 
 
