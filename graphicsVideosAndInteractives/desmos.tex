@@ -13,39 +13,29 @@
 The easiest way to include an interactive graph is to use the
 \verb|\graph| command. Unfortunately, the \verb|\graph| command
 doesn't draw a graph in the PDF, rather, it states (in words) that a
-graph is produced.
+graph is produced. That is,
 \begin{verbatim}
-\graph{x^2,x^3}                     %% just x^2 and x^3
-\graph{x^2 
-\left\{ 1 \leq x \leq 10 \right\}}   %% restricted domain
-\graph{\sin(x) \left\{x<0\right\}, 
-2x \left\{ x>=0 \right\} }          %% piecewise
-\graph{r=\theta} %% polar 
-\end{verbatim}
-
 \[
   \graph{x^2,x^3}
 \]
-There are a number of options for the \verb|\graph| command:
-
-
-
-\paragraph{Change viewing window}
-\[
-  \graph[xmin=-5,xmax=5,ymin=-5,ymax=5]{y=x^2}
-\]
-
-\paragraph{Restricting domain}
-\[
-  \graph{x^2 \left\{ 1 \leq x \leq 10 \right\} }
-\]
-\paragraph{Graphing a piecewise function}
-
-\begin{verbatim}
-\[
-\graph{ \sin(x)\left\{x<0\right\}, 2x\left\{ x>=0 \right\} }
-\]
 \end{verbatim}
+produces
+\[
+  \graph{x^2,x^3}
+\]
+There are a number of options concerning the function being graphed:
+\begin{verbatim}
+\graph{x^2,x^3}                     %% just x^2 and x^3
+                                    %%
+\graph{x^2                          %%
+\left\{ 1 \leq x \leq 10 \right\}}  %% restricted domain
+                                    %%
+\graph{\sin(x) \left\{x<0\right\},  %%
+2x \left\{ x>=0 \right\} }          %% piecewise
+                                    %%
+\graph{r=\theta}                    %% polar 
+\end{verbatim}
+While the code above modifies the function being graphed, there are also several options for the display of the graph.
 
 \paragraph{Optional arguments for \texttt{\textbackslash graph}}
 

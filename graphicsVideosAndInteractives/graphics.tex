@@ -58,12 +58,12 @@ Comes with the file \verb!preamble.tex! with
 This means that any required \verb!*.jpg!, \verb!*.png!, and \verb!*.pdf! can
 be found, assuming your file isn't nested too deep.
 Moreover, we've set up the \verb!.gitignore! to \text{not ignore} \verb!*.jpg!,
-\verb!*.png!, and \verb!*.pdf! when they are placed in the \verb!graphics!
+\verb!*.png!, and \verb!*.pdf! when they are placed in the \verb!pictures!
 directory. Finally, while this is currently the \textit{easiest} method for
 adding graphics in Ximera, it might be better if all graphics were placed at
 the level of the source file, and then a soft link (using the terminal) could
 be made to the
-\verb!graphics! directory. The advantage here being that if someone wants to
+\verb!pictures! directory. The advantage here being that if someone wants to
 borrow your material, everything they need is in the same folder.
 
 With this said, TikZ is the preferred method for graphics because code, found
@@ -72,8 +72,8 @@ graphics paths.
 
 \section{TikZ is the preferred method for graphics}
 
-The preferred way to include graphics is with TikZ. Most of TikZ is supported,
-and these are rendered as images online.
+Most of TikZ is supported,
+and these are rendered as PNGs online.
 For example the image below:
 \begin{image}
   \begin{tikzpicture}
