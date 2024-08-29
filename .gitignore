@@ -1,11 +1,16 @@
 ## Don't push ximeraserve
-.ximeraserve
+*.ximeraserve*
 ## Graphics - may be not ignored
 *.jpg
 ## Graphics - recommend to be ignored
 *.svg
 *.png
 *.pdf
+## Don't ignore things in ./graphics 
+pictures/*
+!pictures/*.jpg
+!pictures/*.pdf
+!pictures/*.png
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
