@@ -152,28 +152,34 @@ looks for the image \textit{at the level of the
       thick,font=\ttfamily]
       \tikzstyle{folder} = [anchor=north west,draw, rectangle, rounded
       corners,
-      minimum width=4cm,fill=white, minimum height=2.8cm, ultra
+      minimum width=4cm,fill=white, minimum height=2.1cm, ultra
       thick,font=\ttfamily]
 
       % Thick grey lines
-      \draw[line width=200pt,white!85!black,line cap=round] (2,0) -- (2,1);
-      \draw[line width=200pt,white!85!black,line cap=round] (10,0)--(10,1);
+      \draw[line width=200pt,white!85!black,line cap=round] (2,-1) -- (2,.5);
+      \draw[line width=200pt,white!85!black,line cap=round] (10,-1)--(10,.5);
 
       % Connections
-      \draw[ultra thick] (2,-1.5) -- (8,2.6);
-      \draw[ultra thick] (2,-1.5) -- (8,1.6);
-      \draw[ultra thick] (2,-1.5) -- (8,.6);
+      \draw[ultra thick] (2,0) -- (8,1.1);
+      \draw[ultra thick] (2,0) -- (8,.1);
+
+      \draw[ultra thick] (2,-2.5) -- (8,-2.4);
+
 
       % Define the folders at top level
       \node[document] at (0,3) {preamble.tex};
       \node[document] at (0,2) {aFirstStepInXimera.tex};
       \node[folder] at (0,1) {basics};
-      \node[] at (2,-1) {(folder)};
-
+      \node[] at (2,-.5) {(folder)};
+      \node[folder] at (0,-1.3) {pictures};
+      \node[] at (2,-2.8) {(folder)};
       % Define the documents in the basics folder
-      \node[document] at (8,3) {basicWorksheet.tex};
-      \node[document] at (8,2) {missionPatch.jpg};
-      \node[document] at (8,1) {graphicsInteractives.tex};
+      \node[document] at (8,1.5) {basicWorksheet.tex};
+      \node[document] at (8,.5) {graphicsInteractives.tex};
+      % Define the documents in the pictures folder
+      \node[document] at (8,-2) {missionPatch.jpg};
+
+
 
     \end{tikzpicture}}
 \end{center}
@@ -183,11 +189,11 @@ level of the
 problem we use the preamble to append the graphics path. If we add (and in
 reality we did!) this
 \begin{verbatim}
-%% Where to find images
 \graphicspath{  %% When looking for images,
-{./}            %% look first at your level,
-{./basics/}     %% then in this folder,
-}    
+{./}            %% look here first,
+{./pictures/}   %% then look for a "pictures" folder,
+{../pictures/}  %% which may be a directory up.
+}
 \end{verbatim}
 to our preamble, then when compiling \verb!aFirstStepInXimera.tex!, the
 compiler will know where to look.
