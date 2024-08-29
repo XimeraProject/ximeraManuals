@@ -10,22 +10,30 @@
 \maketitle
 
 \paragraph{If the Bake fails} ensure all files are committed to the repository
-(verify online when in doubt),  ensure all files compile. In particular,
-ensure filenames are web-safe and all necessary paths are correct. You can check against TeXLive 2019 by running the following:
+(verify online when in doubt),	ensure all files compile. In particular,
+ensure filenames are web-safe and all necessary paths are correct. You can
+check against TeXLive 2019 by running the following:
 \begin{verbatim}
 ./scripts/xmlatex -i bash
 \end{verbatim}
-in a terminal window, note \textbf{you must be at the top level of your repository}. Then you can use \verb!pdflatex! to compile and use
+in a terminal window, note \textbf{you must be at the top level of your
+    repository}. Then you can use \verb!pdflatex! to compile and use
 \begin{verbatim}
 pdflatex FILE-NAME.tex
 xake -v compile FILE-NAME.tex
 more FILE-NAME.tex.log
 \end{verbatim}
-If  you find a file that does not compile, you can try to compile the file directly while 
-slowly moving \verb!\end{document}! down through the document. By starting at the top, the file should compile, and then you should be able to locate the exact location of the bug. 
+If  you find a file that does not compile, you can try to compile the file
+directly while
+slowly moving \verb!\end{document}! down through the document. By starting at
+the top, the file should compile, and then you should be able to locate the
+exact location of the bug.
 
+\paragraph{An svg-viewer missing} error message means that there was a
+compilation error that confused Xake. The offending file needs to be
+recompiled. Make a trivial change in the file, and delete all SVG files in the directory.
 
-Sometimes Ximera materials look good to instructors an others, but not to some
+Sometimes Ximera materials look good to instructors and others, but not to some
 individual students.
 
 \paragraph{Ximera refreshes the page when submitting}
@@ -33,32 +41,46 @@ can be caused by several issues, each with a different solution:
 \begin{description}
     \item[Problem:] Poor internet connection
         \begin{description}
-            \item[Solution:] Refresh the page immediately before entering each answer.
+            \item[Solution:] Refresh the page immediately before entering each
+                answer.
         \end{description}
     \item[Problem:] Browser settings
         \begin{description}
-            \item[Solution:] Try using a different browser. Different students have
-                reported luck with different browsers, including Edge, Firefox, and Chrome.
+            \item[Solution:] Try using a different browser. Different students
+                have
+                reported luck with different browsers, including Edge, Firefox,
+                and Chrome.
         \end{description}
     \item[Problem:] Antivirus Software
         \begin{description}
-            \item[Solution:] Some antivirus software (such as McAfree) are now blocking
-                websockets, a technology Ximera relies on. Try turning off the websockets
+            \item[Solution:] Some antivirus software (such as McAfree) are now
+                blocking
+                websockets, a technology Ximera relies on. Try turning off the
+                websockets
                 setting on the antivirus software.
 
         \end{description}
     \item[Problem:] VPN
         \begin{description}
-            \item[Solution:] If you are using a VPN, try turning it off before using
+            \item[Solution:] If you are using a VPN, try turning it off before
+                using
                 Ximera.
         \end{description}
 \end{description}
+
+\paragraph{unknown node type: parser error} message. This appears
+sometimes rather than the actual rendered mathematics. This is due to
+a
+corruption in the cookies/cache for the browser, and the person
+seeing this
+error need to clear their cache and then reload the page to resolve
+the
+problem.
 
 \paragraph{Difficulty accessing Ximera} is often caused by browser settings.
 The
 easiest solution is usually to try using a different browser. Students seem to
 have the best luck with Chrome, Firefox, or Safari.
-
 
 \paragraph{Math processing error}
 
