@@ -65,7 +65,9 @@ While the code above modifies the function being graphed, there are also several
 
 If you require further features from
 \link[Desmos]{https://www.desmos.com/}, you can sign up for an account
-and include your worksheets like this:
+and include your worksheets using the syntax \verb|\desmos{ID}{width}{height}|, where ID
+is the widget ID and width and height are the dimensions (in pixels)
+you want the embedded widget to have.
 \begin{verbatim}
 \begin{center}
 \desmos{zwywds7med}{800}{600}
@@ -78,7 +80,9 @@ which renders as:
 
 \providecommand{\desmosThreeD}[3]{}   % HACK: should be defined ???
 
-The syntax for Desmos 3D is similar:
+The syntax for Desmos 3D is similar. Use \verb|\desmosThreeD{ID}{width}{height}|, where ID
+is the widget ID and width and height are the dimensions (in pixels)
+you want the embedded widget to have.
 \begin{verbatim}
 \begin{center}
 \desmosThreeD{bb4exrhrl3}{800}{600}
