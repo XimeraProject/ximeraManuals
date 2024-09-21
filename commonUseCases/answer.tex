@@ -17,7 +17,7 @@ There are many ways our friends use Ximera. Some make worksheets, some make
 exercise banks, and some make full textbooks. Common to all of these are the
 use of interactive elements that students submit answers to. We'll call
 anything a student can \textit{answer} an \textbf{answerable}.
-With that said, we'll discuss the basic answerables below, and then described
+With that said, we'll discuss the basic answerables below, and then describe
 how they might be used in use cases of: worksheets, exercise banks, and
 textbooks.
 
@@ -100,14 +100,14 @@ are for building custom validators and are beyond the scope of this document.
 \end{warning}
 
 \paragraph{Validating an answer} is achieved by client-side JavaScript. Around
-one dozen algorithms to check if the student's provided
+one dozen algorithms check if the student's provided
 answer is mathematically equivalent to the content author's provided answer. If
 any report the answer as being correct, then it is marked as correct.
 
 \begin{warning}
   There are confounds for validating answers online:
   \begin{description}
-    \item[Student input] for answers a nontrivial task. Students need to be
+    \item[Student input] answers a nontrivial task. Students need to be
       able
       to easily type in their answers.
     \item[Checking for equality] will not reveal the form of the answer. This
@@ -135,7 +135,7 @@ side when constructing problems.
 \paragraph{Student input} is reflected back to the student, in the sense that
 Ximera tells the users what it thinks they are typing.
 In addition, we provide a math
-pallet. Authors can assist students with input by ensuring that the required
+palette. Authors can assist students with input by ensuring that the required
 answer is not too difficult to type in.
 
 \paragraph{Ximera checks for equality} and is comprehensive in
@@ -153,7 +153,7 @@ custom validator.
 \paragraph{Ximera is open-source} and not designed for high-stakes assessment.
 All content is
 open and students can find the source if they look hard enough. Moreover,
-Answers can be exposed via right-click. This has the even more unfortunate
+answers can be exposed via right-click. This has the even more unfortunate
 side-effect that a student can mess up their browser settings to the point that
 Ximera content will not render.
 
@@ -165,7 +165,7 @@ Unfortunately, if you right-click and go to ``Show Math As'' and then ``TeX
 Commands'' you can \textbf{very easily see the contents of the answer command}.
 
 This information isn't necessary for accessibility
-(after all, the answer box is suppose to contain the actual content supplied by
+(after all, the answer box is supposed to contain the actual content supplied by
 the student, and doesn't have any content the student needs to know about) but
 it's tied to the behavior of the underlying library that supports \textit{all}
 the rendered math on the page, so we can't remove it without killing
