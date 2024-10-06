@@ -37,11 +37,49 @@
             "tooltip": "Serve this project."
         },
         {
-            "label": "XimeraServer",
+            "label": "Extra",
             "alignment": "right",
-            "task": "XimerServer",
-            "description": "Start local server.",
-            "tooltip": "Start local server."
+            "tasks": [
+                {
+                    "task": "Start Ximera Server",
+                    "label": "Start Ximera Server",
+                    "description": "Start local Ximera webserver.",
+                    "problemMatcher": [],
+                },
+                {
+                    "task": "Preview in Simple Browser",
+                    "label": "Preview in Simple Browser",
+                    // "description": "Start local Ximera webserver.",
+                    "problemMatcher": [],
+                },
+                {
+                    "task": "Bake standard",
+                    "label": "Bake  standard PDFs (with answers)",
+                    "description": "Make  full PDF's. ('standaard')",
+                    "problemMatcher": [],
+                },
+                {
+                    "task": "Bake handout",
+                    "label": "Bake handout PDF's (without answers)",
+                    "description": "Make handout PDF's.",
+                    "problemMatcher": [],
+                },                
+                {
+                    "task": "Delete standard",
+                    "label": "Delete all standard PDFs",
+                    "problemMatcher": [],
+                },
+                {
+                    "task": "Delete handout",
+                    "label": "Delete all handout PDFs",
+                    "problemMatcher": [],
+                },
+                {
+                    "task": "Delete all",
+                    "label": "Delete all HTML and PDFs",
+                    "problemMatcher": [],
+                },
+            ],
         },
     ]
 }
