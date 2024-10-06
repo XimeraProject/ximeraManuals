@@ -6,6 +6,7 @@
 *.svg
 *.png
 *.pdf
+!ximeraUserManual.pdf
 ## Don't ignore things in ./graphics 
 pictures/*
 !pictures/*.jpg
@@ -33,7 +34,6 @@ pictures/*
 # these rules might exclude image files for figures etc.
 *.ps
 # *.eps
-*.pdf
 !*-pics.pdf
 !ximera-downloads/**
 
