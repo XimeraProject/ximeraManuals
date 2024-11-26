@@ -1,3 +1,2 @@
-# Take Your First Steps in Ximera
-
+# Ximera User Manual
 This repository contains the 'official' Ximera Manual. It's work in progress...
