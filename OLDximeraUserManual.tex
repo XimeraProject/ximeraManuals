@@ -1,0 +1,68 @@
+\documentclass[numbers,twoside,handout]{xourse}
+
+\title{User Manual}
+\date{2024}
+\author{Jim Fowler \and Wim Obbels \and Jason Nowell\and Bart Snapp}
+
+\input{preamble}
+
+\pdfOnly{\usepackage{manual}}
+
+
+\colorfalse
+\colortrue
+
+%\pdfOnly{\input{coverArt/frontCover.tex}}   % now in manual
+%  \usepackage{sectsty}
+
+
+
+\setcounter{tocdepth}{1}
+\begin{document}
+\begin{abstract}
+    How to use Ximera.
+\end{abstract}
+\maketitle
+\pdfOnly{\pagestyle{fancy}}
+\twocolumn
+\part{Introduction and setup}
+\sectionstyle
+\activity{introduction/introduction}
+\activity{setup/tools}
+\activity{setup/repository}
+
+\part{Getting work done}
+\sectionstyle
+\activity{setup/createActivity}
+\activity{setup/createXourse}
+\activity{setup/packages}
+%\activity{graphicsVideosAndInteractives/graphicsVideosAndInteractives}
+\activity{graphicsVideosAndInteractives/graphics}
+\activity{graphicsVideosAndInteractives/desmosAndGeogebra}
+\activity{graphicsVideosAndInteractives/videos}
+\activity{setup/deploying}
+\activity{setup/commonIssues}
+
+\part{Answerables and progress}
+\sectionstyle
+\activity{commonUseCases/answer}
+\activity{commonUseCases/choice}
+\activity{commonUseCases/problemEnvironments}
+\activity{progressAndCredit/progressAndCredit}
+
+
+\part{Common use cases}
+\sectionstyle
+\activity{commonUseCases/worksheets}
+\activity{commonUseCases/exerciseBanks}
+\activity{commonUseCases/textbooks}
+
+\part{Further information}
+\sectionstyle
+\activity{printing/printing}
+\activity{rendering/rendering}
+\activity{seeXimeraInAction/seeXimeraInAction}
+        
+\pdfOnly{\backCover}  % defined in manual.sty
+
+\end{document}
