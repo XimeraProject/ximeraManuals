@@ -11,7 +11,7 @@
 \end{abstract}
 \maketitle
 
-Once you've deployed our content in a \github\ codespace, you'll surely want to
+Once you've deployed our content in a GitHub codespace, you'll surely want to
 change it, make it your own. Within codespace, you are running VS Code, a
 full-fledged text editor. You can make changes directly there. Our files are on
 the left, and are revealed by the ``pages'' icon.
@@ -22,7 +22,7 @@ Here, I've opened the folder \verb!aFirstFolder!, and then the file
 \end{image}
 At this point, you may push ``SERVE'' and see the results of your change;
 however, \textbf{these changes were made only in your codespace}, a temporary
-computer, lost in the cloud. To make these changes to your actual \github\
+computer, lost in the cloud. To make these changes to your actual GitHub
 repository, you need to ``sync'' them back.
 
 \newpage
@@ -75,9 +75,14 @@ Above we see my repository, and we see that my change was indeed made.
     files in this list will be saved in the next step.
 
     \textbf{Command Behind the Scenes:}
-    \begin{verbatim}
+\begin{verbatim}
 git add <filename>
 \end{verbatim}
+if you want to add all updated files, do
+\begin{verbatim}
+git add -u
+\end{verbatim}
+
 
     \textbf{Why It's Important:}
     Imagine you're painting, but you only want to save some parts of the picture
@@ -98,12 +103,12 @@ git add <filename>
 
     \textbf{Command Behind the Scenes:}
     \begin{verbatim}
-git commit -m "Your commit message"
+git commit -m 'Your commit message'
 \end{verbatim}
 
     \textbf{Why It's Important:}
     Commits are like save points in a video game. If something goes wrong later,
-    you can go back to this point and start fresh.
+    you can go back to this point and start fresh. Your notes (commit messages) are clues as to where you should go.
 
     \textbf{Pro Tip:}
     Always write clear commit messages, like \emph{``Fixed the login bug''} or
