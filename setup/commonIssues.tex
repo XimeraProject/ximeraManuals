@@ -9,15 +9,9 @@
 \end{abstract}
 \maketitle
 
-\paragraph{If the Bake fails} ensure all files are committed to the repository
-(verify online when in doubt),	ensure all files compile. In particular,
-ensure filenames are web-safe and all necessary paths are correct. You can
-check against TeXLive 2019 by running the following:
-\begin{verbatim}
-./scripts/xmlatex -i bash
-\end{verbatim}
-in a terminal window, note \textbf{you must be at the top level of your
-    repository}. Then you can use \verb!pdflatex! to compile and use
+\paragraph{If the Bake fails} and you are working in a Codespace, then you can
+use \verb|xake| directly to debug your code.
+You can use \verb!pdflatex! to compile and use
 \begin{verbatim}
 pdflatex FILE-NAME.tex
 xake -v compile FILE-NAME.tex
@@ -31,7 +25,8 @@ exact location of the bug.
 
 \paragraph{An svg-viewer missing} error message means that there was a
 compilation error that confused Xake. The offending file needs to be
-recompiled. Make a trivial change in the file, and delete all SVG files in the directory.
+recompiled. Make a trivial change in the file, and delete all SVG files in the
+directory.
 
 Sometimes Ximera materials look good to instructors and others, but not to some
 individual students.

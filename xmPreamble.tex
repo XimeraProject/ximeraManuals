@@ -8,11 +8,11 @@
 \makeatother      %% make "@" an other-character
 
 %% Where to find images
-\graphicspath{                      %% When looking for images, 
-{./}                                %% look first at your level,
-{./setup/}                          %% then in this folder,
-{./graphicsVideosAndInteractives/}  %% then in this folder,
-}
+% \graphicspath{                      %% When looking for images, 
+% {./}                                %% look first at your level,
+% {./setup/}                          %% then in this folder,
+% {./graphicsVideosAndInteractives/}  %% then in this folder,
+% }
 
 
 
@@ -27,6 +27,7 @@
 \newcommand{\xfgURL}{https://go.osu.edu/ximera-flash-grant}
 
 
+\newcommand{\github}{\textsl{GitHub}}
 
 \newif\ifcolor %% for color cover
 \colorfalse
@@ -39,5 +40,5 @@
 
 \usepackage{qrcode} %% For QR Codes
 \usepackage[normalem]{ulem} % for strikeout
-\usepackage{multicol} % multicols -- PDF only
+\usepackage{multicol} % multicols -- PDF only MOVE TO PRINTSTYLES
 

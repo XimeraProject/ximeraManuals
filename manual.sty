@@ -108,7 +108,14 @@
 
 \surroundwithmdframed[roundcorner=2pt]{warning}  %% DO THIS IN CLS TOO!
 
-
+%% image environment
+%%\renewenvironment{image}[1][]{\begin{center}}{\end{center}}
+\let\image\relax
+\let\endimage\relax
+\NewEnviron{image}{% 
+  \begin{center}\fbox{\BODY}\end{center}%  center
+}
+%\surroundwithmdframed[roundcorner=2pt]{image} 
 
 
 %% SHOULD BE ADDED TO CLS
