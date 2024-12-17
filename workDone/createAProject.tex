@@ -1,0 +1,53 @@
+\documentclass{ximera}
+
+\title{Create a Ximera project}
+
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+    How to create a new Ximera project.
+\end{abstract}
+\maketitle
+
+\paragraph{All Ximera files must be hosted in a git repository.}
+As an author, you have some choices as to how you proceed.
+
+\section{GitHub setup}
+
+\paragraph{Using a template} is easy.
+We have two repositories potential authors can use as a template:
+\begin{itemize}
+    \item \url{https://github/ximeraProject/ximeraFirstSteps} for a template
+          with multiple files that you can edit.
+    \item \url{https://github/ximeraProject/ximeraNewProject} for a more
+          minimal template.
+\end{itemize}
+If you go to either of these repositories when you are logged in to GitHub, you
+will have the option to make a new repository using the green ``Use this
+template'' button.
+
+\paragraph{To deploy an existing repository from a codespace,} just copy the files
+you will need from either \verb!ximeraFirstSteps! or \verb!ximeraNewProject!
+\begin{itemize}
+\item \texttt{.devcontainer/} (a folder you need if you want to deploy from a GitHub codespace)
+\item \texttt{xmScripts/} (this is a folder)
+\item \texttt{.vscode/} (this is a folder)
+\item \texttt{.xmKeyFile} (if you want to deploy from a GitHub codespace)
+\item \texttt{.gitignore} 
+\end{itemize}
+into your repository. If you already have a \verb|.gitignore| file, we suggest
+you \textbf{replace yours with ours.} Commit your changes to GitHub and view your
+repository online via a web browser to ensure that the files were added.
+
+
+If you want to deploy via codespace, add
+
+
+Finally, after the \verb!.gitignore! is pushed to the repository.
+
+
+
+
+
+\end{document}
