@@ -1,0 +1,51 @@
+\documentclass{ximera}
+
+\title{Create an activity}
+
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+    How to set up an activity.
+\end{abstract}
+\maketitle
+
+It is easy to write a basic Ximera document with clean \LaTeX. The structure is
+as follows:
+\begin{verbatim}
+\documentclass{ximera}
+\begin{document}
+%%
+%% Content goes here
+%%
+\end{document}
+\end{verbatim}
+
+A Ximera activity may be a single problem, a list of exercises, a review of a
+concept, a section of a book---you are only limited by your imagination.
+Examples of individual Ximera activities can be found here:
+\begin{itemize}
+    \item blah
+\end{itemize}
+
+
+
+\paragraph{Use standard \LaTeX} environments and commands like:
+\verb!enumerate!,
+\verb!itemize!,
+\verb!description!,
+\verb!align*!, \verb!$...$!, \verb!\[...\]!, and so on.
+Macros made of basic \LaTeX\ commands are fine. If you store them in \verb!xmPreamble.tex!
+\textbf{No manual formatting.}
+
+\paragraph{Special Ximera documents and folders} are \textbf{automatically}
+loaded by all files in the repository (assuming they are no more than three folders deep).
+\begin{description}
+    \item[\texttt{xmPreamble.tex}]
+    \item[\texttt{xmPictures/}]
+\end{description}
+
+
+
+
+\end{document}

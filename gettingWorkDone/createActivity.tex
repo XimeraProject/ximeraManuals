@@ -1,7 +1,5 @@
 \documentclass{ximera}
 
-\input{../preamble}
-
 \title{Create an activity}
 
 \author{Bart Snapp}
@@ -12,8 +10,12 @@
 \end{abstract}
 \maketitle
 
-It is easy to write a basic Ximera document with clean \LaTeX. The structure is
-as follows:
+Ximera content consists of two distinct types of \LaTeX\ files. Those with the
+\verb!xourse! document class and those with the \verb!ximera! document class.
+Files with the \verb!xourse! document class \textit{glue} together Ximera content via
+the commands \verb!\activity! and \verb!\practice!. Ximera content is written
+using the  \verb!ximera! document class.
+The basic structure of a Ximera activity is as follows:
 \begin{verbatim}
 \documentclass{ximera}
 \begin{document}
@@ -23,22 +25,65 @@ as follows:
 \end{document}
 \end{verbatim}
 
+A Ximera activity may be a single problem, a list of exercises, a review of a
+concept, a section of a book---you are only limited by your imagination.
+Examples of individual Ximera activities can be found here:
+\begin{description}
+    \item[Single problem]See:
 
-A Ximera activity may be a EXPLAIN
+    \url{https://ximera.osu.edu/mooculus/limitLaws/exercises/exerciseList/limitLaws/exercises/limitLaw2}
+    \item[List of exercises] See:
+
+        \url{https://ximera.osu.edu/mooculus/limitLaws/exercises/exerciseList/limitLaws/exercises/limitLaw7}
+    \item[Review of concept] See:
+
+        \url{https://xronos.clas.ufl.edu/mac1140nowell/PrecalculusXourse/explorePolynomials/Practice/factoringGeneral-Practice1}
+    \item[Section of book] See:
+
+        \url{https://ximera.osu.edu/mooculus/calculus1/limitLaws/digInLimitLaws}
+\end{description}
+
+You can see the source code for any of the activities above by appending
+\verb!.tex! to the URL.
+
+\section{Tips for Ximera activities}
+
+We wish to write Ximera documents as simply as possible. Here are some tips.
+
+\paragraph{Use basic \LaTeX} environments and commands like:
+\verb!enumerate!,
+\verb!itemize!,
+\verb!description!,
+\verb!align*!, \verb!$...$!, \verb!\[...\]!, and so on.
+Macros made of basic \LaTeX\ commands are fine as long as you store them in
+\verb!xmPreamble.tex! or another file on your input path. This helps keep the headers very clean.
 
 
-\paragraph{Use standard \LaTeX} environments and commands like:
-    \verb!enumerate!,
-    \verb!itemize!,
-    \verb!description!,
-    \verb!align*!, \verb!$...$!, \verb!\[...\]!, and so on. 
-    Macros made of basic \LaTeX\ commands are fine.
-\textbf{No manual formatting.}
-
-\paragraph{Special Ximera documents and folders} are \textbf{automatically} loaded by all files in the repository.
-ASSUMING
+\paragraph{Avoid manual formatting.} At the core of the Ximera philosophy is
+the
+principle of separating content from deployment. This means that the
+intellectual substance---the ideas, explanations, and activities---should
+remain independent of the specific presentation or layout in which they are
+delivered. This separation ensures adaptability, longevity, and accessibility, enabling
+content to evolve without being constrained by the limitations of any
+particular delivery method.
 
 
+With that said, our strategies for creating PDFs are to load a separate style
+file at the level of a \verb!xourse! file. Further formatting can be achieved via the command \verb!\pdfOnly!.
+
+\paragraph{Special Ximera documents and folders} are \textbf{automatically}
+loaded by all files in the repository (assuming they are no more than three
+folders deep).
+\begin{description}
+    \item[\texttt{xmPreamble.tex}] This is a place to put custom commands to
+        help your document compile. It is not intended to be used for cosmetic
+        changes
+        to Ximera. For making pretty documents, see the section REFERENCE
+        SECTION
+    \item[\texttt{xmPictures/}] This is a folder that you can place JPGs,
+        PNGs, and PDFs, for inclusion into Ximera documents.
+\end{description}
 
 
 \end{document}
