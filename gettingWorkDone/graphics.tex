@@ -41,29 +41,17 @@ If you use \verb!image!, you would write something like:
 \end{verbatim}
 
 The disadvantage of using \verb!\includegraphics! is that you need to handle
-the paths to the images in some way. In the past we've added the files in the
-repository to the graphics path. However, we now suggest you use a global
-graphics path. The repository
-\begin{center}
-  \url{https://github.com/XimeraProject/ximeraNewProject}
-\end{center}
-Comes with the file \verb!preamble.tex! with
-\begin{verbatim}
-\graphicspath{  %% When looking for images,
-{./}            %% look here first,
-{./pictures/}   %% then look for a "pictures" folder,
-{../pictures/}  %% which may be a directory up.
-}
-\end{verbatim}
+the paths to the images in some way. However, we now suggest you use a global
+graphics path: You may store all your grapics inside \verb!\xmPictures!. 
 This means that any required \verb!*.jpg!, \verb!*.png!, and \verb!*.pdf! can
 be found, assuming your file isn't nested too deep.
 Moreover, we've set up the \verb!.gitignore! to \text{not ignore} \verb!*.jpg!,
-\verb!*.png!, and \verb!*.pdf! when they are placed in the \verb!pictures!
+\verb!*.png!, and \verb!*.pdf! when they are placed in the \verb!xmPictures!
 directory. Finally, while this is currently the \textit{easiest} method for
 adding graphics in Ximera, it might be better if all graphics were placed at
 the level of the source file, and then a soft link (using the terminal) could
 be made to the
-\verb!pictures! directory. The advantage here being that if someone wants to
+\verb!xmPictures! directory. The advantage here being that if someone wants to
 borrow your material, everything they need is in the same folder.
 
 With this said, TikZ is the preferred method for graphics because code, found
