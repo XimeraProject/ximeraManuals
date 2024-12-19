@@ -4,27 +4,168 @@
 \author{Bart Snapp}
 
 \begin{document}
+\pdfOnly{\onecolumn}
 \begin{abstract}
     Deploying Ximera documents.
 \end{abstract}
 \maketitle
+\begin{multicols}{2}
+    We have two options for deploying Ximera documents: Deploying through a
+    GitHub
+    codespace and deploying from your machine. With both options you will need
+    a
+    \verb!GPG_KEY_ID! and a \verb!GPG_KEY!. 
+    You can generate a GPG key on your machine with
+    \begin{verbatim}
+gpg --gen-key
+\end{verbatim}
+    Answer all the questions, but \textbf{leave the passphrase blank}, by hitting
+    `tab' to go to \verb!<OK>!.
+    If you are on Windows or MacOS, you should find a recent discussion of how to
+    create keys or contact the Ximera developers for help.
 
-We have two options for deploying Ximera documents: Deploying through a GitHub
-codespace and deploying from your machine.
+    On Linux, you can check for keys with
+    with:
+    \begin{verbatim}
+gpg --list-keys
+\end{verbatim}
 
-\section{Deploying through codespace}
 
-Assuming your repository contains the folder \verb!.devcontainer! from either
-\verb!ximeraFirstSteps! or \verb!ximeraNewProject!, you (actually anyone!) can
-start a codespace from GitHub in your web browser. We've discussed how to
-deploy to a temporary  server running in the cloud. To deploy to public-visible
-Ximera server such as:
-\begin{center}
-    \url{https://ximera.osu.edu}
-\end{center}
-you will need to do some additional set up. 
+\begin{verbatim}
+pub   rsa3072 2024-06-20 [SC] [expires: 2026-06-20]
+215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+uid           [ultimate] Bart Snapp <snapp.14@osu.edu>
+sub   rsa3072 2024-06-20 [E] [expires: 2026-06-20]
+\end{verbatim}
+
+
+\begin{verbatim}
+gpg --armor --export-secret-key 215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+\end{verbatim}
+
+\begin{verbatim}
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
+SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
+QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
+QkdiM0lnV0dsdFpYSmhJRHh1YjI1bFFHVjRZVzF3YkdVdVkyOXRQb2laQkJNV0NnQkJGaUVFSVYv
+RFA2dEUKMWN5akdnU3l6SGpMVmgvY1NhZ0ZBbWJ3QUFJQ0d3TUZDUVdqbW9BRkN3a0lCd0lDSWdJ
+R0ZRb0pDQXNDQkJZQwpBd0VDSGdjQ0Y0QUFDZ2tRekhqTFZoL2NTYWpjaGdFQWhHZkVkYW9xRnZD
+c21NZExZVmNNSUhkTjl4aXJzZTB1Cjh5WVYweXpGVS9zQSt3Vm9zR3UvYk10b3N2bHphMkRJUkQ3
+VG9BUE5HeDYwanBlYjJaRm5DQW9LbkYwRVp2QUEKQWhJS0t3WUJCQUdYVlFFRkFRRUhRTitNMW52
+VG44Um85SFordW50NGJFN1A1dEZ5QnJkbnBmS2pvZ1oyd2R3bApBd0VJQndBQS8xMUhNaFJuTnFL
+RXpBVC9tN1Y1Mm90NjNjRzNRbFp1R0FFV0tqSmJOZUFJRG9HSWZnUVlGZ29BCkpoWWhCQ0Zmd3or
+clJOWE1veG9Fc3N4NHkxWWYzRW1vQlFKbThBQUNBaHNNQlFrRm81cUFBQW9KRU14NHkxWWYKM0Vt
+b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
+YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
+UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
+-----END PGP PRIVATE KEY BLOCK-----
+\end{verbatim}
+
+
+
+    \section{Deploying through codespace}
+
+    Assuming your repository contains the folder \verb!.devcontainer! from either
+    \verb!ximeraFirstSteps! or \verb!ximeraNewProject!, you (actually anyone!)
+    can
+    start a codespace from GitHub in your web browser. We've discussed how to
+    deploy to a temporary  server running in the cloud. To deploy to
+    public-visible
+    Ximera server such as: \url{https://ximera.osu.edu}
+    you will need to do some additional set up. You'll need to add \textbf{two
+        new
+        secrets to codespace}. Go to your GitHub page, and select ``Settings''
+    from the
+    menu at the top right.
+    \pdfOnly{\end{multicols}}
+\begin{image}
+    \includegraphics[width=.7\textwidth]{deploySettings.png}
+\end{image}
+
+\begin{image}
+    \includegraphics[width=.7\textwidth]{deployClickCodespace.png}
+\end{image}
+
+Now look to the right, and scroll down until you see a ``Codespaces'' option.
+We see it above.
+
+\newpage
+
+\begin{image}
+    \includegraphics[width=.7\textwidth]{deploySecret.png}
+\end{image}
+
+Now click on ``New secret.''
+
+\newpage
+
+\begin{image}
+    \includegraphics[width=.7\textwidth]{deployID.png}
+\end{image}
+\pdfOnly{\begin{multicols}{2}}
+        Finally set the name (\verb!YOUR_SECRET_NAME!)of your secrets as
+        \begin{itemize}
+            \item \verb!GPG_KEY_ID! is your public key, it should be something
+                  like
+                  \begin{verbatim}
+215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+\end{verbatim}
+            \item \verb!GPG_KEY! is your private key, it should be something
+                  like:
+                  {%\small
+                  \begin{verbatim}
+LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
+SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
+QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
+QkdiM0lnV0dsdFpYSmhJRHh1YjI1bFFHVjRZVzF3YkdVdVkyOXRQb2laQkJNV0NnQkJGaUVFSVYv
+RFA2dEUKMWN5akdnU3l6SGpMVmgvY1NhZ0ZBbWJ3QUFJQ0d3TUZDUVdqbW9BRkN3a0lCd0lDSWdJ
+R0ZRb0pDQXNDQkJZQwpBd0VDSGdjQ0Y0QUFDZ2tRekhqTFZoL2NTYWpjaGdFQWhHZkVkYW9xRnZD
+c21NZExZVmNNSUhkTjl4aXJzZTB1Cjh5WVYweXpGVS9zQSt3Vm9zR3UvYk10b3N2bHphMkRJUkQ3
+VG9BUE5HeDYwanBlYjJaRm5DQW9LbkYwRVp2QUEKQWhJS0t3WUJCQUdYVlFFRkFRRUhRTitNMW52
+VG44Um85SFordW50NGJFN1A1dEZ5QnJkbnBmS2pvZ1oyd2R3bApBd0VJQndBQS8xMUhNaFJuTnFL
+RXpBVC9tN1Y1Mm90NjNjRzNRbFp1R0FFV0tqSmJOZUFJRG9HSWZnUVlGZ29BCkpoWWhCQ0Zmd3or
+clJOWE1veG9Fc3N4NHkxWWYzRW1vQlFKbThBQUNBaHNNQlFrRm81cUFBQW9KRU14NHkxWWYKM0Vt
+b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
+YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
+UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
+\end{verbatim}
+                  }
+        \end{itemize}
+        \pdfOnly{\end{multicols}}
 
 \section{Deploying from your machine}
+
+ {\small\begin{verbatim}
+#
+# This file contains a DUMMY GPG key to publish Ximera courses on LOCAL testserver(s).
+#
+#  Use environment variables GPG_KEY_ID and GPG_KEY to overwrite this, or 
+#  change them here with your personal/project GPG key
+#
+#   *** BUT DO NEVER COMMIT THIS FILE WITH REAL KEYS ***
+#
+GPG_KEY_ID=215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+GPG_KEY=$(
+cat <<'EOF'
+LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
+SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
+QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
+QkdiM0lnV0dsdFpYSmhJRHh1YjI1bFFHVjRZVzF3YkdVdVkyOXRQb2laQkJNV0NnQkJGaUVFSVYv
+RFA2dEUKMWN5akdnU3l6SGpMVmgvY1NhZ0ZBbWJ3QUFJQ0d3TUZDUVdqbW9BRkN3a0lCd0lDSWdJ
+R0ZRb0pDQXNDQkJZQwpBd0VDSGdjQ0Y0QUFDZ2tRekhqTFZoL2NTYWpjaGdFQWhHZkVkYW9xRnZD
+c21NZExZVmNNSUhkTjl4aXJzZTB1Cjh5WVYweXpGVS9zQSt3Vm9zR3UvYk10b3N2bHphMkRJUkQ3
+VG9BUE5HeDYwanBlYjJaRm5DQW9LbkYwRVp2QUEKQWhJS0t3WUJCQUdYVlFFRkFRRUhRTitNMW52
+VG44Um85SFordW50NGJFN1A1dEZ5QnJkbnBmS2pvZ1oyd2R3bApBd0VJQndBQS8xMUhNaFJuTnFL
+RXpBVC9tN1Y1Mm90NjNjRzNRbFp1R0FFV0tqSmJOZUFJRG9HSWZnUVlGZ29BCkpoWWhCQ0Zmd3or
+clJOWE1veG9Fc3N4NHkxWWYzRW1vQlFKbThBQUNBaHNNQlFrRm81cUFBQW9KRU14NHkxWWYKM0Vt
+b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
+YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
+UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
+EOF
+)
+\end{verbatim}
+ }
 
 \begin{enumerate}
     \item Make sure all source files are committed and pushed to the
