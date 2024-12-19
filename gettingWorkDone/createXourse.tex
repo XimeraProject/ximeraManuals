@@ -27,7 +27,8 @@ without \verb!\maketitle!). The \verb|xourse| file for \textit{A First Step in
   \url{https://github.com/XimeraProject/ximeraFirstSteps/blob/main/aFirstStepInXimera.tex}
 \end{center}
 The \verb!xourse! document class specifies information such as the name of the
-document, the names of the authors, a description of the content, a license, and
+document, the names of the authors, a description of the content, a license,
+and
 the names of all Ximera \LaTeX\ files comprising
 the whole document via \verb!\activity! and \verb!\practice!.
 
@@ -69,6 +70,11 @@ following:
     \sout{\texttt{math872ch2sec3.tex}}. Authors find themselves reordering
     their content and generic names are useless for other users.
 \end{description}
+
+A consistent and well thought out set up will allow you and others to easily
+understand and modify your content for years to come. Ideally a document's
+parent folder would contain everything that document needs
+to compile.
 
 For the repository \texttt{ximeraFirstSteps} we have the following structure:
 \begin{center}%%DIAGRAM OF FILE STRUCTURE
@@ -115,8 +121,8 @@ For the repository \texttt{ximeraFirstSteps} we have the following structure:
       \node[] at (2,-5.2) {(folder)};
 
       % Define the documents in the basics folder
-      \node[document] at (8,3) {basicWorksheet.tex};
-      \node[document] at (8,2) {graphicsInteractives.tex};
+      \node[document] at (8,3) {aFirstActivity.tex};
+      \node[document] at (8,2) {aGraphicsActivity.tex};
 
       % Define the documents in the exercises folder
       \node[document] at (8,1) {exerciseList.tex};
@@ -130,21 +136,18 @@ For the repository \texttt{ximeraFirstSteps} we have the following structure:
     \end{tikzpicture}}
 \end{center}
 We've left some files out of this diagram; regardless, you should be able to
-goto
+go to
 \begin{center}
   \url{https://github.com/ximeraProject/ximeraFirstSteps}
 \end{center}
 and witness this file structure. At the top level of the repository, we have
-the documents \verb!preamble.tex! and \verb!aFirstStepInXimera.tex! along with
-the folders \verb!basics! and \verb!exercises!. Inside \verb!basics!, we have
-two activities and a JPG that is required by one of them. Inside
-\verb!exercises!
+the documents \verb!xmPreamble.tex! and \verb!aFirstStepInXimera.tex! along
+with
+the folders \verb!aFirstFolder! and \verb!aListOfExercisesFolder!. Inside
+\verb!aFirstFolder!, we show
+two activities. Inside
+\verb!aListOfExercisesFolder!
 we have all the practice exercises.
-
-A consistent and well thought out set up will allow you and others to easily
-understand and modify your content for years to come. Ideally a document's
-parent folder would contain everything that document needs
-to compile, except for perhaps the preamble, and we address this below.
 
 \begin{warning}
   Every \verb!*.tex! file in the repository with a \verb!\documentclass!
@@ -199,26 +202,26 @@ There are two different commands we use to add
 In \verb!aFirstStepInXimera.tex! we write
 
 \begin{verbatim}
-\documentclass{xourse} 
-\input{preamble} %% Loads the graphics path
+\documentclass{xourse}
 \author{Wim Obbels \and Bart Snapp}
-\title{A First Step in Ximera}
+\title{A First Ximera Xourse}
 \begin{document}
 \begin{abstract}
-    A simple collection of Ximera activities, 
+    A very simple collection of Ximera activities, 
     to be deployed online.
 \end{abstract}
 \maketitle
-\activity{basics/basicWorksheet}
-\activity{basics/graphicsInteractives}
-\practice{exercises/answer}
-\practice{exercises/multipleChoice}
-\practice{exercises/selectAll}
-\practice{exercises/wordChoice}
-\practice{exercises/hintsAndFollowUp}
+\part{The First Topic of This Course}
+\chapterstyle
+\activity{aFirstFolder/aFirstActivity}
+\sectionstyle
+\activity{aFirstFolder/exercises/someExercises}
+\chapterstyle
+\activity{aFirstFolder/aGraphicsActivity}
 \end{document}
 \end{verbatim}
-Note how we give the paths to the exercises, it's the folder name, followed by
-the document name. The \verb!.tex! can be left on if you like.
+Note, no preamble is required, since \verb!xmPreamble.tex! is automatically
+loaded.  Also note how we give the paths to the exercises, it's the folder
+name, followed by the document name. The \verb!.tex! can be left on if you like.
 
 \end{document}

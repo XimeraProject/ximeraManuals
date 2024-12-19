@@ -1,0 +1,140 @@
+\documentclass{ximera}
+
+\title{Preambles, input paths, and graphics paths}
+
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+  How to add extra packages and commands.
+\end{abstract}
+\maketitle
+
+The Ximera documentclass comes with many packages preloaded:
+\verb!enumitem!,
+\verb!titlesec!,
+\verb!titletoc!,
+\verb!titling!,
+\verb!url!,
+\verb!xcolor!,
+\verb!tikz!,
+\verb!pgfplots!,
+\verb!fancyvrb!,
+\verb!forloop!,
+\verb!environ!,
+\verb!amssymb!,
+\verb!amsmath!,
+\verb!amsthm!,
+\verb!xifthen!,
+\verb!multido!,
+\verb!listings!,
+\verb!xkeyval!,
+\verb!comment!,
+\verb!gettitlestring!,
+\verb!nameref!,
+\verb!epstopdf!,
+\verb!hyperref!.
+
+The documentclass also provides support for the following theorem-like
+environments:
+\verb!algorithm!, \verb!axiom!, \verb!claim!, \verb!conclusion!,
+\verb!condition!, \verb!conjecture!, \verb!corollary!, \verb!criterion!,
+\verb!definition!, \verb!example!, \verb!explanation!, \verb!exercise!,
+\verb!exploration!,
+\verb!fact!, \verb!formula!, \verb!hypothesis!, \verb!idea!, \verb!lemma!,
+\verb!model!,
+\verb!notation!, \verb!observation!, \verb!paradox!, \verb!proof!,
+\verb!problem!,
+\verb!procedure!,
+\verb!proposition!, \verb!question!, \verb!remark!, \verb!solution!,
+\verb!summary!, \verb!template!, \verb!theorem!, \verb!warning!.
+
+We can add functionality and generality, via user defined commands, to the
+document via a preamble, or macros, document. Currently, we have a special file
+called \verb!xmPreamble.tex! that we strongly suggest new users use.
+The purpose of \verb!xmPreamble! is to ensure \textbf{all files compile
+  consistently,
+  it is not for cosmetic changes.} A typical preamble might contain things
+like:
+
+\begin{verbatim}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\d}{\, d}
+\end{verbatim}
+
+\begin{warning}
+  Cosmetic changes to Ximera \textbf{environments} will result in unpredictable
+  behavior
+  online.
+\end{warning}
+
+\paragraph{The special file \texttt{xmPreamble.tex}} is a common preamble that is automatically loaded by every  \verb!ximera! and \verb!xourse! file.
+Since every \verb!*.tex! file with a \verb!ximera! and \verb!xourse! must compile, the
+preamble file must be accessible  by all files. The special file
+\verb!xmPreamble.tex! is found by all files that are at most three directories
+deep. In essence, we are modifying the input path as follows:
+\begin{verbatim}
+\makeatletter      %% make "@" a letter-character
+\def\input@path{   %% When looking for xmPreamble.tex,
+{./}               %% look here first,
+{../}              %% then look a folder up,
+{../../}           %% then look two folders up,
+{../../../}        %% then look three folders up.
+}
+\makeatother       %% make "@" an other-character.
+\end{verbatim}
+and we are \textbf{automatically} loading any file it finds that is named \verb!xmPreamble.tex!.
+
+
+
+\paragraph{The special folder \texttt{xmPictures}} helps \verb!ximera! and  \verb!\xourse! files find images.
+We used \verb!\includegraphics! in \texttt{basicWorkSheet.tex} with code like:
+\begin{verbatim} 
+\begin{center}
+  \includegraphics[width=5cm]{missionPatch.jpg}
+\end{center}
+\end{verbatim}
+In this case, \texttt{aFirstActivity.tex}  and \verb!missionPatch.jpg! are both
+in the folder
+\texttt{basics}. However, when
+this document is compiled via a \verb!xourse! document, the \LaTeX\ compiler
+looks for the image \textit{at the level of the
+  \texttt{aFirstStepInXimera.tex}}.
+
+Since there is no file \verb!missionPatch.jpg! at the
+level of the
+\verb!xourse! document the compilation will fail unless the files know where to look. To solve this
+problem we use the document class to append the graphics path. Essentially we set:
+\begin{verbatim}
+  \graphicspath{          %% When looking for images,
+  {./}                    %% look here first,
+  {.\xmPictures}          %% then look in \xmPictures,
+  {..\xmPictures}         %% then look a folder up,
+  {../..\xmPictures}      %% then look two folders up,
+  {../../..\xmPictures}   %% then look three folders up.
+  }
+  \end{verbatim}
+With this code, Ximera files can find images. 
+
+
+
+\paragraph{Input paths} allow you to load other documents into your files.
+This is a less common use case for power-users, but we'll mention it here. You can surely avoid
+the use of such files with an enhanced preamble. However, for this document, we
+needed to input various TikZ files to help us draw our diagrams. Hence we
+needed to
+add the location of these files to our input path. We did this in our preamble
+the following way:
+\begin{verbatim}
+%% Where to look for inputs
+\makeatletter     %% make "@" a letter-character
+\def\input@path{  %% When looking for files,
+{./}              %% look first at your level
+{./coverArt/}     %% then in this folder,
+{./introduction/} %% then in this folder.
+}
+\makeatother      %% make "@" an other-character.
+\end{verbatim}
+With this said, modifying input paths is more of an advanced feature and one
+should be careful.
+\end{document}
