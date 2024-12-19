@@ -31,9 +31,9 @@ different.
       thick,font=\ttfamily]
 
       % Thick grey lines
-      \draw[line width=200pt,white!85!black,line cap=round] (2,1.5) -- (2,-4);
+      \draw[line width=200pt,white!85!black,line cap=round] (2,1.5) -- (2,-3.5);
       \draw[line width=200pt,white!85!black,line cap=round] (10,1.5) --
-      (10,-4);
+      (10,-3.5);
 
 
 
@@ -47,14 +47,14 @@ different.
       \node at (2,4) {\Huge \tt ./};
       \node at (10,4) {\Huge \tt ../};
 
-      \node[document] at (0,3) {preamble.tex};
+      \node[document] at (0,3) {xmPreamble.tex};
       \node[document] at (0,2) {worksheetCollection.tex};
       % Define the folders at top level
       \node[folder] at (0,1) {someWorksheet};
       \node[] at (2,-.5) {(folder)};
       \node[folder] at (0,-1.3) {anotherWorksheet};
       \node[] at (2,-2.8) {(folder)};
-      \node[folder] at (0,-3.7) {pictures};
+      \node[folder] at (0,-3.7) {xmPictures};
       \node[] at (2,-5.2) {(folder)};
 
       % Define the documents in the worksheets folder
@@ -62,15 +62,6 @@ different.
       \node[document] at (8,-4) {anyNeededImage.jpg};
       \node[document] at (8,-1.5) {anotherWorksheet.tex};
       \node[document] at (8,-5) {otherNeededImage.jpg};
-
-      % paths at bottom
-      \node at (2,-6.5) {\tt\textbackslash input\{preamble\}};
-      \node at (10,-6.5) {\tt\textbackslash input\{../preamble\}};
-
-
-
-
-
     \end{tikzpicture}
   }
 \end{center}
@@ -79,7 +70,7 @@ In this setting, the file \verb!worksheetCollection.tex! might look something
 like
 \begin{verbatim}
 \document{xourse}
-\input{preamble}
+\author{Ada Lovelace}
 \title{My Groovy Worksheets}
 \begin{abstract}
   Some of my worksheets.
@@ -89,15 +80,6 @@ like
 \activity{someWorksheet/someWorksheet}
 \activity{anotherWorksheet/anotherWorkSheet}
 \end{document}
-\end{verbatim}
-
-The preamble would include:
-\begin{verbatim}
-\graphicspath{  %% When looking for images,
-{./}            %% look here first,
-{./pictures/}   %% then look for a "pictures" folder,
-{../pictures/}  %% which may be a directory up.
-}
 \end{verbatim}
 
 

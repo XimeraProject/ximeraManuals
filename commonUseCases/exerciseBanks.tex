@@ -32,9 +32,9 @@ exercise bank, you might want to have essentially one exercise per file.
       thick,font=\ttfamily]
 
       % Thick grey lines
-      \draw[line width=200pt,white!85!black,line cap=round] (2,1.5) -- (2,-4);
+      \draw[line width=200pt,white!85!black,line cap=round] (2,1.5) -- (2,-2.5);
       \draw[line width=200pt,white!85!black,line cap=round] (10,1.5) --
-      (10,-4);
+      (10,-2.5);
 
       % Connections
       \draw[ultra thick] (2,.6) -- (8,2.6);
@@ -52,7 +52,7 @@ exercise bank, you might want to have essentially one exercise per file.
       \node at (10,4) {\Huge \tt ../};
 
       % Define the folders at top level
-      \node[document] at (0,3) {preamble.tex};
+      \node[document] at (0,3) {xmPreamble.tex};
       \node[folder] at (0,2) {exerciseTopic};
       \node[] at (2,0) {(folder)};
       \node[folder] at (0,-1) {anotherTopic};
@@ -68,12 +68,6 @@ exercise bank, you might want to have essentially one exercise per file.
       \node[document] at (8,-2) {exerciseMine.tex};
       \node[document] at (8,-3) {someExercise.tex};
       \node[document] at (8,-4) {exercise3c.tex};
-
-      % paths at bottom
-      \node at (2,-5.5) {\tt\textbackslash input\{./preamble\}};
-      \node at (2,-6) {or};
-      \node at (2,-6.5) {\tt\textbackslash input\{preamble\}};
-      \node at (10,-6.5) {\tt\textbackslash input\{../preamble\}};
     \end{tikzpicture}
   }
 \end{center}
@@ -82,6 +76,7 @@ The individual exercises that live in folders might look something like:
 
 \begin{verbatim}
 \documentclass{ximera}
+\author{Sophie Germain}
 \begin{document}
 \begin{exercise}
 Compute:
@@ -98,7 +93,7 @@ like
 
 \begin{verbatim}
 \documentclass{xourse}
-\input{../preamble}
+\author{Emmy Noether}
 \title{My exercise banks}
 \begin{document}
 \begin{abstract}
