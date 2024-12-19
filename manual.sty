@@ -34,7 +34,7 @@
 % https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
 % \usepackage{xstring}
 % \usepackage{catchfile}
-\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage[mmddyyyy,hhmmss]{datetime}
 
 % \CatchFileDef{\headfull}{/code/.git/HEAD}{}
 % \StrGobbleRight{\headfull}{1}[\head]
@@ -297,8 +297,8 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
   % \definecolor{bkgndcr}{RGB}{255,100,255} %% Pink 
   % \definecolor{txtcr}{RGB}{20,20,20}      %% Dark Gray
 
-  \definecolor{bkgndcr}{RGB}{255,255,100} %% Yellow
-  \definecolor{txtcr}{RGB}{255,100,255}   %% Pink
+  \definecolor{bkgndcr}{RGB}{255,255,175} %% Yellow
+  \definecolor{txtcr}{RGB}{200,30,200}   %% Pink
 
   % \definecolor{bkgndcr}{RGB}{240,50,50}   %% Red
   % \definecolor{txtcr}{RGB}{255,255,255}   %% White
@@ -313,7 +313,6 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
   \colorlet{otherbkgndcr}{bkgndcr}
   \colorlet{othertxtcr}{txtcr}
   \fi
-
 
   \pagestyle{empty}
   \newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
