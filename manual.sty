@@ -156,6 +156,7 @@
 \renewcommand\sectionstyle{%  MOVE TO CLS
   \def\activitystyle{activity-section}
   \def\maketitle{%
+    \gdef\headerNameContent{\thechaptertitle:~\@title}%% Needs a gdef to make the definition global.
     \addtocounter{section}{1}
     \setcounter{sectiontitlenumber}{\value{section}}
     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
@@ -255,7 +256,7 @@
   \end{scope}
   %\draw[step=1cm,gray,very thin] (0,0) grid (71,10);
 \end{tikzpicture}}%
-\resizebox{!}{.7em}{User\,Manual}\hfill \thechaptertitle:~\@title \hfill \MONTH~\thedate \\[-.1cm]
+\resizebox{!}{.7em}{User\,Manual}\hfill \headerNameContent \hfill \MONTH~\thedate \\[-.1cm]
 \rule{\textwidth}{.1cm}\\[0cm]\rmfamily
 Email:~{\tt ximera@math.osu.edu} \hfill Website:~{\tt https://github.com/ximeraProject/}
 }
