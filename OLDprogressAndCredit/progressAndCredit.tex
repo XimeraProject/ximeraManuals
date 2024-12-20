@@ -63,10 +63,6 @@ Compute $1+2$.
 1+2=\answer{3}
 \]
 \end{problem}
-
-\begin{center}
-    \youtube{FvgF95i0_lw}
-\end{center}
 \end{document}
 \end{verbatim}
 
@@ -75,24 +71,23 @@ Above there are four top level theorem environments above: A \verb!theorem!,
 $20\%$ of the total credit.  The breakdown of points is described below:
 
 \begin{description}
-    \item[Theorem environment] Worth 20\% contingent on completion.
+    \item[Theorem environment] Worth 25\% contingent on completion.
         \begin{description}
             \item[No answerables] Automatically flagged as complete.
         \end{description}
-    \item[Question environment] Worth 20\% contingent on completion.
+    \item[Question environment] Worth 25\% contingent on completion.
         \begin{description}
             \item[selectAll] Sub-environment worth 50\% of the enclosing
                 environment contingent on completion.
             \item[Problem environment] Sub-environment Worth 50\% of the
                 enclosing environment contingent on completion.
         \end{description}
-    \item[Remark environment] Worth 20\% contingent on
+    \item[Remark environment] Worth 25\% contingent on
         completion.
         \begin{description}
             \item[No answerables] Automatically flagged as complete.
         \end{description}
-    \item[Problem environment] Worth 20\% contingent on completion.
-    \item[YouTube video] Worth 20\% contingent on \textit{complete} viewing.
+    \item[Problem environment] Worth 25\% contingent on completion.
 \end{description}
 
 In table form:
@@ -100,15 +95,14 @@ In table form:
     \begin{array}{lcc}
         \text{Environment} & \text{Problem Level Credit} & \text{Total Credit}
         \\\hline
-        \text{Theorem}     &       & 20\%\\
+        \text{Theorem}     &       & 25\%\\
         \text{Question}    &       &     \\
-        \text{\textbullet~selectAll}   & 50\%  & 10\%\\
+        \text{\textbullet~selectAll}   & 50\%  & 12.5\%\\
         \text{\textbullet~Sub-Problem} &       &     \\ 
-        \text{\textbullet~\textbullet~Answer box} & 50\%  & 10\%\\
-        \text{Remark}      &       & 20\%\\
+        \text{\textbullet~\textbullet~Answer box} & 50\%  & 12.5\%\\
+        \text{Remark}      &       & 25\%\\
         \text{Problem}     &       &     \\         
         \text{\textbullet~Answer box}   & 100\% & 20\%\\
-        \text{YouTube}     &       & 20\%   
     \end{array}
 \]
 There are things to notice here.
@@ -123,8 +117,7 @@ There are things to notice here.
           \textbf{at the top-level environment count only}, problems with lots
           of parts, nested or not, can end up with nested problems that are worth
           significantly less compared to a problem that has no nested problems. 
-    \item YouTube videos do not need to be in theorem-like environments and one must watch them in entirety to receive full credit.
-\end{enumerate}
+    \end{enumerate}
 
 \section{Progress within a \texttt{xourse}}
 

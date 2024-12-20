@@ -47,6 +47,31 @@ the whole document via \verb!\activity! and \verb!\practice!.
   web-accessible documents must follow.
 \end{warning}
 
+You may have multiple \verb!xourse! files per repository. They may be nested inside folders. 
+  However, the \verb!xourse! document will only be easily accessible online if it
+  contains a title,
+  abstract, and {\tt\textbackslash maketitle} command.
+
+  If a \verb!xourse! does not contain a title, abstract, and {\tt\textbackslash
+      maketitle} it will still be deployed but you will need to know the path
+  to the
+  file. It will be something like:
+  \begin{center}
+    \tt https://ximera.osu.edu/YOUR-COURSE-NAME/PATH-TO-YOUR-FILE
+  \end{center}
+  It is important that there is no trailing `/' as
+  \begin{itemize}
+    \item \url{https://ximera.osu.edu/moooculus} is correct but
+    \item \sout{\url{https://ximera.osu.edu/moooculus/}} is not.
+  \end{itemize}
+
+
+
+
+
+
+
+
 \section{File structure}
 
 While one can write a Ximera document without the use of folders, this quickly
@@ -75,6 +100,8 @@ A consistent and well thought out set up will allow you and others to easily
 understand and modify your content for years to come. Ideally a document's
 parent folder would contain everything that document needs
 to compile.
+
+
 
 For the repository \texttt{ximeraFirstSteps} we have the following structure:
 \begin{center}%%DIAGRAM OF FILE STRUCTURE
@@ -164,19 +191,6 @@ the \verb!xourse! document.
   The \verb!xourse! document will only be easily accessible online if it
   contains a title,
   abstract, and {\tt\textbackslash maketitle} command.
-
-  If a \verb!xourse! does not contain a title, abstract, and {\tt\textbackslash
-      maketitle} it will still be deployed but you will need to know the path
-  to the
-  file. It will be something like:
-  \begin{center}
-    \tt https://ximera.osu.edu/YOUR-COURSE-NAME/PATH-TO-YOUR-FILE
-  \end{center}
-  It is important that there is no trailing `/' as
-  \begin{itemize}
-    \item \url{https://ximera.osu.edu/moooculus} is correct but
-    \item \sout{\url{https://ximera.osu.edu/moooculus/}} is not.
-  \end{itemize}
 \end{warning}
 
 There are two different commands we use to add

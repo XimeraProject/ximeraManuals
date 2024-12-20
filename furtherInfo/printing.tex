@@ -1,0 +1,137 @@
+\documentclass{ximera}
+
+\title{Printing with style}
+
+\author{Bart Snapp}
+
+\begin{document}
+\begin{abstract}
+    We describe methods of styling the print versions of Ximera materials.
+\end{abstract}
+\maketitle
+
+\section{Documentclass options}
+
+There are a number of options for the document class, though their
+effects are only seen in the PDF:
+
+%% Copied from dtx
+\begin{description}
+    \item[\tt\bfseries handout] The default behavior of the class is to display
+        \textbf{all} content. This means that if any questions are asked, all
+        answers
+        are shown. Moreover, some content will only have a meaningful
+        presentation when
+        displayed online. When compiled without any options, this content will
+        be shown
+        too. This option will supress such content and generate a reasonable
+        printiable
+        ``handout.''
+    \item[\tt\bfseries noauthor] By default, authors are listed at the bottom
+        of
+        the first page of a document. This option will supress the listing of
+        the
+        authors.
+    \item[\tt\bfseries nooutcomes] By default, learning outcomes are listed at
+        the
+        bottom of the first page of a document. This option will supress the
+        listing of
+        the learning outcomes.
+    \item[\tt\bfseries instructornotes] This option will turn on (and off)
+        notes
+        written for the instructor.
+    \item[\tt\bfseries noinstructornotes] This option will turn off (and on)
+        notes
+        written for the instructor.
+    \item[\tt\bfseries hints] When the \texttt{handout} option is used, hints
+        are
+        not shown. This option will make hints visible in handout mode.
+    \item[\tt\bfseries newpage] This option will start each problem-like
+        environment (\texttt{exercise}, \texttt{question}, \texttt{problem},
+        and
+        \texttt{exploration}) on a new page.
+    \item[\tt\bfseries numbers] This option will number the titles of the
+        activity.
+        By default the activities are unnumbered.
+    \item[\tt\bfseries wordchoicegiven] This option will replace the choices
+        shown
+        by \texttt{wordChoice} with the correct choice. No indication of the
+        \texttt{wordChoice} environment will be shown.
+\end{description}
+
+\section{The preamble versus printing styles}
+
+The preamble is used to make the Ximera document compile. In fact, it may be
+the case that some files don't even need the preamble. When this is the case,
+you don't need to worry about it.
+
+The printing style is used to make cosmetic changes to the PDF. They are only
+included in the \verb!xourse! files and are enclosed in \verb!\pdfOnly!. For
+example the printstyles for this document are loaded with
+\begin{verbatim}
+\pdfOnly{\usepackage{manual}}
+\end{verbatim}
+
+\section{When and how to use \texttt{prompt}}
+
+Prompt allows you to make your exercises look beautiful in the PDF.  As an
+example consider this exercise:
+\begin{verbatim}
+\begin{exercise}
+Compute $\frac{d}{dx} x^2$
+\begin{prompt}
+\[
+  \frac{d}{dx} x^2 = \answer{2x}
+\]
+\end{prompt}
+\end{exercise}
+\end{verbatim}
+It renders as 
+\begin{exercise}
+Compute $\frac{d}{dx} x^2$
+\begin{prompt}
+\[
+  \frac{d}{dx} x^2 = \answer{2x}
+\]
+\end{prompt}
+\end{exercise} 
+The environment \verb!prompt! hides the display math in the PDF. In a PDF, you don't need answer boxes!
+As another example, consider:
+\begin{verbatim}
+\begin{exercise}
+ Consider the planes defined by the equations below.
+\begin{align*}
+  P_1:  \quad 4 &= 2x-y+3z  \\
+  P_2:  \quad 5 &= 4x-2y+6z \\ 
+  P_3:  \quad 7 &= 5x+2y+z
+\end{align*}
+Describe the relationships between the planes 
+$P_1$, $P_2$, and $P_3$ in terms of ``parallel,'' 
+``orthogonal,'' or ``neither.''
+\begin{prompt}
+\begin{enumerate}
+  \item The planes $P_1$ and $P_2$ are \wordChoice{
+    \choice[correct]{parallel}
+    \choice{orthogonal}
+    \choice{neither parallel nor orthogonal}
+    }
+  \item The planes $P_1$ and $P_3$ are \wordChoice{
+    \choice{parallel}
+    \choice{orthogonal}
+    \choice[correct]
+    {neither parallel nor orthogonal}}.
+  \item The planes $P_2$ and $P_3$ are \wordChoice{
+    \choice{parallel}
+    \choice{orthogonal}
+    \choice[correct]{neither parallel nor orthogonal}
+    }
+\end{enumerate}
+\end{prompt}
+\end{exercise}
+\end{verbatim}
+The environment \verb!prompt! says that the stuff inside the environment is
+used as a \textit{prompt} for the student. In the PDF, everything within the
+prompt is hidden, as a student doesn't need that content to answer the question
+using pencil and paper.
+
+\end{document}

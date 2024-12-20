@@ -1,6 +1,6 @@
 \documentclass{ximera}
 
-\title{Desmos and Geogebra}
+\title{Desmos and GeoGebra}
 
 \begin{document}
 \begin{abstract}
@@ -10,7 +10,7 @@
 
 \section{The graph command}
 
-The easiest way to include an interactive graph is to use the
+The easiest way to include an interactive Desmos graph is to use the
 \verb|\graph| command. Unfortunately, the \verb|\graph| command
 doesn't draw a graph in the PDF, rather, it states (in words) that a
 graph is produced. That is,
@@ -23,6 +23,10 @@ produces
 \[
   \graph{x^2,x^3}
 \]
+in the PDF. Online, the command produces something like this:
+\begin{image}
+  \includegraphics[width=10cm]{desmosGraph.png}
+\end{image}
 There are a number of options concerning the function being graphed:
 \begin{verbatim}
 \graph{x^2,x^3}                     %% just x^2 and x^3
