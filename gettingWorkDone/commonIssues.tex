@@ -9,7 +9,7 @@
 \end{abstract}
 \maketitle
 
-\paragraph{If the Bake fails} and you are working in a Codespace, then you can
+\paragraph{If the SERVE fails} and you are working in a codespace, then you can
 use \verb|xake| directly to debug your code.
 You can use \verb!pdflatex! to compile and use
 \begin{verbatim}
@@ -22,6 +22,33 @@ directly while
 slowly moving \verb!\end{document}! down through the document. By starting at
 the top, the file should compile, and then you should be able to locate the
 exact location of the bug.
+
+\paragraph{If codespace is not acting correctly,} you can always ``Delete'' it,
+and make a new one.
+
+
+Files in \verb!xmScripts/! must be executable. If there is an issue with
+permissions, open the codespace and run
+\begin{verbatim}
+chmod +x ~/xmScripts/xmlatex*
+\end{verbatim}
+In a codespace (or inside a Docker container), \verb!pdflatex! and \verb!xake!
+(Ximera's make program)  are available and the \verb!xmlatex! script is in your
+PATH. This means that the following commands are available to the user:
+\begin{verbatim}
+xmlatex compilePdf <path-to-your-texfile>
+xmlatex compile <path-to-your-texfile>
+xmlatex bake
+xmlatex serve
+xmlatex updateDevEnv
+\end{verbatim}
+The final command will update your authoring environment to our most recent release. 
+
+
+
+
+
+
 
 \paragraph{An svg-viewer missing} error message means that there was a
 compilation error that confused Xake. The offending file needs to be
@@ -63,8 +90,8 @@ can be caused by several issues, each with a different solution:
         \end{description}
 \end{description}
 
-\paragraph{unknown node type: parser error} message. This appears
-sometimes rather than the actual rendered mathematics. This is due to
+\paragraph{unknown node type: parser error} message. This sometimes appears
+rather than the actual rendered mathematics. This is due to
 a
 corruption in the cookies/cache for the browser, and the person
 seeing this
