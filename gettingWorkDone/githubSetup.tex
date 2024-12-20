@@ -49,14 +49,17 @@ to ensure that the files were added.
 You can further check your work by starting a codespace in your repository.
 
 \paragraph{Deploy an existing repository from your machine} is for experienced
-users who can install software on their own computer. In particular, you will need to install:
+users who can install software on their own computer. In particular, you will
+need to install:
 \begin{description}
-    \item[Docker] is a development utility allow you to easily run self-contained applications on your
-computer. You must install and start Docker before you can deploy. You can just let
-it run in the background. 
-\item[VS Code Desktop] is a popular text-editor. It is has strong \LaTeX, git,
-and Docker integration. It provides a UNIX-like command line interface on
-Windows machines via Microsoft's WSL (Windows Subsystem for Linux).
+    \item[Docker] is a development utility allow you to easily run
+        self-contained applications on your
+        computer. You must install and start Docker before you can deploy. You can just
+        let
+        it run in the background.
+    \item[VS Code Desktop] is a popular text-editor. It is has strong \LaTeX, git,
+        and Docker integration. It provides a UNIX-like command line interface on
+        Windows machines via Microsoft's WSL (Windows Subsystem for Linux).
 \end{description}
 Once these applications are installed, a typical workflow will be:
 \begin{enumerate}
@@ -69,14 +72,18 @@ Once these applications are installed, a typical workflow will be:
           \verb!.gitignore!, will not be shown.
     \item To run a special command (like search and replace) do
           \verb!Ctrl-Shift-p!, and search for the command.
-    \item To toggle a UNIX-like terminal, use \verb!Ctrl-~!.
+    \item To toggle a UNIX-like terminal, use \verb!Ctrl-~!. Note, technically
+          it is \verb!Ctrl-`!, but perhaps this is \textit{more} confusing than our
+          misdirection.
 \end{enumerate}
 
-Now, copy the following files from either \verb!ximeraFirstSteps! or \verb!ximeraNewProject!
+Now, copy the following files from either \verb!ximeraFirstSteps! or
+\verb!ximeraNewProject!
 into the repository you wish to deploy.
 \begin{description}
-    \item[\texttt{.devcontainer/}] (only needed if you want to additionally deploy from
-          a GitHub codespace)
+    \item[\texttt{.devcontainer/}] (only needed if you want to additionally
+        deploy from
+        a GitHub codespace)
     \item[\texttt{xmScripts/}] This is a folder that contains our Ximera
         scripts.
     \item[\texttt{.vscode/}] This is a folder that contains our VS Code
@@ -86,14 +93,17 @@ into the repository you wish to deploy.
         you \textbf{replace yours with ours.}
 \end{description}
 Commit your changes to GitHub and view your repository online via a web browser
-to ensure that the files were added. Now, move the \verb!.xmKeyFile! to your repository.
-\textbf{If you are deploying from your machine, do not commit the \texttt{.xmKeyFile} to the repository.}
+to ensure that the files were added.
 
+\begin{warning}
+    If you've added \verb!.devcontainer/! to your repository and open it
+    locally, VS Code will ask you if you want to open a Development Container.
+    Surely you don't, since you are working locally, answer this question with a
+    ``No.'' If you answer ``Yes'' you will want to quit the Development Container.
+\end{warning}
 
-
-
-
-
-
+Now, move the \verb!.xmKeyFile! to your repository.
+\textbf{If you are deploying from your machine, do not commit the
+    \texttt{.xmKeyFile} to the repository.}
 
 \end{document}

@@ -28,7 +28,7 @@ change it and  make it your own.
     a
     virtual
     computer, lost in the cloud. To make these changes to your actual GitHub
-    repository, you need to ``sync'' them back.
+    repository, you need to ``Sync'' them back.
 \pdfOnly{\end{multicols}}
 
 \newpage
@@ -38,7 +38,7 @@ change it and  make it your own.
 \end{image}
 
 \pdfOnly{\begin{multicols}{2}}
-    Remember Git is like a magical notebook that remembers every change you
+    Remember, \verb!git! is version control software. This means that it is like a magical notebook that remembers every change you
     make to your
     project. It helps you go back in time if something breaks and lets you
     share
@@ -54,7 +54,7 @@ change it and  make it your own.
     to a
     file, you're saying,
     \begin{quote}
-        \emph{``Hey Git, this file is ready to be saved!''}
+        \emph{``Hey git, this file is ready to be saved!''}
     \end{quote}
 
     This adds the file to a special list called the \textbf{staging area}. Only
@@ -76,12 +76,12 @@ change it and  make it your own.
               button.
         \item Click ``Commit.''
     \end{enumerate}
-    This tells Git:
+    This tells \verb!git!:
     \begin{quote}
         \emph{``Save these changes forever, and here's a note about what I
             did.''}
     \end{quote}
-    Git takes a snapshot of the staged files and saves them with your message.
+    \verb!git! takes a snapshot of the staged files and saves them with your message.
     If you would ever need to undo your work from this point, this message will
     help guide your future-self.
 \pdfOnly{\end{multicols}}
@@ -93,11 +93,11 @@ change it and  make it your own.
 \end{image}
 \pdfOnly{\begin{multicols}{2}}
 \paragraph{Step 3: Syncing with GitHub (Sending Your Work Online)}
-When you click \textbf{``Commit and Sync''}, you're telling Git:
+When you click \textbf{``Sync Changes''}, you're telling \verb!git!:
 \begin{quote}
-    \emph{``Send my saved changes to the big Git notebook on GitHub.''}
+    \emph{``Send my saved changes to the repository on GitHub.''}
 \end{quote}
-Git takes your saved changes and sends them to your \textbf{remote
+\verb!git! takes your saved changes and sends them to your \textbf{remote
     repository}
 (the one on GitHub). At the same time, it checks if there are any new
 changes from your teammates and brings them back to you. At this point,
@@ -118,37 +118,35 @@ To check that everything worked correctly, go to
 Above we see my repository, and we see that my change was indeed made.
 
 
-\paragraph{The Git Workflow}
-
-For a new author, this can be overwhelming. Here are the steps once again.
-\begin{enumerate}
-    \item \textbf{Stage:} Use the ``+'' button to pick what you want to
-          stage for commit (save).
+\paragraph{The \texttt{git} workflow} can be overwhelming for a new author. Here are the steps in a concise form:
+\begin{description}
+    \item[Stage] Use the ``+'' button to pick what you want to
+          stage for commit (save). For the command-line-nerd:
 \begin{verbatim}
 git add FILE-NAME-1 FILE-NAME-2  # You can list multiple files or
 git add -u                       # Add all modified files 
 \end{verbatim}
-    \item \textbf{Commit:} Write a message and click ``commit'' to save
+    \item[Commit] Write a message and click ``Commit'' to save
           your
-          changes.
+          changes. For the command-line-nerd:
 \begin{verbatim}
 git commit -m 'A GOOD MESSAGE'
 \end{verbatim}
-    \item \textbf{Sync:} Send your changes to GitHub and get updates from
+    \item[Sync Changes] Send your changes to GitHub and get updates from
           your
           team.
+          For the command-line-nerd:
 \begin{verbatim}
 git pull && git push
 \end{verbatim}
-\end{enumerate}
+\end{description}
 
-\paragraph{Checking Your Work}
-
-After syncing, go to:
+\paragraph{Checking your work} is easy. Simply go to:
 \begin{center}
     \url{https://github.com/YOUR-GIT-USER-NAME/YOUR-REPO-NAME}
 \end{center}
 You should see your changes there!
+\pdfOnly{\columnbreak}
 \pdfOnly{\end{multicols}}
 
 
