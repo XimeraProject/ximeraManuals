@@ -118,17 +118,16 @@ To check that everything worked correctly, go to
 Above we see my repository, and we see that my change was indeed made.
 
 
-\paragraph{The \texttt{git} workflow} can be overwhelming for a new author. Here are the steps in a concise form:
+\paragraph{The \texttt{git} workflow} can seem overwhelming. Use the VSCode buttons, or type explicit commands in the Terminal.
 \begin{description}
-    \item[Stage] Use the ``+'' button to pick what you want to
-          stage for commit (save). For the command-line-nerd:
+    \item[Stage] Select with the ``+'' button what you want to
+        commit (save). Or type
 \begin{verbatim}
 git add FILE-NAME-1 FILE-NAME-2  # You can list multiple files or
 git add -u                       # Add all modified files 
 \end{verbatim}
     \item[Commit] Write a message and click ``Commit'' to save
-          your
-          changes. For the command-line-nerd:
+          your changes. 
 \begin{verbatim}
 git commit -m 'A GOOD MESSAGE'
 \end{verbatim}
@@ -136,18 +135,13 @@ git commit -m 'A GOOD MESSAGE'
 \pdfOnly{\begin{minipage}{\columnwidth}}
 \pdfOnly{\begin{description}}    
     \item[Sync changes] Send your changes to GitHub and get updates from
-          your
-          team.
-          For the command-line-nerd:
+          your  team.
 \begin{verbatim}
 git pull && git push
 \end{verbatim}
 \end{description}
-\paragraph{Checking your work} is easy. Simply go to:
-\begin{center}
+\paragraph{Check} on 
     \url{https://github.com/YOUR-GIT-USER-NAME/YOUR-REPO-NAME}
-\end{center}
-You should see your changes there!
 \pdfOnly{\end{minipage}}
 \pdfOnly{\end{multicols}}
 
