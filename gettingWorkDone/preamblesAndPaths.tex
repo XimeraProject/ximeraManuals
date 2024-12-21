@@ -123,15 +123,14 @@ This is a less common use case for power-users, but we'll mention it here. You c
 the use of such files with an enhanced preamble. However, for this document, we
 needed to input various TikZ files to help us draw our diagrams. Hence we
 needed to
-add the location of these files to our input path. We did this in our preamble
+add the location of these files to our input path. We did this in our \verb!xmPreamble.tex!
 the following way:
 \begin{verbatim}
 %% Where to look for inputs
 \makeatletter     %% make "@" a letter-character
 \def\input@path{  %% When looking for files,
 {./}              %% look first at your level
-{./coverArt/}     %% then in this folder,
-{./introduction/} %% then in this folder.
+{./xmPictures/}   %% then in this folder,
 }
 \makeatother      %% make "@" an other-character.
 \end{verbatim}

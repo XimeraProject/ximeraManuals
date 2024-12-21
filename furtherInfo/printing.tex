@@ -61,16 +61,30 @@ effects are only seen in the PDF:
 
 \section{The preamble versus printing styles}
 
-The preamble is used to make the Ximera document compile. In fact, it may be
-the case that some files don't even need the preamble. When this is the case,
-you don't need to worry about it.
+\paragraph{The preamble} is used to make the Ximera document compile. You include things like:
+\begin{verbatim}
+\newcommand{\R}{\mathbb R}
+\renecommand{\vec}{\mathbf}
+\end{verbatim}
 
-The printing style is used to make cosmetic changes to the PDF. They are only
+
+\paragraph{The printing style} is used to make cosmetic changes to the PDF. They are only
 included in the \verb!xourse! files and are enclosed in \verb!\pdfOnly!. For
 example the printstyles for this document are loaded with
 \begin{verbatim}
 \pdfOnly{\usepackage{manual}}
 \end{verbatim}
+In the print styles, you can change how the document looks cosmetically with things like:
+\begin{verbatim}
+\let\warning\relax
+\let\endwarning\relax
+\newtheoremstyle{warning}
+{\topsep}{\topsep}{\rmfamily}{}{\bfseries\sffamily}{:}{ }{#1}
+\theoremstyle{warning}
+\newtheorem*{warning}{WARNING}
+\surroundwithmdframed[innertopmargin=10pt]{warning}
+\end{verbatim}
+
 
 \section{When and how to use \texttt{prompt}}
 

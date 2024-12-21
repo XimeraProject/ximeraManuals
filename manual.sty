@@ -65,12 +65,7 @@
   \fi}
 
 
-% Frame Environment
-\NewEnviron{xframe}{
-  \begin{mdframed}[roundcorner=2pt]
-    \BODY
-  \end{mdframed}
-}
+
 % \def\cleartheorem#1{%
 %     \expandafter\let\csname#1\endcsname\relax
 %     \expandafter\let\csname c@#1\endcsname\relax
@@ -132,21 +127,6 @@
 
 
 
-%% \part does not print anything, but it's in the TOC
-%% (and it is used online ...)
-%% 
-% \makeatletter
-% \renewcommand\part[1]{%
-%   %\thispagestyle{empty}
-%   \if@openright
-%     \cleardoublepage
-%   \else
-%     \clearpage
-%   \fi
-%   \refstepcounter{part}% Increase the part counter
-%   \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}% Add the part to the table of contents
-% }
-% \makeatother
 \renewcommand{\part}[1]{\chapterstyle\title{#1}\begin{abstract}\end{abstract}\maketitle\def\thechaptertitle{#1}}
 
 
