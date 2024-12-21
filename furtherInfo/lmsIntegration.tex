@@ -1,0 +1,49 @@
+\documentclass{ximera}
+
+\title{LMS integration}
+\begin{document}
+\begin{abstract}
+Send grades back to your Learning Management System.
+\end{abstract}
+\maketitle
+
+We are building an assignment-grade database to seamlessly serve learners at institutions that
+support LTI 1.3. Additionally, we will provide alternatives for
+self-learners
+and situations where LTI 1.3 support is not available.
+\begin{center}
+    \begin{tikzpicture}
+        \node at (-3,1) [cloud, draw,cloud puffs=10,cloud puff arc=120,
+            aspect=2, inner ysep=1em,scale=.8] {};
+        \node at (-3,1) {LMS};
+        \node at (-3,-1) {\resizebox{1cm}{!}{\input{computer.tex}}};
+        \node at (-3,-2) {Students with LTI};
+        \draw[->] (-3.1,-.4) -- (-3.1,.4);
+        \draw[<-] (-2.9,-.4) -- (-2.9,.4);
+        \node at (0,0) {\resizebox{1cm}{!}{\input{modulus.tex}}};
+        \node at (0,-1) {Assignment};
+        \node at (0,-1.4) {Database};
+        \draw[->] (-2,.8) -- (-.6,.2);
+        \draw[<-] (-2.1,.6) -- (-.7,0);
+        \node at (3,-1) {\resizebox{1cm}{!}{\input{server.tex}}};
+        \node at (3,-2) {Ximera};
+        \node at (3,-2.4) {Server};
+        \node at (3,1) {\resizebox{1cm}{!}{\input{computer.tex}}};
+        \node at (3,2) {Self-learner};
+        \draw[->] (3.1,-.4) -- (3.1,.4);
+        \draw[<-] (2.9,-.4) -- (2.9,.4);
+        \draw[->] (2,.8) -- (.6,.2);
+        \draw[<-] (2.1,.6) -- (.7,0);
+        \draw[->] (2.3,-1) -- (.6,-.4);
+        \draw[<-] (2.4,-.8) -- (.7,-.2);
+    \end{tikzpicture}
+\end{center}
+
+
+While this feature is not yet available yet, it will be ready soon.
+
+
+
+
+
+\end{document}
