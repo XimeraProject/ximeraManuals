@@ -50,6 +50,22 @@ You can see the source code for any of the activities above by appending
 
 We wish to write Ximera documents as simply as possible. Here are some tips.
 
+\paragraph{Give them descriptive file names} so that someone can figure out what file they are looking at. File names like \verb!problem1.tex! are usually less helpful than say, \verb!basicDerivativePractice1.tex!.
+In particular, all document  names used for Ximera must be web-safe! This means
+    they:
+    \begin{description}
+        \item[Must end with \texttt{.tex}] as our compiler will not attempt to compile non-\TeX\ documents.   
+      \item[Must only use alphanumeric English characters] Meaning: a,b, \dots,
+        z, A,B, \dots, Z, 0,1, \dots, 9, and hyphen `-' and underscore `\_'
+        though the
+        last two are discouraged.
+      \item[Cannot use any other characters, including spaces] This means all
+        Ximera document names must be a single word.
+    \end{description}
+    This is not a limitation of Ximera, rather it is a rule that nearly all
+    web-accessible documents must follow.
+
+
 \paragraph{Use basic \LaTeX} environments and commands like:
 \verb!enumerate!,
 \verb!itemize!,
