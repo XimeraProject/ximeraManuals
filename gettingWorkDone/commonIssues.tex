@@ -9,6 +9,12 @@
 \end{abstract}
 \maketitle
 
+\section{Compilation issues}
+
+While we seek to support as much of \LaTeX\ as possible, there are features
+that are either not implemented, difficult to implement, or impossible to
+implement.
+
 \paragraph{If the SERVE fails} and you are working in a codespace, then you can
 use \verb|xake| directly to debug your code.
 You can use \verb!pdflatex! to compile and use
@@ -23,11 +29,20 @@ slowly moving \verb!\end{document}! down through the document. By starting at
 the top, the file should compile, and then you should be able to locate the
 exact location of the bug.
 
+\paragraph{If a \LaTeX\ package is unsupported} and you need to use it, you can
+modify \verb!xmScripts/config.txt!
+\begin{verbatim}
+ # version of Ximera xake container to use (with xmlatex)
+ #
+ # : "${XAKE_VERSION:=v2.4.2-full}"   # with texlive_full
+\end{verbatim}
+by removing the \verb!#! in front of the container ending in ``full.'' Note,
+this is a \textbf{large} container, and hence is not shipped by default.
+
 \paragraph{If codespace is not acting correctly,} you can always ``Delete'' it,
 and make a new one.
 
-
-Files in \verb!xmScripts/! must be executable. If there is an issue with
+\paragraph{Files in \texttt{xmScripts/}} must be executable. If there is an issue with
 permissions, open the codespace and run
 \begin{verbatim}
 chmod +x ~/xmScripts/xmlatex*
@@ -42,13 +57,15 @@ xmlatex bake
 xmlatex serve
 xmlatex updateDevEnv
 \end{verbatim}
-The final command will update your authoring environment to our most recent release. 
+The final command will update your authoring environment to our most recent
+release.
 
+\section{Online issues}
 
-
-
-
-
+Sometimes there is strange behavior online. If this happens, start by
+\textbf{visiting the offending URL in a private browser}. If the content looks
+good in a private browser, than the issue is due to cookies or browser
+settings.
 
 \paragraph{An svg-viewer missing} error message means that there was a
 compilation error that confused Xake. The offending file needs to be
