@@ -253,7 +253,11 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
 
 
 
-
+\newenvironment{absolutelynopagebreak} %% to stop page break in cover.
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
 
 \setcounter{tocdepth}{1}
 \usepackage{pagecolor}
@@ -294,8 +298,12 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
   \colorlet{othertxtcr}{txtcr}
   \fi
 
-  \pagestyle{empty}
+\pagestyle{empty}
+\iflulu
+\pdfpagewidth=11.125in \pdfpageheight=9.75in \newgeometry{hmargin={1cm,1cm},vmargin={1.3175cm,1cm}}
+\else 
   \newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
+\fi 
   \pagecolor{bkgndcr}
   \boldmath % Makes all math text bold
   \bfseries % Makes all text bold
@@ -312,11 +320,11 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
   
   \begin{center}
     \scalebox{3}{Fowler $\bullet$ Obbels $\bullet$ Nowell $\bullet$ Snapp}
-  \end{center}
+  \end{center}\begin{absolutelynopagebreak}
   \small This document was typeset on \today. \hfill \Large\textsf{\ccbyncsa}\\
   \small\texttt{GIT COMMIT: \commit}\\
-  \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}
-\clearpage\pagecolor{white}\color{black}\unboldmath\normalfont\restoregeometry\colorlet{bkgndcr}{white}\colorlet{txtcr}{black}
+  \small Source: {\hypersetup{allcolors=txtcr}\docURL}\hfill developed in \textbf{XIMERA}\end{absolutelynopagebreak}
+\clearpage\pagecolor{white}\color{black}\unboldmath\normalfont\restoregeometry\colorlet{bkgndcr}{white}\colorlet{txtcr}{black}\pdfpagewidth=11in\pdfpageheight=8.5in 
 \mbox{}
 \vspace{3cm}
 \begin{center}
