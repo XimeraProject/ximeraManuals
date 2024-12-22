@@ -1,5 +1,5 @@
 ## Ignore.xmKeyFile  (contains dummy key, but potential real key should probably never be committed)
-*xmKeyFile*
+*.xmKeyFile*
 ## Don't push ximeraserve  (Obsolete now: till 11/2024 used instead of .xmKeyFile)
 *.ximeraserve*
 #
@@ -9,6 +9,7 @@
 *.pdf
 ## Folder xmPictures is in the graphicspath, and should contain the pictures used in \includegraphics
 ## So in xmPictures things presumably must be committed
+xmPictures/*
 !xmPictures/*.jpg
 !xmPictures/*.pdf
 !xmPictures/*.png
