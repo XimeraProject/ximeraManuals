@@ -146,7 +146,7 @@ Now click on ``New secret.''
 
 \section{GPG keys on your machine}
 
-For experience GitHub users. To deploy from your machine, you need a file in
+This section is for experience GitHub users. To deploy from your machine, you need a file in
 the folder of the repository of
 your content that \textbf{is not committed to the repository}. Please reach out
 to Ximera developers for help with this step. You will also need to modify
@@ -201,13 +201,15 @@ configuration files.
 % We should discuss this more once the discussion in the repository
 % \verb!ximeraFirstSteps! is steady.
 
-\section{Configuration and deploy}
 
-Once your GPG keys are set up, use VS Code to open the file:
+\section{Setting the remote Ximera server}
+
+
+Currently,  this is subject to change, you need to modify: 
 \begin{verbatim}
 xmScripts/config.txt
 \end{verbatim}
-around line 20, you will find something like:
+Around line 20, you will find something like:
 \begin{verbatim}
 ## : "${XIMERA_NAME:=myreponame}"
 ## : "${XIMERA_URL:=http://localhost:2000/}"
@@ -217,14 +219,14 @@ around line 20, you will find something like:
 \end{verbatim}
 Remove the \verb!##! from the first line, uncommenting it, and set
 \verb!myreponame! to be what
-you want your content to be called online.
+you want your content to be called online. 
 \begin{warning}
     Your name for your content must be \textbf{all lower case} alphanumeric
     English characters. Lower case letters and numbers are fine.
 \end{warning}
 Next uncomment, remove the \verb!##!, from the line of the server you wish to
 deploy to. Save the file. It would probably be best to not commit it to the
-repository, though it really doesn't matter. Now, when you press ``SERVE,'' your Ximera content will be deployed online!
+repository, though it really doesn't matter. Now, when you press ``SERVE,'' your Ximera content will be deployed online! Please feel free to reach out to the Ximera developers  for help at this step.
 
 
 
