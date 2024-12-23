@@ -30,7 +30,7 @@ the top, the file should compile, and then you should be able to locate the
 exact location of the bug.
 
 \paragraph{If a \LaTeX\ package is unsupported} and you need to use it, you can
-modify \verb!xmScripts/config.txt!
+modify \verb!xmScripts/config.txt!, \textbf{note this is subject to change}
 \begin{verbatim}
  # version of Ximera xake container to use (with xmlatex)
  #
@@ -38,6 +38,12 @@ modify \verb!xmScripts/config.txt!
 \end{verbatim}
 by removing the \verb!#! in front of the container ending in ``full.'' Note,
 this is a \textbf{large} container, and hence is not shipped by default.
+If you want to also deploy from a codespace, you will also need to, \textbf{again, subject to change}
+\begin{verbatim}
+image: ghcr.io/ximeraproject/xake2024:v2.4.2
+# image: ghcr.io/ximeraproject/xake2024:v2.4.2-full
+\end{verbatim}
+By commenting, adding a \verb!#! to, the beginning of the first line and removing \verb!#! from the second.
 
 \paragraph{If codespace is not acting correctly,} you can always ``Delete'' it,
 and make a new one.
