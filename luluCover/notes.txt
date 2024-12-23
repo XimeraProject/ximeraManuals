@@ -1,1 +1,8 @@
-# Start by compiling ximeraUserManual with \luluture
+# How to make the cover
+
+# Start by compiling ximeraUserManual with \colortrue and \luluture
+
+
+# Print to the a custom size as given by the Lulu template
+Width: 11.13 in
+Height: 8.75 in
