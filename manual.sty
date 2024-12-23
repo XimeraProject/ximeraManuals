@@ -300,7 +300,7 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
 
 \pagestyle{empty}
 \iflulu
-\pdfpagewidth=11.125in \pdfpageheight=9.75in \newgeometry{hmargin={1cm,1cm},vmargin={1.3175cm,1cm}}
+\pdfpagewidth=11.125in \pdfpageheight=9.75in \newgeometry{hmargin={1cm,1cm},vmargin={1.3175cm,0cm}}
 \else 
   \newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
 \fi 
@@ -349,7 +349,11 @@ XIMERA\quad FORM \quad \myrandom \quad GIT \quad COMMIT \quad %\branch(
 
 \newcommand{\backCover}{
 \pagestyle{empty}
-\newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
+\iflulu
+\pdfpagewidth=11.125in \pdfpageheight=9.75in \newgeometry{hmargin={1cm,1.3175cm},vmargin={1.3175cm,0cm}}
+\else 
+  \newgeometry{hmargin={1cm,1cm},vmargin={1cm,1cm}}
+\fi 
 \onecolumn
 \colorlet{bkgndcr}{otherbkgndcr}
 \colorlet{txtcr}{othertxtcr}
