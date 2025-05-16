@@ -21,11 +21,12 @@ page is essentially infinite in length. Moreover, the \textit{consumers} of the
 content we create are \textit{students}. Students are also unconcerned with
 awkward page layout. Students prefer to see the image exactly when it is
 mentioned. With this said, we suggest wrapping all images in either a
-\verb!center! environment or an (Ximera-specific) \verb!image! environment.
+\verb!center! environment or a (Ximera-specific) \verb!image! environment.
 The environment \verb!image! centers and automatically scales the contents.  If
 an author finds themselves printing to various page-sizes, \verb!image! might
 be preferred. Moreover, \verb!image! can be redefined globally to act
-identically to \verb!center!, but \verb!center! cannot be redefined.
+identically to \verb!center!, but \verb!center! cannot be redefined. In
+particular, we utilize this feature of \verb!image! in this manual.
 
 If you use \verb!center!, you would write something like:
 \begin{verbatim}
@@ -42,7 +43,7 @@ If you use \verb!image!, you would write something like:
 
 The disadvantage of using \verb!\includegraphics! is that you need to handle
 the paths to the images in some way. However, we now suggest you use a global
-graphics path: You may store all your graphics inside \verb!\xmPictures!. 
+graphics path: You may store all your graphics inside \verb!\xmPictures!.
 This means that any required \verb!*.jpg!, \verb!*.png!, and \verb!*.pdf! can
 be found, assuming your file isn't nested too deep.
 Moreover, we've set up the \verb!.gitignore! to \text{not ignore} \verb!*.jpg!,
@@ -61,7 +62,7 @@ graphics paths.
 \section{TikZ is the preferred method for graphics}
 
 Most of TikZ is supported,
-and these are rendered as PNGs online. 
+and these are rendered as PNGs online.
 For example, the following code
 \begin{verbatim}
 \begin{image}
@@ -105,8 +106,7 @@ generates the image below:
   \end{tikzpicture}
 \end{image}
 
-When you use TikZ for graphics, you don't need to worry about the \verb!\graphicspath! and your work is completely self-contained. 
-
-
+When you use TikZ for graphics, you don't need to worry about the
+\verb!\graphicspath! and your work is completely self-contained.
 
 \end{document}
