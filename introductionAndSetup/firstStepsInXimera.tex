@@ -12,23 +12,27 @@
         \maketitle
 
         To use Ximera, you must have a \link[GitHub]{https://github.com}
-        account.
-        GitHub is a web platform where developers can store, share, and
-        manage
+        account. GitHub is a web platform where developers can store, share,
+        and manage
         their code. It uses \verb!git!, popular software for version control,
         to help
-        teams work together simultaneously
-        without overwriting each other's changes. GitHub has	issue tracking,
-        pull requests for proposing changes, and other project management
-        tools. It's
-        like a shared folder
-        for coding, designed to help teams work smarter and track progress.
-        Go to \url{https://github.com} and either sign-up or log-in. Note, you
-        must
-        know
-        your \textbf{username} and \textbf{password}, so store them in a safe
-        place; like in a safe, or under your bed. After you have a GitHub
-        account, log-in and go to:
+        teams work together simultaneously without overwriting each other's
+        changes.
+        GitHub has
+        \begin{itemize}
+            \item issue tracking,
+            \item pull requests for proposing changes,
+            \item the ability to merge code,
+        \end{itemize}
+        and other project management tools. It's like a shared folder for
+        coding, designed to
+        help teams work together and track progress. Go to
+        \url{https://github.com} and
+        either sign-up or log-in. Note, you must know your \textbf{username}
+        and
+        \textbf{password}, so store them in a safe place; like in a safe, or
+        under your
+        bed. After you have a GitHub account, log-in and go to:
         \begin{center}
             \url{https://github.com/ximeraProject/ximeraFirstSteps}
             %% 230% on my horiz screen
@@ -61,71 +65,83 @@
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsCodespace}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
-        Once there, click the green ``Code'' button, select
-        the ``Codespaces'' tab, and click ``Create codespace on main.''
-        A GitHub codespace is a remote computer set up specifically for coding.
-        We have our codespace preconfigured with all the tools, libraries, and
-        software
-        you need for a Ximera
-        project. With a codespace, you can instantly start working
-        without worrying about setting up software on your local machine.
-        Moreover,
-        others can go to your GitHub page, start their own codespace, and try
-        out your
-        code.
-        \textbf{It will take around 5 minutes for your codespace to be created
-            and you
-            must wait until it is complete.}
-        \pdfOnly{\end{multicols}}
+\pdfOnly{\begin{multicols*}{2}}
+        After you go to your repository, click the green ``Code'' button, select the ``Codespaces''
+        tab, and click ``Create codespace on main.'' \textbf{It will take
+            around 5
+            minutes for your codespace to be created and you must wait until it
+            is
+            complete.} A GitHub codespace is a remote computer set up
+        specifically for
+        coding. We have our codespace preconfigured with all the tools,
+        libraries, and
+        software you need to use Ximera. With a codespace, you can instantly
+        start
+        working without worrying about setting up software on your local
+        machine.
+        Moreover, \textbf{Ximera developers} can go to your GitHub page, start
+        their
+        own codespace, and try out your code and help with possible issues.
+
+        \pdfOnly{\end{multicols*}}
 
 \newpage
 
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsVScode}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
         Once the codespace is created, you will see something like what we have
-        above.
-        This is Visual Studio Code (VS Code) running within your browser. This
-        is a powerful text-editor with many extensions. One could use it write Ximera
-        content.  On the far left, you see a
-        vertical list of icons. Currently, ``EXPLORER'' is selected, it looks
-        like
-        ``pages of paper.'' Moving right, we see the files in our GitHub Repo.
-        At the bottom right-hand corner of the screen you will see a buttons
-        that say ``PDF'' and 
-        ``SERVE.'' These buttons were added by the files in \verb!.vscode/!.
-        Press the ``PDF'' button to compile Ximera content to a PDF. 
-        Press the ``SERVE'' button to compile Ximera content to HTML and
-        JavaScript.
-        This will take a few minutes. When the compilation is finished, note the line that says:
-        ``PROBLEMS,'' ``OUTPUT,'' ``DEBUG CONSOLE,'' ``TERMINAL,'' ``PORTS.''
-        \pdfOnly{\end{multicols}}
+        above. This is Visual Studio Code (VS Code) running within your browser. This
+        is a powerful text-editor with many extensions. We use it write Ximera content.
+        On the far left, you see a vertical list of icons. Currently, ``EXPLORER'' is
+        selected, it looks like ``pages of paper.'' Moving right, we see the files in
+        our GitHub Repo. At the bottom right-hand corner of the screen you will see
+        buttons that say ``SERVE,''  ``HTML,'' and ``PDF.'' These buttons were added by the files
+        in \verb!.vscode/!. Press the ``PDF'' button to compile Ximera content to a
+        PDF. 
+        \begin{itemize}
+            \item The ``SERVE'' button to compiles the \textbf{entire} Ximera repository to HTML and deploys to a (local or remote) server. If this is the first time you are compiling, it will take a few minutes.
+        \item The ``HTML'' button compiles only the \textbf{current} \LaTeX\ file to HTML.
+        \item The ``PDF'' button compiles only the \textbf{current} \LaTeX\ file to PDF using our Ximera tools.
+        \end{itemize}
+    After you have pressed the ``SERVE'' button, you will see a
+        ``terminal'' window at the bottom of the screen. 
+        note the line that says: ``PROBLEMS,'' ``OUTPUT,'' ``DEBUG CONSOLE,''
+        ``TERMINAL,'' ``PORTS.''
+        \pdfOnly{\end{multicols*}}
 
 \newpage
- 
+
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsPorts}
 \end{image}
 \pdfOnly{\begin{multicols}{2}}
-You want
-to click on ``PORTS.'' The ``PORTS'' tab may be hidden within ``$\cdots$.''
-After you click on ``PORTS,'' select 2080 and click on the globe, and a webpage will open. Your
-content will be under the link ``Content.'' You should be able to see the
-content in your browser.
+        You want
+        to click on ``PORTS.'' The ``PORTS'' tab may be hidden within
+        ``$\cdots$.''
+        After you click on ``PORTS,'' select 2080 and click on the globe, and a
+        webpage
+        will open. Your
+        content will be under the link ``Content.'' You should be able to see
+        the
+        content in your browser.
 
+        You may delete your codespace (you can simply restart it) and others
+        can come
+        to your GitHub repository, start a codespace, and check out and compile
+        your
+        code.
+        This is especially useful if a user runs into difficulty, as a Ximera
+        developer
+        can examine a users exact setup, and help resolve any issues.
 
-You may delete your codespace (you can simply restart it) and others can come to your GitHub repository, start a codespace, and check out and compile your code. 
-This is especially useful if a user runs into difficulty, as a Ximera developer can examine a users exact setup, and help resolve any issues. 
+        Demo versions of this repository are published as:
+        \begin{itemize}
+            \item \link[a preview with the newest Ximera layout]{https://set.kuleuven.be/voorkennis/firststeps24/aFirstXourseVariant/aFirstFolder/aFirstActivityVariant}
+            \item \link[a version on the current production server]{https://ximera.osu.edu/firststeps24/aFirstXourse/aFirstFolder/aFirstActivity}
+        \end{itemize}
 
-
-Demo versions of this repository are published as:
-\begin{itemize}
-    \item \link[a preview with the newest Ximera layout]{https://set.kuleuven.be/voorkennis/firststeps24/aFirstXourseVariant/aFirstFolder/aFirstActivityVariant}
-    \item \link[a version on the current production server]{https://ximera.osu.edu/firststeps24/aFirstXourse/aFirstFolder/aFirstActivity}
-\end{itemize}
-
-\pdfOnly{\end{multicols}}
+        \pdfOnly{\end{multicols}}
 \pdfOnly{\twocolumn}
 \end{document}

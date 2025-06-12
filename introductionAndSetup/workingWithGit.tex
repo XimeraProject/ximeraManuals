@@ -37,10 +37,8 @@ change it and  make it your own.
     \includegraphics[width=.7\textwidth]{xfsStage}
 \end{image}
 
-\pdfOnly{\begin{multicols}{2}}
-    Remember, \verb!git! is version control software. This means that it is like a magical notebook that remembers every change you
-    make to your
-    project. It helps you go back in time if something breaks and lets you
+\pdfOnly{\begin{multicols*}{2}}
+    Remember, \verb!git! is version control software.  It helps you go back in time if something breaks and lets you
     share
     your work with others. For this reason, it makes you do a little ``dance''
     to ensure good code hygiene.
@@ -60,14 +58,14 @@ change it and  make it your own.
     This adds the file to a special list called the \textbf{staging area}. Only
     files in this list will be saved in the next step.
 
-\pdfOnly{\end{multicols}}
+\pdfOnly{\end{multicols*}}
 
 \newpage
 
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsCommitMessage}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
     \paragraph{Step 2: Committing Changes (Saving Your Work)}
 
     After staging your files, you
@@ -84,14 +82,14 @@ change it and  make it your own.
     \verb!git! takes a snapshot of the staged files and saves them with your message.
     If you would ever need to undo your work from this point, this message will
     help guide your future-self.
-\pdfOnly{\end{multicols}}
+\pdfOnly{\end{multicols*}}
 
 \newpage
 
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsSync}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
 \paragraph{Step 3: Syncing with GitHub (Sending Your Work Online)}
 When you click \textbf{``Sync Changes''}, you're telling \verb!git!:
 \begin{quote}
@@ -103,7 +101,7 @@ When you click \textbf{``Sync Changes''}, you're telling \verb!git!:
 changes from your teammates and brings them back to you. At this point,
 VS Code in your codespace will ask you if you periodically want to sync.
 You can click ``Yes.''
-\pdfOnly{\end{multicols}}
+\pdfOnly{\end{multicols*}}
 
 \newpage
 
