@@ -78,14 +78,15 @@ Commit your changes to GitHub and view your repository online via a web browser
 to ensure that the files were added.
 
 \begin{warning}
-    If you've added \verb!.devcontainer/! to your repository and open it
+    If you've added \verb!.devcontainer/! to your repository and open your repository
     locally, VS Code will ask you if you want to open a Development Container.
-    Probably you don't, since you can working locally and the VS Code buttons will each time start a local container.
+    Probably you don't, since working locally requires Docker and VS Code and the buttons will handle the local containers.
     But if you answer ``Yes'' you can develop completely \textit{inside} a container that will run on your local computer. 
 \end{warning}
 
 Now, move the \verb!.xmKeyFile! to your repository.
-\textbf{If deploying on your machine, you do not need to commit the
-    \texttt{.xmKeyFile} to the repository. But surely never commit a non-dummy key!}
+If you are deploying on your machine, \textbf{DO NOT commit the
+    \texttt{.xmKeyFile} to your repository.} This should be a non-issue as the \verb!.xmKeyFile! is in the \verb!.gitignore! file.
+    This means authors should have to ``work'' to violate this advice.
 
 \end{document}
