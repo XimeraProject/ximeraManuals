@@ -46,7 +46,19 @@ change it and  make it your own.
     \paragraph{Step 1: Staging Files (The ``+'' Button)}
 
     You start by clicking on the icon that looks like a poorly drawn ``Y'' with
-    lines and circles on the left. Then you click on a ``$\boldsymbol{+}$'' for every file you
+    lines and circles on the left:
+    \begin{image}
+        \begin{tikzpicture}[line cap=round, line width=2.5pt]
+            % Connecting lines (branches)
+            \draw (0,2) -- (0,1);         % Vertical line
+            \draw[smooth] plot coordinates {(0,1) (0.1,1.35) (0.4,1.4) (0.5,1.7)};         % Diagonal branch
+           % Nodes (commits)
+           \draw[fill=white] (0,2) circle (4pt); % Top node
+           \draw[fill=white] (0,1) circle (4pt); % Middle node
+           \draw[fill=white] (.5,1.7) circle (4pt); % Bottom right node
+         \end{tikzpicture}
+        \end{image}
+    Then you click on a ``$\boldsymbol{+}$'' for every file you
     want
     to send to your repository.  When you click the little ``$\boldsymbol{+}$'' next
     to a
@@ -108,7 +120,7 @@ You can click ``Yes.''
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsConfirm}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
 To check that everything worked correctly, go to
 \begin{center}
     \url{https://github.com/YOUR-GIT-USER-NAME/YOUR-REPO-NAME}
@@ -145,7 +157,7 @@ git pull && git push
     \verb!https://github.com/YOUR-GIT-USER-NAME/YOUR-REPO-NAME!
 \end{center}
 \pdfOnly{\end{minipage}}
-\pdfOnly{\end{multicols}}
+\pdfOnly{\end{multicols*}}
 
 
 
