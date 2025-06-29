@@ -23,19 +23,16 @@ When you are logged in to GitHub, you
 will in both cases have the option to make a new repository using the green ``Use this
 template'' button. Once the template is made, you are ready to go!
 
-\paragraph{To deploy an existing repository from a codespace} copy the
+\paragraph{To deploy an existing repository} copy the
 following files from either \verb!ximeraFirstSteps! or \verb!ximeraNewProject!
 into your repository.
-\begin{description}
-    \item[\texttt{.devcontainer/}] (folder needed to be able to start 
-          a
-          GitHub codespace)
-    \item[\texttt{xmScripts/}] folder with the Ximera build and deploy script and config.
-    \item[\texttt{.vscode/}] folder with VS Code
-        settings, e.g.  the buttons for Ximera compilation.
-    \item[\texttt{.xmKeyFile}] a `dummy' gpg-key file needed to preview your work in a Codespace.
-    \item[\texttt{.gitignore}]  \textbf{replace yours or merge them} if you alrady have one.
-\end{description}
+        \begin{description}
+            \item[\texttt{.devcontainer/}] (optional: provides a Codespace setup) 
+            \item[\texttt{xmScripts/}]  (build scripts and config)
+            \item[\texttt{global.css}] (gives some configuration for online content)
+            \item[\texttt{.vscode/}]  (optional, but strongly advised)
+            \item[\texttt{.gitignore}]	(optional, but strongly advised)
+        \end{description}
 Commit your changes to GitHub and check online that the files were added.
 Start a Codespace in your repository to build, edit and preview your course.
 
@@ -65,28 +62,11 @@ Contact the Ximera developers for assistance. A typical workflow is:
           misdirection.
 \end{enumerate}
 
-Now, copy the same files as above from either \verb!ximeraFirstSteps! or
-\verb!ximeraNewProject!
-into the repository you wish to deploy.
-\begin{description}
-    \item[\texttt{.devcontainer/}] (optional: provides a Codespace setup) 
-    \item[\texttt{xmScripts/}]  (build scripts and config)
-    \item[\texttt{.vscode/}]  (optional, but strongly advised)
-    \item[\texttt{.gitignore}]	(optional, but strongly advised)
-\end{description}
-Commit your changes to GitHub and view your repository online via a web browser
-to ensure that the files were added.
-
 \begin{warning}
     If you've added \verb!.devcontainer/! to your repository and open your repository
     locally, VS Code will ask you if you want to open a Development Container.
     Probably you don't, since working locally requires Docker and VS Code and the buttons will handle the local containers.
     But if you answer ``Yes'' you can develop completely \textit{inside} a container that will run on your local computer. 
 \end{warning}
-
-Now, move the \verb!.xmKeyFile! to your repository.
-If you are deploying on your machine, \textbf{DO NOT commit the
-    \texttt{.xmKeyFile} to your repository.} This should be a non-issue as the \verb!.xmKeyFile! is in the \verb!.gitignore! file.
-    This means authors should have to ``work'' to violate this advice.
 
 \end{document}

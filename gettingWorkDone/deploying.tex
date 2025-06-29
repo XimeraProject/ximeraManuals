@@ -25,17 +25,27 @@
 
     If you are deploying legacy Ximera material, you may need to contact Ximera
     developers to obtain a proper key. If you are deploying new Ximera content,
-    you can get your own GPG key by running the command:
-    \begin{verbatim}
-xmlatex genKey
-\end{verbatim}
-    in either a codespace or a Docker container. You'll get a \verb!GPG_KEY_ID!
-    that looks something like:
-    \begin{verbatim}
-215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
-\end{verbatim}
-    and a \verb!GPG_KEY! that looks something like:
-    {\pdfOnly\footnotesize\begin{verbatim}
+    you can get your own GPG key by pressing ``SERVE'' in a fresh codespace. If you do this, and you want to ``officially'' deploy, you should tell us your name and email address:
+\pdfOnly{\end{multicols}}\enlargethispage{2em}
+\begin{image}
+    \includegraphics[width=.7\textwidth]{xfsEmail}
+\end{image}
+\pdfOnly{\newpage}
+\pdfOnly{\begin{multicols*}{2}}
+Open the file (using `hamburger' $\to$ File $\to$ open-file) \verb!.xmKeyFile!. It should look something like this: 
+{\pdfOnly{\footnotesize}\begin{verbatim}
+#
+# This file contains a private GPG key for 
+# Bart Snapp <bart.snapp@gmail.com> 
+# to publish Ximera courses.
+#
+# These settings will be overwritten 
+# by existing environment variables GPG_KEY_ID and GPG_KEY
+#
+#   *** DO NEVER COMMIT THIS FILE ***
+#
+GPG_KEY_ID=215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+GPG_KEY="\
 LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
 SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
 QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
@@ -50,14 +60,39 @@ clJOWE1veG9Fc3N4NHkxWWYzRW1vQlFKbThBQUNBaHNNQlFrRm81cUFBQW9KRU14NHkxWWYKM0Vt
 b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
 YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
 UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
+"
 \end{verbatim}
-    }
-    Copy and paste these into a file but \textbf{do not commit them to the
-        repository}. If you do, and you use the key to deploy, others will be
-    able to
-    overwrite your interactive content.
+}
+\pdfOnly\columnbreak
+    In this case, the \verb!GPG_KEY_ID! is:
+    \begin{verbatim}
+215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
+\end{verbatim}
+    and the \verb!GPG_KEY! is: 
+    {\pdfOnly{\footnotesize}\begin{verbatim}
+LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
+SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
+QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
+QkdiM0lnV0dsdFpYSmhJRHh1YjI1bFFHVjRZVzF3YkdVdVkyOXRQb2laQkJNV0NnQkJGaUVFSVYv
+RFA2dEUKMWN5akdnU3l6SGpMVmgvY1NhZ0ZBbWJ3QUFJQ0d3TUZDUVdqbW9BRkN3a0lCd0lDSWdJ
+R0ZRb0pDQXNDQkJZQwpBd0VDSGdjQ0Y0QUFDZ2tRekhqTFZoL2NTYWpjaGdFQWhHZkVkYW9xRnZD
+c21NZExZVmNNSUhkTjl4aXJzZTB1Cjh5WVYweXpGVS9zQSt3Vm9zR3UvYk10b3N2bHphMkRJUkQ3
+VG9BUE5HeDYwanBlYjJaRm5DQW9LbkYwRVp2QUEKQWhJS0t3WUJCQUdYVlFFRkFRRUhRTitNMW52
+VG44Um85SFordW50NGJFN1A1dEZ5QnJkbnBmS2pvZ1oyd2R3bApBd0VJQndBQS8xMUhNaFJuTnFL
+RXpBVC9tN1Y1Mm90NjNjRzNRbFp1R0FFV0tqSmJOZUFJRG9HSWZnUVlGZ29BCkpoWWhCQ0Zmd3or
+clJOWE1veG9Fc3N4NHkxWWYzRW1vQlFKbThBQUNBaHNNQlFrRm81cUFBQW9KRU14NHkxWWYKM0Vt
+b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
+YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
+UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
+\end{verbatim}%%
+}
+Copy and paste the contents of \verb!.xmKeyFile! to a  file on your computer for safe-keeping, but \textbf{do not commit it to the
+repository}. If you do, and you use the key to deploy, others will be
+able to overwrite your interactive content.
 
-    \pdfOnly{\end{multicols}}
+\pdfOnly{\end{multicols*}}
+
+
 \begin{image}
     \includegraphics[width=.7\textwidth]{deploySettings.png}
 \end{image}
