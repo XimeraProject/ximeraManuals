@@ -10,30 +10,30 @@
 \end{abstract}
 \maketitle
 \pdfOnly{\begin{multicols}{2}}
-    We have two options for deploying Ximera documents: Deploying through a
-    GitHub
-    codespace and deploying from your machine. With both options you will need
-    a
-    \verb!GPG_KEY_ID! and a \verb!GPG_KEY!. The purpose of the GPG keys is to
-    identify authors with specific names of Ximera content on Ximera servers.
-    For example, if you make a course ``bigmath,'' your GPG key will ensure
-    that
-    you ``own'' that name, and only people who have that GPG key can publish to
-    that name.
+        We have several options for deploying Ximera documents: Deploying through a
+        GitHub codespace, deploying from your machine, and deploying though a GitHub
+        action. We will discuss the first option here and suggest the interested user
+        reach out to Ximera developers for help with other deploy methods. With all
+        options you will need a
+        \verb!GPG_KEY_ID! and a \verb!GPG_KEY!. These will identify your ``xourse name'' as one that you own.
+        
+        \section{Obtaining GPG Keys}
 
-    \section{Obtaining GPG Keys}
-
-    If you are deploying legacy Ximera material, you may need to contact Ximera
-    developers to obtain a proper key. If you are deploying new Ximera content,
-    you can get your own GPG key by pressing ``SERVE'' in a fresh codespace. If you do this, and you want to ``officially'' deploy, you should tell us your name and email address:
-\pdfOnly{\end{multicols}}\enlargethispage{2em}
+        If you are deploying legacy Ximera material, you may need to contact Ximera
+        developers to obtain a proper key. If you are deploying new Ximera content,
+        you can get your own GPG key by pressing ``SERVE'' in a \textit{fresh} codespace. If
+        you do this, and you want to ``officially'' deploy, you should tell us your
+        name and email address:
+        \pdfOnly{\end{multicols}}\pdfOnly{\enlargethispage{2em}}
 \begin{image}
     \includegraphics[width=.7\textwidth]{xfsEmail}
 \end{image}
 \pdfOnly{\newpage}
 \pdfOnly{\begin{multicols*}{2}}
-Open the file (using `hamburger' $\to$ File $\to$ open-file) \verb!.xmKeyFile!. It should look something like this: 
-{\pdfOnly{\footnotesize}\begin{verbatim}
+    
+        Open the file (using `hamburger' $\to$ File $\to$ open-file) \verb!.xmKeyFile!.
+        It should look something like this:
+        {\pdfOnly{\footnotesize}\begin{verbatim}
 # This file contains a private GPG key for 
 # Bart Snapp <bart.snapp@gmail.com> 
 # to publish Ximera courses.
@@ -63,14 +63,14 @@ YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
 UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
 "
 \end{verbatim}
-}
-\pdfOnly\columnbreak
-    In this case, the \verb!GPG_KEY_ID! is:
-    \begin{verbatim}
+        }\pdfOnly{\columnbreak}
+        In this case, the \verb!GPG_KEY_ID! is:
+        \begin{verbatim}
 215FC33FAB44D5CCA31A04B2CC78CB561FDC49A8
 \end{verbatim}
-    and the \verb!GPG_KEY! is: 
-    {\pdfOnly{\footnotesize}\begin{verbatim}
+        and the \verb!GPG_KEY! is:
+
+        {\pdfOnly{\footnotesize}\begin{verbatim}
 LS0tLS1CRUdJTiBQR1AgUFJJVkFURSBLRVkgQkxPQ0stLS0tLQoKbEZnRVp2QUFBaFlKS3dZQkJB
 SGFSdzhCQVFkQUI4UW9zbWR3YmJBcHJHQ1k1N3Q1VmRVVkJGTlpWWEFQTGVkWQpMWnZtQ0tjQUFR
 QzF4dmlVckwzRWE2bmpJcUZ1WitWL2EzUG55TCtPeDMvTHg3eWxtV2pNNlJUeHRDTkVkVzF0CmVT
@@ -86,18 +86,18 @@ b2RpTUEvMVBMZFpzc2owdm10VGw1ZEFMUGNMdUpDandNZlgyQWFCS3J1WG0vZjc4UEFQOWM2eHdh
 YXdSVQpFTks0VCttYU5IbGt6TXVLWjJEYkNwS1Irdk5rdHlWL0FRPT0KPWk3Wk8KLS0tLS1FTkQg
 UEdQIFBSSVZBVEUgS0VZIEJMT0NLLS0tLS0K
 \end{verbatim}%%
-}
-Copy and paste the contents of \verb!.xmKeyFile! to a  file on your computer for safe-keeping, but \textbf{do not commit it to the
-repository}. If you do, and you use the key to deploy, others will be
-able to overwrite your interactive content.
+        }
+        Copy and paste the contents of \verb!.xmKeyFile! to a  file on your computer
+        for safe-keeping, but \textbf{do not commit it to the
+            repository}. If you do, and you use the key to deploy, others will be
+        able to overwrite your interactive content.
 
-\pdfOnly{\end{multicols*}}
-
+        \pdfOnly{\end{multicols*}}
 
 \begin{image}
     \includegraphics[width=.7\textwidth]{deploySettings.png}
 \end{image}
-\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
         \section{GPG keys and codespace}
         Once you have your \verb!GPG_KEY_ID! and \verb!GPG_KEY!, you are ready
         to go.
@@ -116,7 +116,7 @@ able to overwrite your interactive content.
         from the
         menu at the top right.
 
-        \pdfOnly{\end{multicols}}
+        \pdfOnly{\end{multicols*}}
 
 \pdfOnly{\newpage}
 
@@ -182,7 +182,8 @@ Now click on ``New secret.''
 
 \section{GPG keys on your machine}
 
-This section is for experience GitHub users. To deploy from your machine, you need a file in
+This section is for experience GitHub users. To deploy from your machine, you
+need a file in
 the folder of the repository of
 your content that \textbf{is not committed to the repository}. Please reach out
 to Ximera developers for help with this step. You will also need to modify
@@ -237,11 +238,9 @@ configuration files.
 % We should discuss this more once the discussion in the repository
 % \verb!ximeraFirstSteps! is steady.
 
-
 \section{Setting the remote Ximera server}
 
-
-Currently,  \textbf{this is subject to change}, you need to modify: 
+Currently,  \textbf{this is subject to change}, you need to modify:
 \begin{verbatim}
 xmScripts/config.txt
 \end{verbatim}
@@ -255,17 +254,15 @@ Around line 20, you will find something like:
 \end{verbatim}
 Remove the \verb!##! from the first line, uncommenting it, and set
 \verb!myreponame! to be what
-you want your content to be called online. 
+you want your content to be called online.
 \begin{warning}
     Your name for your content must be \textbf{all lower case} alphanumeric
     English characters. Lower case letters and numbers are fine.
 \end{warning}
 Next uncomment, remove the \verb!##!, from the line of the server you wish to
 deploy to. Save the file. It would probably be best to not commit it to the
-repository, though it really doesn't matter. Now, when you press ``SERVE,'' your Ximera content will be deployed online! Please feel free to reach out to the Ximera developers  for help at this step.
-
-
-
-
+repository, though it really doesn't matter. Now, when you press ``SERVE,''
+your Ximera content will be deployed online! Please feel free to reach out to
+the Ximera developers  for help at this step.
 
 \end{document}
