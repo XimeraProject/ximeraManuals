@@ -1,6 +1,6 @@
 \documentclass{ximera}
 
-\title{Getting help}
+\title{Getting and giving help}
 \begin{document}
 \begin{abstract}
     Sometimes the manual just isn't enough!
@@ -57,6 +57,22 @@ When submitting an issue, follow these steps:
 Ximera is an open-source project, and we welcome contributions from the
 community. If you have suggestions for improving the platform or this manual,
 feel free to fork the repository and submit a pull request on GitHub.
+
+If you would like to contribute to the Ximera document class, we suggest the following workflow:
+\begin{enumerate}
+\item Make a \textbf{Template} of a testing repository like: \link{https://github.com/XimeraProject/ximeraFirstSteps}
+\item \textbf{Clone your template}, or work on your template in a GitHub Codespace.
+\item \textbf{Fork} XimeraLatex.
+\item \textbf{Clone your fork} of Ximera \LaTeX\ \textbf{into your template}, and switch to the \verb!development! branch (this should be up-to-date with the \verb!master! branch).
+\item \textbf{In your template}, rename the folder \verb!ximeraLatex! to \verb!.ximera_local!. Now your template will use this version of Ximera \LaTeX.
+\item Make your edits by either directly editing a \textbf{preamble file} (that overrides the current \verb!ximeraLatex!) or within \verb!ximera.cls! found within \verb!.ximera_local! directly.
+\item Once your changes work, make your changes in the \verb!*.dtx! files. If you developed in \verb!ximera.cls! directly, change its name to \verb!ximeradev.cls! so that it is not overwritten in the next step.
+\item Run \verb!make! and a new \verb!ximera.cls!, \verb!xourse.cls!, \verb!ximera.4ht! and \verb!xourse.4ht! will be generated, overwriting any existing files in \verb!.ximera_local!.
+\item Push changes to your fork of \verb!ximeraLatex!. It is best to make small commits, and give detailed descriptions.
+\item When ready, \textbf{submit a pull-request} from your fork.
+\end{enumerate}
+Once your changes have been accepted via a pull-request, Ximera developers will update the branch master from the branch development.
+
 
 Thank you for using Ximera. We are committed to providing high-quality tools
 for creating and sharing interactive mathematics content. Your feedback and
