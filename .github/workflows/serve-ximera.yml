@@ -90,7 +90,7 @@ jobs:
           ./xmScripts/xmlatex serve -f ximeraUserManual.tex
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
-publish-ximera-kuleuven:
+  publish-ximera-kuleuven:
     name: Publish Ximera Courses to KU Leuven server
     needs: build-ximera # Waits for the build job to complete
     runs-on: ubuntu-latest
@@ -116,7 +116,4 @@ publish-ximera-kuleuven:
           ./xmScripts/xmlatex name         
           ./xmScripts/xmlatex serve -f ximeraUserManual.tex
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
-
-
-
 
