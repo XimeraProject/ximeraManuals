@@ -25,7 +25,7 @@ mentioned. With this said, we suggest wrapping all images in either a
 The environment \verb!image! centers and automatically scales the contents.  If
 an author finds themselves printing to various page-sizes, \verb!image! might
 be preferred. Moreover, \verb!image! can be redefined globally to act
-identically to \verb!center!, but \verb!center! cannot be redefined. In
+identically to \verb!center!, but \verb!center! should not be redefined. In
 particular, we utilize this feature of \verb!image! in this manual to place frames around graphics.
 
 If you use \verb!center!, you would write something like:
@@ -55,7 +55,7 @@ be made to the
 \verb!xmPictures! directory. The advantage here being that if someone wants to
 borrow your material, everything they need is in the same folder.
 
-With this said, TikZ is the preferred method for graphics because code, found
+With this said, TikZ (via \verb!pgfplots!) is the preferred method for graphics because code, found
 in the Ximera \LaTeX\ file, generates the image. No need to worry about
 graphics paths.
 

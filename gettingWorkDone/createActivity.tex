@@ -75,9 +75,9 @@ Macros made of basic \LaTeX\ commands are fine as long as you store them in
 \verb!xmPreamble.tex! or another file on your input path. This helps keep the headers very clean.
 
 
-\paragraph{Avoid manual formatting.} At the core of the Ximera philosophy is
-the
-principle of separating content from deployment. This means that the
+\paragraph{Avoid manual formatting.} This means, that you shouldn't try to vertically space your content and you should use \LaTeX\ commands for semantic markup.
+At the core of the Ximera philosophy is
+the principle of separating content from deployment. This means that the
 intellectual substance---the ideas, explanations, and activities---should
 remain independent of the specific presentation or layout in which they are
 delivered. This separation ensures adaptability, longevity, and accessibility, enabling
@@ -88,7 +88,7 @@ particular delivery method.
 With that said, our strategies for creating PDFs are to load a separate style
 file at the level of a \verb!xourse! file. Further formatting can be achieved via the command \verb!\pdfOnly!.
 
-\paragraph{Special Ximera documents and folders} are \textbf{automatically}
+\paragraph{Special Ximera documents and folders} are provided and are \textbf{automatically}
 loaded by all files in the repository (assuming they are no more than three
 folders deep).
 \begin{description}
