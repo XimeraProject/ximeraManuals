@@ -8,7 +8,7 @@ https://go.osu.edu/xman
 
 It can be downloaded from:
 
-(https://github.com/XimeraProject/ximeraManuals/releases/tag/v1.5.0)
+https://github.com/XimeraProject/ximeraManuals/releases/tag/v1.5.0
 
 
 A print version can be purchased (at cost) from Lulu:
