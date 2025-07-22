@@ -13,8 +13,7 @@ https://github.com/XimeraProject/ximeraManuals/releases/tag/v1.5.0
 
 A print version can be purchased (at cost) from Lulu:
 
-https://www.lulu.com/shop/jason-nowell-and-wim-obbels-and-jim-fowler-and-bart-snapp/ximera-user-manual/paperback/product-jeqd9wg.html
-
+https://www.lulu.com/shop/jeff-kuan-and-wim-obbels-and-jason-nowell-and-jim-fowler/ximera-user-manual/paperback/product-7kv526k.html
 
 ## Future content
 - Videos for common activites
