@@ -90,11 +90,11 @@ jobs:
           ./xmScripts/xmlatex serve -f ximeraUserManual.tex
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
-  publish-ximera-kuleuven:
-    name: Publish Ximera Courses to KU Leuven server
+  publish-ximera-xerxes:
+    name: Publish Ximera Courses to xerxes
     needs: build-ximera # Waits for the build job to complete
     runs-on: ubuntu-latest
-    environment: production
+    environment: xerxes
     steps:
       - name: Restore ximera serve cache (only .git)
         id: serve-cache-restore
@@ -110,7 +110,7 @@ jobs:
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          XIMERA_URL: "https://set-p-dsb-zomercursus-latest.cloud-ext.icts.kuleuven.be/"
+          XIMERA_URL: "https://xerxes.ximera.org/"
           XIMERA_NAME: ${{ vars.XIMERA_NAME }}
         run: |
           ./xmScripts/xmlatex name         
