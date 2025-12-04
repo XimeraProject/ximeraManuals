@@ -48,6 +48,11 @@ image: ghcr.io/ximeraproject/xake2024:v2.4.2
 \end{verbatim}
 By commenting, adding a \verb!#! to, the beginning of the first line and removing \verb!#! from the second.
 
+After making the above changes (either or both) you should rebuild your codespace container. 
+There may be a popup asking you if you wish to do so. If not, you can also click the blue bar in the
+bottom left that starts with "Codespaces:" which will open options at the top middle of the screen,
+one of which is the option to rebuild the container.
+
 \paragraph{If codespace is not acting correctly,} you can always ``Delete'' it,
 and make a new one.
 
@@ -79,7 +84,7 @@ settings.
 \paragraph{An svg-viewer missing} error message means that there was a
 compilation error that confused Xake. The offending file needs to be
 recompiled. Make a trivial change in the file, and delete all SVG files in the
-directory.
+directory, then re-serve/publish.
 
 Sometimes Ximera materials look good to instructors and others, but not to some
 individual students.
