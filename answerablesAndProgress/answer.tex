@@ -1,6 +1,7 @@
 \documentclass{ximera}
 
-\title{Enter math answers with \symbol{`\\} answer}
+
+\title{Enter math answers with \symbol{`\\}\symbol{`\\}answer}
 \author{Bart Snapp}
 
 \begin{document}
@@ -18,7 +19,7 @@ how they might be used in use cases of: worksheets, exercise banks, and
 textbooks.
 
 
-The basic way of including a answerable item in Ximera is to use the
+The basic way of including an answerable item in Ximera is to use the
 \verb|\answer| command.
 
 \begin{warning}
@@ -41,7 +42,7 @@ We can validate an expression of variables:
 \begin{exercise}
 Compute:
 \[
-\frac{\partial}{\partial x} \sin(3xyx) 
+\frac{\partial}{\partial x} \sin(3xyz) 
 = \answer{3yz\cos(3xyz)}
 \]
 \end{exercise}
@@ -116,9 +117,9 @@ any report the answer as being correct, then it is marked as correct.
       is open to the students. Ximera is not designed for high-stakes
       assessment.
       \item[Richardson's theorem ]\link[states it is not
-        possible]{https://en.wikipedia.org/wiki/Richardson\%27s\_theorem}
-      to decide equality between the expressions of involving integers, $\pi$,
-      logarithms and exponential and sine functions.
+        possible]{https://en.wikipedia.org/wiki/Richardson/\%27s/\_theorem}
+      to decide equality between expressions that involving integers, $\pi$,
+      logarithms, and exponential and sine functions.
     \item[Floating-point numbers] can lead to erroneous computations, leading
       to
       identifying nonequal expressions as equal.
@@ -188,7 +189,10 @@ decision:
   \item To sometimes count incorrect submissions as correct.
 \end{itemize}
 For the Ximera platform, we chose to \textbf{sometimes count incorrect
-  submissions as correct}. This means that at least one of the validators
+submissions as correct}\footnote{Note that it typically requires pretty 
+  obscur edge cases for this to occur. This means that, in practice, this isn't something
+  most authors need worry about, but it is something they should be aware of.}. 
+This means that at least one of the validators
 believed that the student typed in the correct solution. The validator can
 surely be optimized further, but that will be for future research and
 development.
@@ -207,7 +211,7 @@ Confirm:
 
 Ximera accepts $10$ for the answer that should be $10^{-11}+10$  as correct,
 even though we obviously know that's not
-true.  This because $10^{-11}$ is a number that is too small for machine
+true.  This is because $10^{-11}$ is a number that is too small for machine
 precision. For a more in-depth review of the perils of floating-point
 arithmetic, see \link%
 [\textit{What Every Computer Scientist Should Know About Floating-Point

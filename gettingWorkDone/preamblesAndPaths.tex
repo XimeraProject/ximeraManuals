@@ -88,7 +88,7 @@ and we are \textbf{automatically} loading any file it finds that is named \verb!
 
 
 
-\paragraph{The special folder \texttt{xmPictures/}} helps \verb!ximera! and  \verb!\xourse! files find images.
+\paragraph{The special folder \texttt{xmPictures/}} helps \verb!ximera! and  \verb!xourse! files find images.
 We used \verb!\includegraphics! in \texttt{basicWorkSheet.tex} with code like:
 \begin{verbatim} 
 \begin{center}
@@ -109,10 +109,10 @@ problem we use the document class to append the graphics path. Essentially we se
 \begin{verbatim}
   \graphicspath{          %% When looking for images,
   {./}                    %% look here first,
-  {.\xmPictures}          %% then look in \xmPictures,
-  {..\xmPictures}         %% then look a folder up,
-  {../..\xmPictures}      %% then look two folders up,
-  {../../..\xmPictures}   %% then look three folders up.
+  {./xmPictures}          %% then look in xmPictures,
+  {../xmPictures}         %% then look a folder up,
+  {../../xmPictures}      %% then look two folders up,
+  {../../../xmPictures}   %% then look three folders up.
   }
   \end{verbatim}
 With this code, Ximera files can find images. 
