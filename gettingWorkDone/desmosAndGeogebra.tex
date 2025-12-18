@@ -23,10 +23,13 @@ produces
 \begin{center}
   Graph of $x^2$, $x^3$
 \end{center}
-in the PDF. Online, the command produces something like this:
+in the PDF. \pdfOnly{Online, the command produces something like this:
 \begin{image}
   \includegraphics[width=10cm]{desmosGraph.png}
-\end{image}
+\end{image}}
+\htmlOnly{\begin{center}
+  \graph{x^2,x^3}
+\end{center}}
 There are a number of options concerning the function being graphed:
 \begin{verbatim}
 \graph{x^2,x^3}                     %% just x^2 and x^3
