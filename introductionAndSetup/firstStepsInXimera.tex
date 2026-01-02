@@ -5,7 +5,7 @@
 \title{First steps in Ximera}
 
 \begin{document}
-\pdfOnly{\onecolumn\begin{multicols}{2}}
+% \pdfOnly{\onecolumn\begin{multicols}{2}}
         \begin{abstract}
             Try out Ximera!
         \end{abstract}
@@ -14,7 +14,7 @@
         To author using Ximera, you must have a \link[GitHub]{https://github.com}
         account. GitHub is a web platform where developers can store, share,
         and manage
-        their code. It uses \verb!git!, popular software for version control,
+        their code. GitHub uses \verb!git!, popular software for version control,
         to help
         teams work together simultaneously without overwriting each other's
         changes.
@@ -31,26 +31,58 @@
         either \textbf{sign-up} or \textbf{log-in}. Note, you must know your \textbf{username}
         and
         \textbf{password}, so store them in a safe place; like in a safe, or
-        under your
-        bed. After you have a GitHub account, log-in and go to:
-        \begin{center}
-            \url{https://github.com/ximeraProject/ximeraFirstSteps}
-            %% 230% on my horiz screen
-        \end{center}
+        under your bed. 
+
+
+
+        \section{Deploying content}
+        After you have a GitHub account, you have some choices for how you deploy Ximera content.
+        
+\paragraph{Experts}  experienced with GitHub, VS Code, and Docker, can set up Ximera on
+their own machine using local installations of this software. If you choose to follow this path, check out the repositories:
+\begin{itemize}
+    \item \url{https://github.com/ximeraProject/ximeraFirstSteps}
+    \item \url{https://github.com/ximeraProject/ximeraNewProject}
+\end{itemize}
+
+\paragraph{Beginners (and experts!)} can use \link[Overleaf Premium]{https://www.overleaf.com} to effortlessly deploy Ximera documents.
+Overleaf is a popular online \LaTeX\ editor. The premium features provide integration with GitHub. If you choose to follow this path, check 
+out the repositories:
+        \begin{itemize}
+    \item \url{https://github.com/ximeraProject/ximeraFirstOverleafSteps}            %% 190% on my laptop screen
+    \item \url{https://github.com/ximeraProject/ximeraNewOverleafProject}
+\end{itemize}
+
+
+\paragraph{First time Ximera authors} will find it easiest to use Overleaf Premium and the repository:
+\begin{center}
+     \url{https://github.com/ximeraProject/ximeraFirstOverleafSteps}            %% 190% on my laptop screen
+\end{center}
+In the remainder of this section, we will walk you through the steps to create your own copy of this repository, 
+and start editing and deploying Ximera content. 
+
+
+
+\pdfOnly{\onecolumn}
         You will see something like this:
-        \pdfOnly{\end{multicols}}\enlargethispage{1.5em}
+        % \pdfOnly{\end{multicols}}
+        % \enlargethispage{1.5em}
 \begin{image}
-    \includegraphics[width=.7\textwidth]{xfsTemplate}
+    \includegraphics[width=.7\textwidth]{xfosTemplate} %% 190% on my laptop screen
 \end{image}
-\newpage\pdfOnly{\begin{multicols}{2}}
+\pdfOnly{\begin{multicols*}{2}}
 Click on the green ``Use this template'' button and select ``Create a
-new repository.'' Give it a fun repository name, and push the button \columnbreak
-``Create repository.'' At this point you have your own personal copy of our repository
-\verb!ximeraFirstSteps!. In fact, after you create it, GitHub will take you to it. \pdfOnly{\end{multicols}}
+new repository.''  \pdfOnly{\end{multicols*}}
+\newpage\enlargethispage{1.5em}
+%\pdfOnly{\begin{multicols*}{2}}
+ Give it a fun repository name (use only letters, numbers, spaces and if necessary ``-''), and push the button 
+``Create repository.''  %\pdfOnly{\end{multicols*}}
 \begin{image}
-    \includegraphics[width=.7\textwidth]{xfsCreate}
+    \includegraphics[width=.7\textwidth]{xfosCreate} %% 190% on my laptop screen
 \end{image}
 \pdfOnly{\begin{multicols}{2}}
+    At this point you have your own personal copy of our repository
+\verb!ximeraFirstOverleafSteps!.   In fact, after you create it, GitHub will take you to it.
         This copy can
         always
         be found at:
@@ -59,92 +91,62 @@ new repository.'' Give it a fun repository name, and push the button \columnbrea
         \end{center}
         For the example used in this manual, the URL would be: 
         \begin{center}
-            \verb!https://github.com/bartsnapp/bartXimeraTest!
+            \verb!https://github.com/bartsnapp/Ximera-Test!
         \end{center}
+        Note, GitHub \textit{automatically} replaced the spaces with hyphens in the the name. 
+        At this point your own personal copy of the repository is deployed on the Ximera server:
+        \begin{center}
+            \verb!https://xerxes.ximera.org/USERNAME-REPO-NAME!
+        \end{center}
+        With the content here deployed at:
+        \begin{center}
+            \url{https://xerxes.ximera.org/bartsnapp-ximera-test}
+            \end{center}
+        Now it is time to open Overleaf.
         \newpage
         \pdfOnly{\end{multicols}}
 \begin{image}
-    \includegraphics[width=.7\textwidth]{xfsCodespace}
+    \includegraphics[width=.7\textwidth]{xfosOverleaf}
 \end{image}
 \pdfOnly{\begin{multicols*}{2}}
-        When at your repository, click the green ``Code'' button, select the ``Codespaces''
-        tab, and click ``Create codespace on main.'' A GitHub codespace is a remote computer set up
-        specifically for
-        coding. \textbf{It will take
-            around 5
-            minutes for your codespace to be created and you must wait until it
-            is
-            complete.} We have our codespace preconfigured with all the tools,
-        libraries, and
-        software you need to use Ximera. With a codespace, you can instantly
-        start
-        working without worrying about setting up software on your local
-        machine.
-        Moreover, \textbf{Ximera developers} can go to your GitHub page, start
-        their
-        own codespace, and try out your code and directly help with possible issues.
+In Overleaf, select ``New project'' and then ``Import from GitHub.''
+You will be asked to connect with GitHub. When you do, you will
+ see a list of GitHub repositories. Select your Ximera GitHub Repository.
 
         \pdfOnly{\end{multicols*}}
 
 \newpage
 
 \begin{image}
-    \includegraphics[width=.7\textwidth]{xfsVScode}
+    \includegraphics[width=.7\textwidth]{xfosChange.png}
 \end{image}
 \pdfOnly{\begin{multicols*}{2}}
-        Once the codespace is created, you will see something like what we have
-        above. This is Visual Studio Code (VS Code) running within your browser. VS Code
-        is a powerful text-editor with many extensions. We use it to write Ximera content.
-        On the far left, you see a vertical list of icons. Currently, ``EXPLORER'' is
-        selected, it looks like ``pages of paper.'' Moving right, we see the files in
-        our GitHub repository. At the bottom right-hand corner of the screen you will see
-        buttons that say ``SERVE,''  ``HTML,'' and ``PDF.'' These buttons were added by the files
-        in the hidden folder \verb!.vscode/!.
-        \begin{description}
-            \item[The ``SERVE'' button] compiles the \textbf{entire} Ximera repository to HTML and deploys to a (local or remote) server. If this is the first time you are compiling, it will take a few minutes.
-        \item[The ``HTML'' button] compiles only the \textbf{current} \LaTeX\ file to HTML.
-        \item[The ``PDF'' button] compiles only the \textbf{current} \LaTeX\ file to PDF using our Ximera tools.
-        \end{description}
-        At this point, you will want to press the```SERVE'' button. This will
-        compile the entire repository and deploy it to a local server. As part of this process, 
-        we will generate a GPG Key, that we use to help sign content online. 
-        If you are simply playing with Ximera, you can just hit ``enter'' \textit{twice}.
-
-
-
-        We will discuss deploying Ximera content to the open web in a later section.
-        
+        Once the files load in Overleaf, you can go to:
+    \[
+    \texttt{aFirstFolder} \to \texttt{aFirstActivity.tex}
+    \]
+And make some changes. For example, 
+I made a change at line 14.
         \pdfOnly{\end{multicols*}}
 
 \newpage
 
 \begin{image}
-    \includegraphics[width=.7\textwidth]{xfsPorts}
+    \includegraphics[width=.7\textwidth]{xfosSync.png}
 \end{image}
 \pdfOnly{\begin{multicols}{2}}
 
-    After you have pressed the ``SERVE'' button, you will see a
-        ``terminal'' window at the bottom of the screen. 
-        Note the line that says: ``PROBLEMS,'' ``OUTPUT,'' ``DEBUG CONSOLE,''
-        ``TERMINAL,'' ``PORTS.''
-        You want
-        to click on ``PORTS.'' The ``PORTS'' tab may be hidden within
-        ``$\cdots$.''
-        After you click on ``PORTS,'' select 2080 and click on the globe, and a
-        webpage
-        will open. Your
-        content will be under the link ``Content.'' You should be able to see
-        the
-        content in your browser.
-
-        You may delete your codespace (you can simply recreate it) and others
-        can come
-        to your GitHub repository, start a codespace, and check out and compile
-        your
-        code.
-        This is especially useful if a user runs into difficulty, as a Ximera
-        developer
-        can examine a users exact setup, and help resolve any issues.
+    After you have made your changes, go to the ``Integrations'' tab on the left side of the
+    Overleaf window. Then select ``GitHub Sync.'' When you Push to GitHub, your changes will be sent to your GitHub repository, and
+    automatically deployed to the Ximera server. You can check this by going to your Ximera URL:
+        \begin{center}
+            \url{https://xerxes.ximera.org/YOUR-USERNAME-YOUR-REPO-NAME}
+        \end{center}
+        In our example, the URL is:
+        \begin{center}
+            \url{https://xerxes.ximera.org/bartsnapp-ximera-test}
+        \end{center}
+        You should see your changes live on the Ximera server!
 
         Demo versions of this repository are published as:
         \begin{itemize}
